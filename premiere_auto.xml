@@ -1,0 +1,1726 @@
+<?xml version="1.0" ?>
+<xmeml version="4">
+  
+    
+  <project>
+    
+        
+    <name>AI_Vertical_Final</name>
+    
+        
+    <children>
+      
+            
+      <sequence id="sequence-1">
+        
+                
+        <name>AI_Vertical_Final</name>
+        
+                
+        <duration>22773</duration>
+        
+                
+        <rate>
+          
+                    
+          <timebase>60</timebase>
+          
+                    
+          <ntsc>TRUE</ntsc>
+          
+                
+        </rate>
+        
+                
+        <media>
+          
+                    
+          <video>
+            
+                        
+            <format>
+              <samplecharacteristics>
+                <width>1080</width>
+                <height>1920</height>
+                <pixelaspectratio>square</pixelaspectratio>
+                <rate>
+                  <timebase>59</timebase>
+                  <ntsc>TRUE</ntsc>
+                </rate>
+              </samplecharacteristics>
+            </format>
+            
+                        
+            <track>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-1">
+                
+                                
+                <file id="file-1">
+                  
+                                    
+                  <pathurl>D:\素材\Videos\bandicam 2025-12-07 21-59-57-374.mp4</pathurl>
+                  
+                                    
+                  <name>bandicam 2025-12-07 21-59-57-374.mp4</name>
+                  
+                                    
+                  <rate>
+                    
+                                        
+                    <timebase>60</timebase>
+                    
+                                        
+                    <ntsc>TRUE</ntsc>
+                    
+                                    
+                  </rate>
+                  
+                                    
+                  <duration>1000000</duration>
+                  
+                                    
+                  <timecode>
+                    
+                                        
+                    <rate>
+                      
+                                            
+                      <timebase>60</timebase>
+                      
+                                            
+                      <ntsc>TRUE</ntsc>
+                      
+                                        
+                    </rate>
+                    
+                                        
+                    <string>00:00:00:00</string>
+                    
+                                        
+                    <frame>0</frame>
+                    
+                                        
+                    <displayformat>NDF</displayformat>
+                    
+                                    
+                  </timecode>
+                  
+                                    
+                  <media>
+                    
+                                        
+                    <video/>
+                    
+                                        
+                    <audio/>
+                    
+                                    
+                  </media>
+                  
+                                
+                </file>
+                
+                                
+                <name>Game_0</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>5835</duration>
+                
+                                
+                <start>0</start>
+                
+                                
+                <end>5835</end>
+                
+                                
+                <in>0</in>
+                
+                                
+                <out>5835</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>270</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.8568512644130344</horiz>
+                        <vert>-0.4972334051027498</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-2">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_1</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>3805</duration>
+                
+                                
+                <start>5835</start>
+                
+                                
+                <end>9640</end>
+                
+                                
+                <in>5840</in>
+                
+                                
+                <out>9645</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>223</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.4920881103599412</horiz>
+                        <vert>-0.2945964276159131</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-3">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_2</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>1690</duration>
+                
+                                
+                <start>9640</start>
+                
+                                
+                <end>11330</end>
+                
+                                
+                <in>9660</in>
+                
+                                
+                <out>11350</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>232</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.5710321869811362</horiz>
+                        <vert>-0.31597065137004887</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-4">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_3</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>160</duration>
+                
+                                
+                <start>11330</start>
+                
+                                
+                <end>11490</end>
+                
+                                
+                <in>11355</in>
+                
+                                
+                <out>11515</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>148</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.19984804233536121</horiz>
+                        <vert>-0.1536394733120687</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-5">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_4</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>45</duration>
+                
+                                
+                <start>11490</start>
+                
+                                
+                <end>11535</end>
+                
+                                
+                <in>11520</in>
+                
+                                
+                <out>11565</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>176</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.3688863515853882</horiz>
+                        <vert>-0.07451244961056443</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-6">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_5</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>15</duration>
+                
+                                
+                <start>11535</start>
+                
+                                
+                <end>11550</end>
+                
+                                
+                <in>11570</in>
+                
+                                
+                <out>11585</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>193</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.4583217302958171</horiz>
+                        <vert>-0.0542439091950655</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-7">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_6</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>30</duration>
+                
+                                
+                <start>11550</start>
+                
+                                
+                <end>11580</end>
+                
+                                
+                <in>11595</in>
+                
+                                
+                <out>11625</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>239</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.5434316595395406</horiz>
+                        <vert>-0.23018199453751242</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-8">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_7</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>795</duration>
+                
+                                
+                <start>11580</start>
+                
+                                
+                <end>12375</end>
+                
+                                
+                <in>11655</in>
+                
+                                
+                <out>12450</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>258</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.659869010809153</horiz>
+                        <vert>-0.4564901426457946</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-9">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_8</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>14</duration>
+                
+                                
+                <start>12375</start>
+                
+                                
+                <end>12389</end>
+                
+                                
+                <in>12455</in>
+                
+                                
+                <out>12469</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>164</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.30572407444318134</horiz>
+                        <vert>0.059674198428789765</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-10">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_9</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>15</duration>
+                
+                                
+                <start>12389</start>
+                
+                                
+                <end>12404</end>
+                
+                                
+                <in>12475</in>
+                
+                                
+                <out>12490</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>212</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.3829311927159627</horiz>
+                        <vert>-0.1620751470327377</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-11">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_10</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>1005</duration>
+                
+                                
+                <start>12404</start>
+                
+                                
+                <end>13409</end>
+                
+                                
+                <in>12510</in>
+                
+                                
+                <out>13515</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>260</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.747288860936663</horiz>
+                        <vert>-0.4792182917025552</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-12">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_11</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>230</duration>
+                
+                                
+                <start>13409</start>
+                
+                                
+                <end>13639</end>
+                
+                                
+                <in>13525</in>
+                
+                                
+                <out>13755</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>227</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.5692406510529311</horiz>
+                        <vert>-0.3912152194458505</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-13">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Game_12</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>9134</duration>
+                
+                                
+                <start>13639</start>
+                
+                                
+                <end>22773</end>
+                
+                                
+                <in>13765</in>
+                
+                                
+                <out>22899</out>
+                
+                            
+                <filter>
+                  <effect>
+                    <name>Basic Motion</name>
+                    <effectid>basic</effectid>
+                    <parameter>
+                      <parameterid>scale</parameterid>
+                      <name>Scale</name>
+                      <value>244</value>
+                    </parameter>
+                    <parameter>
+                      <parameterid>center</parameterid>
+                      <name>Center</name>
+                      <value>
+                        <horiz>-0.6976396110852886</horiz>
+                        <vert>-0.2990417655615506</vert>
+                      </value>
+                    </parameter>
+                  </effect>
+                </filter>
+              </clipitem>
+              
+                        
+            </track>
+            
+                        
+            <track/>
+            
+                    
+          </video>
+          
+                    
+          <audio>
+            
+                        
+            <track>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-14">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_0</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>5835</duration>
+                
+                                
+                <start>0</start>
+                
+                                
+                <end>5835</end>
+                
+                                
+                <in>0</in>
+                
+                                
+                <out>5835</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-15">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_1</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>3805</duration>
+                
+                                
+                <start>5835</start>
+                
+                                
+                <end>9640</end>
+                
+                                
+                <in>5840</in>
+                
+                                
+                <out>9645</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-16">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_2</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>1690</duration>
+                
+                                
+                <start>9640</start>
+                
+                                
+                <end>11330</end>
+                
+                                
+                <in>9660</in>
+                
+                                
+                <out>11350</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-17">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_3</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>160</duration>
+                
+                                
+                <start>11330</start>
+                
+                                
+                <end>11490</end>
+                
+                                
+                <in>11355</in>
+                
+                                
+                <out>11515</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-18">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_4</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>45</duration>
+                
+                                
+                <start>11490</start>
+                
+                                
+                <end>11535</end>
+                
+                                
+                <in>11520</in>
+                
+                                
+                <out>11565</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-19">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_5</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>15</duration>
+                
+                                
+                <start>11535</start>
+                
+                                
+                <end>11550</end>
+                
+                                
+                <in>11570</in>
+                
+                                
+                <out>11585</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-20">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_6</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>30</duration>
+                
+                                
+                <start>11550</start>
+                
+                                
+                <end>11580</end>
+                
+                                
+                <in>11595</in>
+                
+                                
+                <out>11625</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-21">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_7</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>795</duration>
+                
+                                
+                <start>11580</start>
+                
+                                
+                <end>12375</end>
+                
+                                
+                <in>11655</in>
+                
+                                
+                <out>12450</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-22">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_8</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>14</duration>
+                
+                                
+                <start>12375</start>
+                
+                                
+                <end>12389</end>
+                
+                                
+                <in>12455</in>
+                
+                                
+                <out>12469</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-23">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_9</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>15</duration>
+                
+                                
+                <start>12389</start>
+                
+                                
+                <end>12404</end>
+                
+                                
+                <in>12475</in>
+                
+                                
+                <out>12490</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-24">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_10</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>1005</duration>
+                
+                                
+                <start>12404</start>
+                
+                                
+                <end>13409</end>
+                
+                                
+                <in>12510</in>
+                
+                                
+                <out>13515</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-25">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_11</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>230</duration>
+                
+                                
+                <start>13409</start>
+                
+                                
+                <end>13639</end>
+                
+                                
+                <in>13525</in>
+                
+                                
+                <out>13755</out>
+                
+                            
+              </clipitem>
+              
+                            
+              <clipitem frameBlend="FALSE" id="clipitem-26">
+                
+                                
+                <file id="file-1"/>
+                
+                                
+                <name>Audio_12</name>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <rate>
+                  
+                                    
+                  <timebase>60</timebase>
+                  
+                                    
+                  <ntsc>TRUE</ntsc>
+                  
+                                
+                </rate>
+                
+                                
+                <duration>9134</duration>
+                
+                                
+                <start>13639</start>
+                
+                                
+                <end>22773</end>
+                
+                                
+                <in>13765</in>
+                
+                                
+                <out>22899</out>
+                
+                            
+              </clipitem>
+              
+                        
+            </track>
+            
+                    
+          </audio>
+          
+                
+        </media>
+        
+            
+      </sequence>
+      
+        
+    </children>
+    
+    
+  </project>
+  
+
+</xmeml>

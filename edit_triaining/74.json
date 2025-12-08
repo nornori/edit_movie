@@ -1,0 +1,1820 @@
+{
+  "meta": {
+    "xml_path": "C:\\Users\\yushi\\Documents\\プログラム\\editxml\\bandicam 2025-06-21 16-27-03-700.xml",
+    "video_paths": [
+      "D:\\切り抜き\\2025-6\\2025-6-21\\bandicam 2025-06-21 16-27-03-700.mp4"
+    ],
+    "image_paths": [],
+    "original_filename": "bandicam 2025-06-21 16-27-03-700.xml"
+  },
+  "clip_details": [
+    {
+      "track_kind": "video",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 0.0,
+      "timeline_end": 13.2633,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "video",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 13.2633,
+      "timeline_end": 54.0541,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "video",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 54.0541,
+      "timeline_end": 74.5412,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "video",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 74.5412,
+      "timeline_end": 146.8802,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "video",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 146.8802,
+      "timeline_end": 435.669,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 0.0,
+      "timeline_end": 13.2633,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 13.2633,
+      "timeline_end": 54.0541,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 54.0541,
+      "timeline_end": 74.5412,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 74.5412,
+      "timeline_end": 146.8802,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 1,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 146.8802,
+      "timeline_end": 435.669,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 2,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 0.0,
+      "timeline_end": 13.2633,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 2,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 13.2633,
+      "timeline_end": 54.0541,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 2,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 54.0541,
+      "timeline_end": 74.5412,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 2,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 74.5412,
+      "timeline_end": 146.8802,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    },
+    {
+      "track_kind": "audio",
+      "track_index": 2,
+      "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+      "timeline_start": 146.8802,
+      "timeline_end": 435.669,
+      "scale": 100.0,
+      "pos_x": 0.5,
+      "pos_y": 0.5,
+      "rotation": 0.0,
+      "opacity": 100.0,
+      "audio_level": 0.0,
+      "crop_left": 0.0,
+      "crop_top": 0.0,
+      "crop_right": 0.0,
+      "crop_bottom": 0.0
+    }
+  ],
+  "timeline_data": {
+    "OTIO_SCHEMA": "Timeline.1",
+    "metadata": {
+      "fcp_xml": {
+        "@MZ.EditLine": "76197081981450",
+        "@MZ.Sequence.AudioTimeDisplayFormat": "200",
+        "@MZ.Sequence.EditingModeGUID": "9678af98-a7b7-4bdb-b477-7ac9c8df4a4e",
+        "@MZ.Sequence.PreviewFrameSizeHeight": "1080",
+        "@MZ.Sequence.PreviewFrameSizeWidth": "1920",
+        "@MZ.Sequence.PreviewRenderingClassID": "1061109567",
+        "@MZ.Sequence.PreviewRenderingPresetCodec": "1634755443",
+        "@MZ.Sequence.PreviewRenderingPresetPath": "EncoderPresets\\SequencePreview\\9678af98-a7b7-4bdb-b477-7ac9c8df4a4e\\QuickTime.epr",
+        "@MZ.Sequence.PreviewUseMaxBitDepth": "false",
+        "@MZ.Sequence.PreviewUseMaxRenderQuality": "false",
+        "@MZ.Sequence.VideoTimeDisplayFormat": "998",
+        "@MZ.WorkInPoint": "0",
+        "@MZ.WorkOutPoint": "137409161400000",
+        "@Monitor.ProgramZoomIn": "0",
+        "@Monitor.ProgramZoomOut": "110729582574490",
+        "@TL.SQAVDividerPosition": "0.5",
+        "@TL.SQAudioVisibleBase": "0",
+        "@TL.SQHeaderWidth": "204",
+        "@TL.SQHideShyTracks": "0",
+        "@TL.SQTimePerPixel": "0.061735092257747759",
+        "@TL.SQVideoVisibleBase": "0",
+        "@TL.SQVisibleBaseTime": "76134355176671",
+        "@explodedTracks": "true",
+        "@id": "sequence-78",
+        "labels": {
+          "label2": "Forest"
+        },
+        "logginginfo": {
+          "description": null,
+          "good": null,
+          "lognote": null,
+          "originalaudiofilename": null,
+          "originalvideofilename": null,
+          "scene": null,
+          "shottake": null
+        },
+        "media": {
+          "audio": {
+            "format": {
+              "samplecharacteristics": {
+                "depth": "16",
+                "samplerate": "48000"
+              }
+            },
+            "numOutputChannels": "2",
+            "outputs": {
+              "group": [
+                {
+                  "channel": {
+                    "index": "1"
+                  },
+                  "downmix": "0",
+                  "index": "1",
+                  "numchannels": "1"
+                },
+                {
+                  "channel": {
+                    "index": "2"
+                  },
+                  "downmix": "0",
+                  "index": "2",
+                  "numchannels": "1"
+                }
+              ]
+            }
+          },
+          "video": {
+            "format": {
+              "samplecharacteristics": {
+                "anamorphic": "FALSE",
+                "codec": {
+                  "appspecificdata": {
+                    "appmanufacturer": "Apple Inc.",
+                    "appname": "Final Cut Pro",
+                    "appversion": "7.0",
+                    "data": {
+                      "qtcodec": {
+                        "codecname": "Apple ProRes 422",
+                        "codectypecode": "apcn",
+                        "codectypename": "Apple ProRes 422",
+                        "codecvendorcode": "appl",
+                        "datarate": "0",
+                        "keyframerate": "0",
+                        "spatialquality": "1024",
+                        "temporalquality": "0"
+                      }
+                    }
+                  },
+                  "name": "Apple ProRes 422"
+                },
+                "colordepth": "24",
+                "fielddominance": "none",
+                "height": "1080",
+                "pixelaspectratio": "square",
+                "rate": {
+                  "ntsc": "FALSE",
+                  "timebase": "59"
+                },
+                "width": "1920"
+              }
+            }
+          }
+        },
+        "rate": {
+          "ntsc": "FALSE",
+          "timebase": "59"
+        },
+        "timecode": {
+          "displayformat": "NDF",
+          "rate": {
+            "ntsc": "FALSE",
+            "timebase": "59"
+          }
+        },
+        "uuid": "9b4d7451-fbaf-47c8-885f-fcad0c68d6fd"
+      }
+    },
+    "name": "bandicam 2025-06-21 16-27-03-700",
+    "global_start_time": {
+      "OTIO_SCHEMA": "RationalTime.1",
+      "rate": 59.0,
+      "value": 0.0
+    },
+    "tracks": {
+      "OTIO_SCHEMA": "Stack.1",
+      "metadata": {},
+      "name": "bandicam 2025-06-21 16-27-03-700",
+      "source_range": null,
+      "effects": [],
+      "markers": [],
+      "enabled": true,
+      "color": null,
+      "children": [
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "1",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "enabled": "TRUE",
+              "locked": "FALSE"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4696",
+                  "alphatype": "none",
+                  "anamorphic": "FALSE",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "1",
+                      "linkclipref": "clipitem-4696",
+                      "mediatype": "video",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "1",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4701",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "1",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4706",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pixelaspectratio": "square",
+                  "pproTicksIn": "8544080144275",
+                  "pproTicksOut": "11915069580850"
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 795.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 2015.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4697",
+                  "alphatype": "none",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "2",
+                      "linkclipref": "clipitem-4697",
+                      "mediatype": "video",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "2",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4702",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "2",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4707",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "14268401829025",
+                  "pproTicksOut": "24635784435850"
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 2445.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 3365.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4698",
+                  "alphatype": "none",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "32709198130490",
+                  "pproTicksOut": "37916210744470"
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 1228.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 7714.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4699",
+                  "alphatype": "none",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "42682238576810",
+                  "pproTicksOut": "61067911780570"
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 4336.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 10066.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4700",
+                  "alphatype": "none",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "64010637150360",
+                  "pproTicksOut": "137409161863710"
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 17310.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 15096.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            }
+          ],
+          "kind": "Video"
+        },
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "0",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "enabled": "TRUE",
+              "locked": "FALSE"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [],
+          "kind": "Video"
+        },
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "0",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "enabled": "TRUE",
+              "locked": "FALSE"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [],
+          "kind": "Video"
+        },
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "1",
+              "@PannerCurrentValue": "0.5",
+              "@PannerIsInverted": "true",
+              "@PannerName": "バランス",
+              "@PannerStartKeyframe": "-91445760000000000,0.5,0,0,0,0,0,0",
+              "@TL.SQTrackAudioKeyframeStyle": "0",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "@currentExplodedTrackIndex": "0",
+              "@premiereTrackType": "Stereo",
+              "@totalExplodedTrackCount": "2",
+              "enabled": "TRUE",
+              "locked": "FALSE",
+              "outputchannelindex": "1"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4701",
+                  "@premiereChannelType": "stereo",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "1",
+                      "linkclipref": "clipitem-4696",
+                      "mediatype": "video",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "1",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4701",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "1",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4706",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "8544080144275",
+                  "pproTicksOut": "11915069580850",
+                  "sourcetrack": {
+                    "mediatype": "audio",
+                    "trackindex": "1"
+                  }
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 795.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 2015.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4702",
+                  "@premiereChannelType": "stereo",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "2",
+                      "linkclipref": "clipitem-4697",
+                      "mediatype": "video",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "2",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4702",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "2",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4707",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "14268401829025",
+                  "pproTicksOut": "24635784435850",
+                  "sourcetrack": {
+                    "mediatype": "audio",
+                    "trackindex": "1"
+                  }
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 2445.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 3365.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4703",
+                  "@premiereChannelType": "stereo",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "3",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4703",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "3",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4708",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "32709198130490",
+                  "pproTicksOut": "37916210744470",
+                  "sourcetrack": {
+                    "mediatype": "audio",
+                    "trackindex": "1"
+                  }
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 1228.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 7714.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4704",
+                  "@premiereChannelType": "stereo",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "4",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4704",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "4",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4709",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "42682238576810",
+                  "pproTicksOut": "61067911780570",
+                  "sourcetrack": {
+                    "mediatype": "audio",
+                    "trackindex": "1"
+                  }
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 4336.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 10066.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            },
+            {
+              "OTIO_SCHEMA": "Clip.2",
+              "metadata": {
+                "fcp_xml": {
+                  "@id": "clipitem-4705",
+                  "@premiereChannelType": "stereo",
+                  "colorinfo": {
+                    "asc_sat": null,
+                    "asc_sop": null,
+                    "lut": null,
+                    "lut1": null,
+                    "lut2": null
+                  },
+                  "enabled": "TRUE",
+                  "labels": {
+                    "label2": "Iris"
+                  },
+                  "link": [
+                    {
+                      "clipindex": "5",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4705",
+                      "mediatype": "audio",
+                      "trackindex": "1"
+                    },
+                    {
+                      "clipindex": "5",
+                      "groupindex": "1",
+                      "linkclipref": "clipitem-4710",
+                      "mediatype": "audio",
+                      "trackindex": "2"
+                    }
+                  ],
+                  "logginginfo": {
+                    "description": null,
+                    "good": null,
+                    "lognote": null,
+                    "originalaudiofilename": null,
+                    "originalvideofilename": null,
+                    "scene": null,
+                    "shottake": null
+                  },
+                  "masterclipid": "masterclip-2380",
+                  "pproTicksIn": "64010637150360",
+                  "pproTicksOut": "137409161863710",
+                  "sourcetrack": {
+                    "mediatype": "audio",
+                    "trackindex": "1"
+                  }
+                }
+              },
+              "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+              "source_range": {
+                "OTIO_SCHEMA": "TimeRange.1",
+                "duration": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 17310.0
+                },
+                "start_time": {
+                  "OTIO_SCHEMA": "RationalTime.1",
+                  "rate": 59.0,
+                  "value": 15096.0
+                }
+              },
+              "effects": [],
+              "markers": [],
+              "enabled": true,
+              "color": null,
+              "media_references": {
+                "DEFAULT_MEDIA": {
+                  "OTIO_SCHEMA": "ExternalReference.1",
+                  "metadata": {
+                    "fcp_xml": {
+                      "@id": "file-2380",
+                      "media": {
+                        "audio": {
+                          "channelcount": "2",
+                          "samplecharacteristics": {
+                            "depth": "16",
+                            "samplerate": "48000"
+                          }
+                        },
+                        "video": {
+                          "samplecharacteristics": {
+                            "anamorphic": "FALSE",
+                            "fielddominance": "none",
+                            "height": "1080",
+                            "pixelaspectratio": "square",
+                            "rate": {
+                              "ntsc": "FALSE",
+                              "timebase": "59"
+                            },
+                            "width": "1920"
+                          }
+                        }
+                      },
+                      "rate": {
+                        "ntsc": "FALSE",
+                        "timebase": "59"
+                      },
+                      "timecode": {
+                        "displayformat": "NDF",
+                        "rate": {
+                          "ntsc": "FALSE",
+                          "timebase": "59"
+                        }
+                      }
+                    }
+                  },
+                  "name": "bandicam 2025-06-21 16-27-03-700.mp4",
+                  "available_range": {
+                    "OTIO_SCHEMA": "TimeRange.1",
+                    "duration": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 32406.0
+                    },
+                    "start_time": {
+                      "OTIO_SCHEMA": "RationalTime.1",
+                      "rate": 59.0,
+                      "value": 0.0
+                    }
+                  },
+                  "available_image_bounds": null,
+                  "target_url": "file://localhost/D%3a/%e5%88%87%e3%82%8a%e6%8a%9c%e3%81%8d/2025-6/2025-6-21/bandicam%202025-06-21%2016-27-03-700.mp4"
+                }
+              },
+              "active_media_reference_key": "DEFAULT_MEDIA"
+            }
+          ],
+          "kind": "Audio"
+        },
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "1",
+              "@PannerCurrentValue": "0.5",
+              "@PannerIsInverted": "true",
+              "@PannerName": "バランス",
+              "@PannerStartKeyframe": "-91445760000000000,0.5,0,0,0,0,0,0",
+              "@TL.SQTrackAudioKeyframeStyle": "0",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "@currentExplodedTrackIndex": "0",
+              "@premiereTrackType": "Stereo",
+              "@totalExplodedTrackCount": "2",
+              "enabled": "TRUE",
+              "locked": "FALSE",
+              "outputchannelindex": "1"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [],
+          "kind": "Audio"
+        },
+        {
+          "OTIO_SCHEMA": "Track.1",
+          "metadata": {
+            "fcp_xml": {
+              "@MZ.TrackTargeted": "1",
+              "@PannerCurrentValue": "0.5",
+              "@PannerIsInverted": "true",
+              "@PannerName": "バランス",
+              "@PannerStartKeyframe": "-91445760000000000,0.5,0,0,0,0,0,0",
+              "@TL.SQTrackAudioKeyframeStyle": "0",
+              "@TL.SQTrackExpanded": "0",
+              "@TL.SQTrackExpandedHeight": "41",
+              "@TL.SQTrackShy": "0",
+              "@currentExplodedTrackIndex": "0",
+              "@premiereTrackType": "Stereo",
+              "@totalExplodedTrackCount": "2",
+              "enabled": "TRUE",
+              "locked": "FALSE",
+              "outputchannelindex": "1"
+            }
+          },
+          "name": "",
+          "source_range": null,
+          "effects": [],
+          "markers": [],
+          "enabled": true,
+          "color": null,
+          "children": [],
+          "kind": "Audio"
+        }
+      ]
+    }
+  }
+}

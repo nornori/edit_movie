@@ -1,0 +1,30 @@
+{
+    "timeline_name": "AI_Auto_Edit",
+    "fps": 59.94,
+    "clips": [
+        {
+            "track": 1,
+            "name": "AutoCut_0",
+            "file": "D:/切り抜き/2025-8/2025-8-02/bandicam 2025-08-05 23-30-14-178.mp4",
+            "start": 0.0,
+            "end": 0.5,
+            "source_start": 0.0
+        },
+        {
+            "track": 1,
+            "name": "AutoCut_85",
+            "file": "D:/切り抜き/2025-8/2025-8-02/bandicam 2025-08-05 23-30-14-178.mp4",
+            "start": 0.5,
+            "end": 31.5,
+            "source_start": 42.5
+        },
+        {
+            "track": 1,
+            "name": "AutoCut_160",
+            "file": "D:/切り抜き/2025-8/2025-8-02/bandicam 2025-08-05 23-30-14-178.mp4",
+            "start": 31.5,
+            "end": 61.0,
+            "source_start": 80.0
+        }
+    ]
+}
