@@ -33,11 +33,8 @@ echo.
 echo ================================================================================
 echo.
 
-REM 一時ファイル名
-set TEMP_XML=outputs\inference_results\temp_%RANDOM%.xml
-
-echo [1/3] 推論を実行中...
-python src\inference\inference_pipeline.py "%VIDEO_PATH%" --model "%MODEL_PATH%" --output "%TEMP_XML%"
+echo [1/2] 推論を実行中...
+python src\inference\inference_pipeline.py "%VIDEO_PATH%" --model "%MODEL_PATH%" --output "%OUTPUT_PATH%" --telop_config configs\config_telop_disabled.yaml
 
 if errorlevel 1 (
     echo.
@@ -45,18 +42,19 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo.
-echo [2/3] テロップをグラフィックに変換中...
-python src\inference\fix_telop_simple.py "%TEMP_XML%" "%OUTPUT_PATH%"
+REM テロップをグラフィックに変換する処理は無効化
+REM echo.
+REM echo [2/3] テロップをグラフィックに変換中...
+REM python src\inference\fix_telop_simple.py "%TEMP_XML%" "%OUTPUT_PATH%"
+REM 
+REM if errorlevel 1 (
+REM     echo.
+REM     echo エラー: テロップ変換に失敗しました
+REM     exit /b 1
+REM )
 
-if errorlevel 1 (
-    echo.
-    echo エラー: テロップ変換に失敗しました
-    exit /b 1
-)
-
 echo.
-echo [3/3] 完了！
+echo [2/2] 完了！
 echo.
 echo ================================================================================
 echo 出力XMLファイル: %OUTPUT_PATH%
@@ -64,8 +62,5 @@ echo ===========================================================================
 echo.
 echo Premiere Proで上記のXMLファイルを開いてください。
 echo.
-
-REM 一時ファイルを削除
-if exist "%TEMP_XML%" del "%TEMP_XML%"
 
 exit /b 0

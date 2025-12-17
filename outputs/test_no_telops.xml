@@ -1,0 +1,2995 @@
+<?xml version="1.0" ?>
+<xmeml version="4">
+    <project>
+        <name>bandicam 2025-06-02 00-01-10-144</name>
+        <children>
+            <sequence id="sequence-1">
+                <name>bandicam 2025-06-02 00-01-10-144</name>
+                <duration>14276</duration>
+                <rate>
+                    <timebase>60</timebase>
+                    <ntsc>TRUE</ntsc>
+                </rate>
+                <media>
+                    <video>
+                        <format/>
+                        <track>
+                            <clipitem frameBlend="FALSE" id="clipitem-1">
+                                <file id="file-1">
+                                    <pathurl>file://localhost/D%3A/%E5%88%87%E3%82%8A%E6%8A%9C%E3%81%8D/2025-6/2025-6-02/bandicam%202025-06-02%2000-01-10-144.mp4</pathurl>
+                                    <name>bandicam%202025-06-02%2000-01-10-144.mp4</name>
+                                    <rate>
+                                        <timebase>60</timebase>
+                                        <ntsc>TRUE</ntsc>
+                                    </rate>
+                                    <duration>7071</duration>
+                                    <timecode>
+                                        <rate>
+                                            <timebase>60</timebase>
+                                            <ntsc>TRUE</ntsc>
+                                        </rate>
+                                        <string>00:00:00:00</string>
+                                        <frame>0</frame>
+                                        <displayformat>NDF</displayformat>
+                                    </timecode>
+                                    <media>
+                                        <video/>
+                                        <audio/>
+                                    </media>
+                                </file>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>809</duration>
+                                <start>0</start>
+                                <end>809</end>
+                                <in>0</in>
+                                <out>809</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-2">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>809</start>
+                                <end>827</end>
+                                <in>905</in>
+                                <out>923</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-3">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6083</duration>
+                                <start>827</start>
+                                <end>6910</end>
+                                <in>983</in>
+                                <out>7066</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-4">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>6910</start>
+                                <end>6946</end>
+                                <in>1031</in>
+                                <out>1067</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-5">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>6946</start>
+                                <end>6952</end>
+                                <in>1085</in>
+                                <out>1091</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-6">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>6952</start>
+                                <end>7000</end>
+                                <in>1109</in>
+                                <out>1157</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-7">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>7000</start>
+                                <end>7000</end>
+                                <in>1319</in>
+                                <out>1319</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-8">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>7000</start>
+                                <end>7024</end>
+                                <in>1349</in>
+                                <out>1373</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-9">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>7024</start>
+                                <end>7072</end>
+                                <in>1397</in>
+                                <out>1445</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-10">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>192</duration>
+                                <start>7072</start>
+                                <end>7264</end>
+                                <in>1457</in>
+                                <out>1649</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-11">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>60</duration>
+                                <start>7264</start>
+                                <end>7324</end>
+                                <in>1697</in>
+                                <out>1757</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-12">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>90</duration>
+                                <start>7324</start>
+                                <end>7414</end>
+                                <in>1847</in>
+                                <out>1937</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-13">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>126</duration>
+                                <start>7414</start>
+                                <end>7540</end>
+                                <in>1961</in>
+                                <out>2087</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-14">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>7540</start>
+                                <end>7570</end>
+                                <in>2219</in>
+                                <out>2249</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-15">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>7570</start>
+                                <end>7594</end>
+                                <in>2267</in>
+                                <out>2291</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-16">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>7594</start>
+                                <end>7642</end>
+                                <in>2327</in>
+                                <out>2375</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-17">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>7642</start>
+                                <end>7678</end>
+                                <in>2405</in>
+                                <out>2441</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-18">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>7678</start>
+                                <end>7696</end>
+                                <in>2477</in>
+                                <out>2495</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-19">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>7696</start>
+                                <end>7750</end>
+                                <in>2531</in>
+                                <out>2585</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-20">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>96</duration>
+                                <start>7750</start>
+                                <end>7846</end>
+                                <in>2639</in>
+                                <out>2735</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-21">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>917</duration>
+                                <start>7846</start>
+                                <end>8763</end>
+                                <in>2759</in>
+                                <out>3676</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-22">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>42</duration>
+                                <start>8763</start>
+                                <end>8805</end>
+                                <in>3706</in>
+                                <out>3748</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-23">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>66</duration>
+                                <start>8805</start>
+                                <end>8871</end>
+                                <in>3778</in>
+                                <out>3844</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-24">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>120</duration>
+                                <start>8871</start>
+                                <end>8991</end>
+                                <in>3874</in>
+                                <out>3994</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-25">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>8991</start>
+                                <end>9027</end>
+                                <in>4012</in>
+                                <out>4048</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-26">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>228</duration>
+                                <start>9027</start>
+                                <end>9255</end>
+                                <in>4066</in>
+                                <out>4294</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-27">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>9255</start>
+                                <end>9267</end>
+                                <in>4330</in>
+                                <out>4342</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-28">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>342</duration>
+                                <start>9267</start>
+                                <end>9609</end>
+                                <in>4414</in>
+                                <out>4756</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-29">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>9609</start>
+                                <end>9627</end>
+                                <in>4786</in>
+                                <out>4804</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-30">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>9627</start>
+                                <end>9645</end>
+                                <in>4834</in>
+                                <out>4852</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-31">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>198</duration>
+                                <start>9645</start>
+                                <end>9843</end>
+                                <in>4870</in>
+                                <out>5068</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-32">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>9843</start>
+                                <end>9849</end>
+                                <in>5086</in>
+                                <out>5092</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-33">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>786</duration>
+                                <start>9849</start>
+                                <end>10635</end>
+                                <in>5140</in>
+                                <out>5926</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-34">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>120</duration>
+                                <start>10635</start>
+                                <end>10755</end>
+                                <in>5944</in>
+                                <out>6064</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-35">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>324</duration>
+                                <start>10755</start>
+                                <end>11079</end>
+                                <in>6088</in>
+                                <out>6412</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-36">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>108</duration>
+                                <start>11079</start>
+                                <end>11187</end>
+                                <in>6442</in>
+                                <out>6550</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-37">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>11187</start>
+                                <end>11187</end>
+                                <in>6610</in>
+                                <out>6610</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-38">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>228</duration>
+                                <start>11187</start>
+                                <end>11415</end>
+                                <in>6634</in>
+                                <out>6862</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-39">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>11415</start>
+                                <end>11451</end>
+                                <in>6874</in>
+                                <out>6910</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-40">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>11451</start>
+                                <end>11481</end>
+                                <in>6964</in>
+                                <out>6994</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-41">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>11481</start>
+                                <end>11505</end>
+                                <in>1469</in>
+                                <out>1493</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-42">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>11505</start>
+                                <end>11577</end>
+                                <in>1517</in>
+                                <out>1589</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-43">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>11577</start>
+                                <end>11577</end>
+                                <in>1619</in>
+                                <out>1619</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-44">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>11577</start>
+                                <end>11631</end>
+                                <in>1871</in>
+                                <out>1925</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-45">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>11631</start>
+                                <end>11703</end>
+                                <in>1997</in>
+                                <out>2069</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-46">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>11703</start>
+                                <end>11709</end>
+                                <in>2231</in>
+                                <out>2237</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-47">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>11709</start>
+                                <end>11727</end>
+                                <in>2561</in>
+                                <out>2579</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-48">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>11727</start>
+                                <end>11745</end>
+                                <in>2663</in>
+                                <out>2681</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-49">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>11745</start>
+                                <end>11757</end>
+                                <in>2699</in>
+                                <out>2711</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-50">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>552</duration>
+                                <start>11757</start>
+                                <end>12309</end>
+                                <in>2771</in>
+                                <out>3323</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-51">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12309</start>
+                                <end>12327</end>
+                                <in>3341</in>
+                                <out>3359</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-52">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>215</duration>
+                                <start>12327</start>
+                                <end>12542</end>
+                                <in>3389</in>
+                                <out>3604</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-53">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>12542</start>
+                                <end>12596</end>
+                                <in>3616</in>
+                                <out>3670</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-54">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>12596</start>
+                                <end>12626</end>
+                                <in>3784</in>
+                                <out>3814</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-55">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12626</start>
+                                <end>12644</end>
+                                <in>3910</in>
+                                <out>3928</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-56">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>174</duration>
+                                <start>12644</start>
+                                <end>12818</end>
+                                <in>4078</in>
+                                <out>4252</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-57">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>12818</start>
+                                <end>12890</end>
+                                <in>4432</in>
+                                <out>4504</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-58">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>60</duration>
+                                <start>12890</start>
+                                <end>12950</end>
+                                <in>4540</in>
+                                <out>4600</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-59">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12950</start>
+                                <end>12968</end>
+                                <in>4648</in>
+                                <out>4666</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-60">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>12968</start>
+                                <end>13004</end>
+                                <in>4708</in>
+                                <out>4744</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-61">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>13004</start>
+                                <end>13022</end>
+                                <in>4882</in>
+                                <out>4900</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-62">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>96</duration>
+                                <start>13022</start>
+                                <end>13118</end>
+                                <in>4954</in>
+                                <out>5050</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-63">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>13118</start>
+                                <end>13118</end>
+                                <in>5152</in>
+                                <out>5152</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-64">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>216</duration>
+                                <start>13118</start>
+                                <end>13334</end>
+                                <in>5182</in>
+                                <out>5398</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-65">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>324</duration>
+                                <start>13334</start>
+                                <end>13658</end>
+                                <in>5440</in>
+                                <out>5764</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-66">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>13658</start>
+                                <end>13682</end>
+                                <in>5782</in>
+                                <out>5806</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-67">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>13682</start>
+                                <end>13688</end>
+                                <in>5842</in>
+                                <out>5848</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-68">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>13688</start>
+                                <end>13724</end>
+                                <in>5878</in>
+                                <out>5914</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-69">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>13724</start>
+                                <end>13796</end>
+                                <in>5956</in>
+                                <out>6028</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-70">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>102</duration>
+                                <start>13796</start>
+                                <end>13898</end>
+                                <in>6100</in>
+                                <out>6202</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-71">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>13898</start>
+                                <end>13922</end>
+                                <in>6226</in>
+                                <out>6250</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-72">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>132</duration>
+                                <start>13922</start>
+                                <end>14054</end>
+                                <in>6274</in>
+                                <out>6406</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-73">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>14054</start>
+                                <end>14066</end>
+                                <in>6526</in>
+                                <out>6538</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-74">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>14066</start>
+                                <end>14138</end>
+                                <in>6652</in>
+                                <out>6724</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-75">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>14138</start>
+                                <end>14210</end>
+                                <in>6754</in>
+                                <out>6826</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-76">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>14210</start>
+                                <end>14228</end>
+                                <in>2783</in>
+                                <out>2801</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-77">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14228</start>
+                                <end>14234</end>
+                                <in>2885</in>
+                                <out>2891</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-78">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>14234</start>
+                                <end>14252</end>
+                                <in>2969</in>
+                                <out>2987</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-79">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14252</start>
+                                <end>14258</end>
+                                <in>4096</in>
+                                <out>4102</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-80">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>14258</start>
+                                <end>14258</end>
+                                <in>4132</in>
+                                <out>4132</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-81">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14258</start>
+                                <end>14264</end>
+                                <in>5578</in>
+                                <out>5584</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-82">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>14264</start>
+                                <end>14276</end>
+                                <in>5644</in>
+                                <out>5656</out>
+                            </clipitem>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-125"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-144"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-159"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-160"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-191"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-196"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-203"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-208"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-239"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-244"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-267"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-276"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-293"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-320"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-361"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-361"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-372"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-408"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-424"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-474"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-475"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-483"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-484"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-495"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-502"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-510"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-529"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-532"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-548"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-561"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-562"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-573"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-583"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-600"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-602"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-607"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-614"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-624"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-636"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-666"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-667"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-670"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-676"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-680"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-690"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-699"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-716"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-722"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-725"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-729"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-732"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-766"/>
+                        </track>
+                        <track>
+                            <clipitem id="clipitem-785"/>
+                        </track>
+                        </video>
+                    <audio>
+                        <track>
+                            <clipitem frameBlend="FALSE" id="clipitem-788">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>809</duration>
+                                <start>0</start>
+                                <end>809</end>
+                                <in>0</in>
+                                <out>809</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-789">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>809</start>
+                                <end>827</end>
+                                <in>905</in>
+                                <out>923</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-790">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6083</duration>
+                                <start>827</start>
+                                <end>6910</end>
+                                <in>983</in>
+                                <out>7066</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-791">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>6910</start>
+                                <end>6946</end>
+                                <in>1031</in>
+                                <out>1067</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-792">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>6946</start>
+                                <end>6952</end>
+                                <in>1085</in>
+                                <out>1091</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-793">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>6952</start>
+                                <end>7000</end>
+                                <in>1109</in>
+                                <out>1157</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-794">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>7000</start>
+                                <end>7000</end>
+                                <in>1319</in>
+                                <out>1319</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-795">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>7000</start>
+                                <end>7024</end>
+                                <in>1349</in>
+                                <out>1373</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-796">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>7024</start>
+                                <end>7072</end>
+                                <in>1397</in>
+                                <out>1445</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-797">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>192</duration>
+                                <start>7072</start>
+                                <end>7264</end>
+                                <in>1457</in>
+                                <out>1649</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-798">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>60</duration>
+                                <start>7264</start>
+                                <end>7324</end>
+                                <in>1697</in>
+                                <out>1757</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-799">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>90</duration>
+                                <start>7324</start>
+                                <end>7414</end>
+                                <in>1847</in>
+                                <out>1937</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-800">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>126</duration>
+                                <start>7414</start>
+                                <end>7540</end>
+                                <in>1961</in>
+                                <out>2087</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-801">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>7540</start>
+                                <end>7570</end>
+                                <in>2219</in>
+                                <out>2249</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-802">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>7570</start>
+                                <end>7594</end>
+                                <in>2267</in>
+                                <out>2291</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-803">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>48</duration>
+                                <start>7594</start>
+                                <end>7642</end>
+                                <in>2327</in>
+                                <out>2375</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-804">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>7642</start>
+                                <end>7678</end>
+                                <in>2405</in>
+                                <out>2441</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-805">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>7678</start>
+                                <end>7696</end>
+                                <in>2477</in>
+                                <out>2495</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-806">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>7696</start>
+                                <end>7750</end>
+                                <in>2531</in>
+                                <out>2585</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-807">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>96</duration>
+                                <start>7750</start>
+                                <end>7846</end>
+                                <in>2639</in>
+                                <out>2735</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-808">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>917</duration>
+                                <start>7846</start>
+                                <end>8763</end>
+                                <in>2759</in>
+                                <out>3676</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-809">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>42</duration>
+                                <start>8763</start>
+                                <end>8805</end>
+                                <in>3706</in>
+                                <out>3748</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-810">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>66</duration>
+                                <start>8805</start>
+                                <end>8871</end>
+                                <in>3778</in>
+                                <out>3844</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-811">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>120</duration>
+                                <start>8871</start>
+                                <end>8991</end>
+                                <in>3874</in>
+                                <out>3994</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-812">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>8991</start>
+                                <end>9027</end>
+                                <in>4012</in>
+                                <out>4048</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-813">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>228</duration>
+                                <start>9027</start>
+                                <end>9255</end>
+                                <in>4066</in>
+                                <out>4294</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-814">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>9255</start>
+                                <end>9267</end>
+                                <in>4330</in>
+                                <out>4342</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-815">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>342</duration>
+                                <start>9267</start>
+                                <end>9609</end>
+                                <in>4414</in>
+                                <out>4756</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-816">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>9609</start>
+                                <end>9627</end>
+                                <in>4786</in>
+                                <out>4804</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-817">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>9627</start>
+                                <end>9645</end>
+                                <in>4834</in>
+                                <out>4852</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-818">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>198</duration>
+                                <start>9645</start>
+                                <end>9843</end>
+                                <in>4870</in>
+                                <out>5068</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-819">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>9843</start>
+                                <end>9849</end>
+                                <in>5086</in>
+                                <out>5092</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-820">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>786</duration>
+                                <start>9849</start>
+                                <end>10635</end>
+                                <in>5140</in>
+                                <out>5926</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-821">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>120</duration>
+                                <start>10635</start>
+                                <end>10755</end>
+                                <in>5944</in>
+                                <out>6064</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-822">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>324</duration>
+                                <start>10755</start>
+                                <end>11079</end>
+                                <in>6088</in>
+                                <out>6412</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-823">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>108</duration>
+                                <start>11079</start>
+                                <end>11187</end>
+                                <in>6442</in>
+                                <out>6550</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-824">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>11187</start>
+                                <end>11187</end>
+                                <in>6610</in>
+                                <out>6610</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-825">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>228</duration>
+                                <start>11187</start>
+                                <end>11415</end>
+                                <in>6634</in>
+                                <out>6862</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-826">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>11415</start>
+                                <end>11451</end>
+                                <in>6874</in>
+                                <out>6910</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-827">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>11451</start>
+                                <end>11481</end>
+                                <in>6964</in>
+                                <out>6994</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-828">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>11481</start>
+                                <end>11505</end>
+                                <in>1469</in>
+                                <out>1493</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-829">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>11505</start>
+                                <end>11577</end>
+                                <in>1517</in>
+                                <out>1589</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-830">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>11577</start>
+                                <end>11577</end>
+                                <in>1619</in>
+                                <out>1619</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-831">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>11577</start>
+                                <end>11631</end>
+                                <in>1871</in>
+                                <out>1925</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-832">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>11631</start>
+                                <end>11703</end>
+                                <in>1997</in>
+                                <out>2069</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-833">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>11703</start>
+                                <end>11709</end>
+                                <in>2231</in>
+                                <out>2237</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-834">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>11709</start>
+                                <end>11727</end>
+                                <in>2561</in>
+                                <out>2579</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-835">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>11727</start>
+                                <end>11745</end>
+                                <in>2663</in>
+                                <out>2681</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-836">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>11745</start>
+                                <end>11757</end>
+                                <in>2699</in>
+                                <out>2711</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-837">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>552</duration>
+                                <start>11757</start>
+                                <end>12309</end>
+                                <in>2771</in>
+                                <out>3323</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-838">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12309</start>
+                                <end>12327</end>
+                                <in>3341</in>
+                                <out>3359</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-839">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>215</duration>
+                                <start>12327</start>
+                                <end>12542</end>
+                                <in>3389</in>
+                                <out>3604</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-840">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>54</duration>
+                                <start>12542</start>
+                                <end>12596</end>
+                                <in>3616</in>
+                                <out>3670</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-841">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>30</duration>
+                                <start>12596</start>
+                                <end>12626</end>
+                                <in>3784</in>
+                                <out>3814</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-842">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12626</start>
+                                <end>12644</end>
+                                <in>3910</in>
+                                <out>3928</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-843">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>174</duration>
+                                <start>12644</start>
+                                <end>12818</end>
+                                <in>4078</in>
+                                <out>4252</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-844">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>12818</start>
+                                <end>12890</end>
+                                <in>4432</in>
+                                <out>4504</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-845">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>60</duration>
+                                <start>12890</start>
+                                <end>12950</end>
+                                <in>4540</in>
+                                <out>4600</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-846">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>12950</start>
+                                <end>12968</end>
+                                <in>4648</in>
+                                <out>4666</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-847">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>12968</start>
+                                <end>13004</end>
+                                <in>4708</in>
+                                <out>4744</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-848">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>13004</start>
+                                <end>13022</end>
+                                <in>4882</in>
+                                <out>4900</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-849">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>96</duration>
+                                <start>13022</start>
+                                <end>13118</end>
+                                <in>4954</in>
+                                <out>5050</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-850">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>13118</start>
+                                <end>13118</end>
+                                <in>5152</in>
+                                <out>5152</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-851">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>216</duration>
+                                <start>13118</start>
+                                <end>13334</end>
+                                <in>5182</in>
+                                <out>5398</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-852">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>324</duration>
+                                <start>13334</start>
+                                <end>13658</end>
+                                <in>5440</in>
+                                <out>5764</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-853">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>13658</start>
+                                <end>13682</end>
+                                <in>5782</in>
+                                <out>5806</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-854">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>13682</start>
+                                <end>13688</end>
+                                <in>5842</in>
+                                <out>5848</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-855">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>36</duration>
+                                <start>13688</start>
+                                <end>13724</end>
+                                <in>5878</in>
+                                <out>5914</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-856">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>13724</start>
+                                <end>13796</end>
+                                <in>5956</in>
+                                <out>6028</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-857">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>102</duration>
+                                <start>13796</start>
+                                <end>13898</end>
+                                <in>6100</in>
+                                <out>6202</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-858">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>24</duration>
+                                <start>13898</start>
+                                <end>13922</end>
+                                <in>6226</in>
+                                <out>6250</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-859">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>132</duration>
+                                <start>13922</start>
+                                <end>14054</end>
+                                <in>6274</in>
+                                <out>6406</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-860">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>14054</start>
+                                <end>14066</end>
+                                <in>6526</in>
+                                <out>6538</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-861">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>14066</start>
+                                <end>14138</end>
+                                <in>6652</in>
+                                <out>6724</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-862">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>72</duration>
+                                <start>14138</start>
+                                <end>14210</end>
+                                <in>6754</in>
+                                <out>6826</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-863">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>14210</start>
+                                <end>14228</end>
+                                <in>2783</in>
+                                <out>2801</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-864">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14228</start>
+                                <end>14234</end>
+                                <in>2885</in>
+                                <out>2891</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-865">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>18</duration>
+                                <start>14234</start>
+                                <end>14252</end>
+                                <in>2969</in>
+                                <out>2987</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-866">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14252</start>
+                                <end>14258</end>
+                                <in>4096</in>
+                                <out>4102</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-867">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>0</duration>
+                                <start>14258</start>
+                                <end>14258</end>
+                                <in>4132</in>
+                                <out>4132</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-868">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>6</duration>
+                                <start>14258</start>
+                                <end>14264</end>
+                                <in>5578</in>
+                                <out>5584</out>
+                            </clipitem>
+                            <clipitem frameBlend="FALSE" id="clipitem-869">
+                                <file id="file-1"/>
+                                <name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <rate>
+                                    <timebase>60</timebase>
+                                    <ntsc>TRUE</ntsc>
+                                </rate>
+                                <duration>12</duration>
+                                <start>14264</start>
+                                <end>14276</end>
+                                <in>5644</in>
+                                <out>5656</out>
+                            </clipitem>
+                        </track>
+                    </audio>
+                </media>
+            </sequence>
+        </children>
+    </project>
+</xmeml>

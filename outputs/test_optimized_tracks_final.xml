@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence id="sequence-1">
+		<name>test_video</name>
+		<duration>6000</duration>
+		<rate>
+			<timebase>60</timebase>
+			<ntsc>TRUE</ntsc>
+		</rate>
+		<media>
+			<video>
+				<format/>
+				<track>
+				</track>
+				<track TL.SQTrackShy="0" TL.SQTrackExpandedHeight="25" TL.SQTrackExpanded="0" MZ.TrackTargeted="0">
+							<clipitem frameBlend="FALSE" id="clipitem-telop-1">
+								<masterclipid>masterclip-3</masterclipid>
+								<name>グラフィック</name>
+								<enabled>TRUE</enabled>
+								<duration>2582774</duration>
+								<rate>
+									
+								<timebase>60</timebase>
+								<ntsc>TRUE</ntsc>
+							
+								</rate>
+								<start>0</start>
+								<end>6</end>
+								<in>0</in>
+								<out>6</out>
+								<pproTicksIn>914456774963789</pproTicksIn>
+								<pproTicksOut>914677708529577</pproTicksOut>
+								<alphatype>straight</alphatype>
+								<pixelaspectratio>square</pixelaspectratio>
+								<anamorphic>FALSE</anamorphic>
+								<file id="file-2">
+									<name>グラフィック</name>
+									<mediaSource>GraphicAndType</mediaSource>
+									<rate>
+										<timebase>60</timebase>
+										<ntsc>TRUE</ntsc>
+									</rate>
+									<timecode>
+										<rate>
+											<timebase>60</timebase>
+											<ntsc>TRUE</ntsc>
+										</rate>
+										<string>00:00:00:00</string>
+										<frame>0</frame>
+										<displayformat>NDF</displayformat>
+									</timecode>
+									<media>
+										<video>
+											<samplecharacteristics>
+												<rate>
+													<timebase>60</timebase>
+													<ntsc>TRUE</ntsc>
+												</rate>
+												<width>1080</width>
+												<height>1920</height>
+												<anamorphic>FALSE</anamorphic>
+												<pixelaspectratio>square</pixelaspectratio>
+												<fielddominance>none</fielddominance>
+											</samplecharacteristics>
+										</video>
+									</media>
+								</file>
+								<filter>
+									<effect>
+										<name>グラフィック</name>
+										<effectid>GraphicAndType</effectid>
+										<effectcategory>graphic</effectcategory>
+										<effecttype>filter</effecttype>
+										<mediatype>video</mediatype>
+										<pproBypass>false</pproBypass>
+										<parameter authoringApp="PremierePro">
+											<parameterid>1</parameterid>
+											<name>ソーステキスト</name>
+											<hash>025b1101-ead6-0ca2-1feb-caf3000001fc</hash>
+											<value>5AEAAAAAAABEMyIRDAAAAAAABgAKAAQABgAAAGQAAAAAAF4ASAAQAAwARABAADwAOAAAAAAAAAAAADQAMwAsAAAAKAAkACAAAAAAAAAAAAAAAAAAHAAAAAAAGgAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAABsABwBeAAAAAAAAAUAAAABQAAAAbAAAAAIAAAAAAAEAAQAAAAAAQEEAAMBAAABAQAAAyEIAAAABIAAAAAIAAAACAAAAAAA2QwCASkTw/v//9P7///j+//8S////AAAAAAEAAAAEAAAAEQAAAEhHUFNvZWlLYWt1cG9wdGFpAAAAAQAAAAwAAAAIAAwABAAIAAgAAAAIAAAAUAAAAA8AAADjgrDjg6njg5XjgqPjg4MAAAA2ACQAAAAgABwAAAAAABsAFAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAADAAAAAgABAA2AAAAAgAAABwAAAAcAAAAHAAAAAAAIEEAAAABaAAAAE3PAEOw////tP///wEAAAAUAAAAEAAaAAgABwAMAAAAEAAUABAAAAAAAAABHAAAAAAAoEEcAAAAAgAAAAAACgAIAAUABgAHAAoAAAAADAD//P///wQABAAEAAAACAAIAAYABwAIAAAAAAAMAA==</value>
+										</parameter>
+										<parameter authoringApp="PremierePro">
+											<parameterid>2</parameterid>
+											<name>トランスフォーム</name>
+											<IsTimeVarying>false</IsTimeVarying>
+											<ParameterControlType>11</ParameterControlType>
+											<LowerBound>false</LowerBound>
+											<UpperBound>false</UpperBound>
+											<value>-91445760000000000,false,0,0,0,0,0,0</value>
+										</parameter>
+										<parameter authoringApp="PremierePro">
+											<parameterid>3</parameterid>
+											<name>位置</name>
+											<IsTimeVarying>false</IsTimeVarying>
+											<value>-91445760000000000,0.5:0.5,0,0,0,0,0,0,5,4,0,0,0,0</value>
+										</parameter>
+										<parameter authoringApp="PremierePro">
+											<parameterid>4</parameterid>
+											<name>スケール</name>
+											<IsTimeVarying>false</IsTimeVarying>
+											<ParameterControlType>2</ParameterControlType>
+											<LowerBound>0</LowerBound>
+											<UpperBound>4000</UpperBound>
+											<value>-91445760000000000,100.,0,0,0,0,0,0</value>
+										</parameter>
+										<parameter authoringApp="PremierePro">
+											<parameterid>8</parameterid>
+											<name>不透明度</name>
+											<IsTimeVarying>false</IsTimeVarying>
+											<ParameterControlType>2</ParameterControlType>
+											<LowerBound>0</LowerBound>
+											<UpperBound>100</UpperBound>
+											<value>-91445760000000000,100.,0,0,0,0,0,0</value>
+										</parameter>
+									</effect>
+								</filter>
+								<logginginfo>
+									<description></description>
+									<scene></scene>
+									<shottake></shottake>
+									<lognote></lognote>
+									<good></good>
+									<originalvideofilename></originalvideofilename>
+									<originalaudiofilename></originalaudiofilename>
+								</logginginfo>
+								<colorinfo>
+									<lut></lut>
+									<lut1></lut1>
+									<asc_sop></asc_sop>
+									<asc_sat></asc_sat>
+									<lut2></lut2>
+								</colorinfo>
+								<labels>
+								</labels>
+							</clipitem>
+							<enabled>TRUE</enabled>
+							<locked>FALSE</locked>
+						</track>
+			</video>
+			<audio>
+				<track>
+				</track>
+			</audio>
+		</media>
+	</sequence>
+</xmeml>

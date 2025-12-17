@@ -7,12 +7,12 @@ import torch
 import logging
 from pathlib import Path
 
-from model import create_model, MultimodalTransformer
-from loss import MultiTrackLoss, create_optimizer, create_scheduler, GradientClipper
-from dataset import create_dataloaders
-from multimodal_dataset import create_multimodal_dataloaders
-from training import TrainingPipeline
-from model_persistence import save_model
+from src.model.model import create_model, MultimodalTransformer
+from src.model.loss import MultiTrackLoss, create_optimizer, create_scheduler, GradientClipper
+from src.training.dataset import create_dataloaders
+from src.training.multimodal_dataset import create_multimodal_dataloaders
+from src.training.training import TrainingPipeline
+from src.model.model_persistence import save_model
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -125,6 +125,7 @@ def main(args):
         asset_weight=config.get('asset_weight', 1.0),
         scale_weight=config.get('scale_weight', 1.0),
         position_weight=config.get('position_weight', 1.0),
+        rotation_weight=config.get('rotation_weight', 1.0),
         crop_weight=config.get('crop_weight', 1.0),
         ignore_inactive=config.get('ignore_inactive', True)
     )
@@ -210,7 +211,7 @@ if __name__ == "__main__":
                        help='Directory containing video feature CSV files')
     
     # Multimodal settings
-    parser.add_argument('--enable_multimodal', action='store_true',
+    parser.add_argument('--enable_multimodal', type=lambda x: x.lower() == 'true', default=None,
                        help='Enable multimodal training with video features')
     parser.add_argument('--fusion_type', type=str, default='gated',
                        choices=['concat', 'add', 'gated', 'attention'],
@@ -263,6 +264,8 @@ if __name__ == "__main__":
                        help='Weight for scale loss')
     parser.add_argument('--position_weight', type=float, default=1.0,
                        help='Weight for position loss')
+    parser.add_argument('--rotation_weight', type=float, default=1.0,
+                       help='Weight for rotation loss')
     parser.add_argument('--crop_weight', type=float, default=1.0,
                        help='Weight for crop loss')
     

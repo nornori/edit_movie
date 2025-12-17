@@ -3,17 +3,17 @@
 # Data paths
 train_data: preprocessed_data/train_sequences.npz
 val_data: preprocessed_data/val_sequences.npz
-features_dir: input_features
+features_dir: data/processed/input_features
 
 # Multimodal settings
-enable_multimodal: True  # Python boolean
+enable_multimodal: true
 fusion_type: gated
-use_modality_attention_mask: True  # Python boolean
+use_modality_attention_mask: true
 
 # Feature dimensions
 audio_features: 17  # 4 base + 1 telop_active + 6 speech embeddings + 6 telop embeddings
 visual_features: 522  # 10 scalar + 512 CLIP
-track_features: 180  # 20 tracks × 9 parameters (old format)
+track_features: 240  # 20 tracks × 12 parameters
 
 # Model architecture
 d_model: 256
@@ -25,8 +25,8 @@ num_tracks: 20
 max_asset_classes: 10
 
 # Training hyperparameters
-batch_size: 16
-num_epochs: 10  # Short experiment
+batch_size: 1  # Reduced to 1 due to very long sequences (4428 timesteps)
+num_epochs: 100  # Full training
 learning_rate: 0.0001
 weight_decay: 0.00001
 grad_clip: 1.0
@@ -42,11 +42,12 @@ active_weight: 1.0
 asset_weight: 1.0
 scale_weight: 1.0
 position_weight: 1.0
+rotation_weight: 1.0
 crop_weight: 1.0
 ignore_inactive: true
 
 # Checkpointing
-checkpoint_dir: checkpoints_multimodal
+checkpoint_dir: checkpoints
 save_every: 5
 early_stopping_patience: null
 

@@ -1,0 +1,2559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence id="sequence-1">
+		<name>bandicam 2025-06-22 02-16-39-762</name>
+		<duration>24549</duration>
+		<rate>
+			<timebase>59</timebase>
+			<ntsc>TRUE</ntsc>
+		</rate>
+		<media>
+			<video>
+				<format/>
+				<track>
+					<clipitem frameBlend="FALSE" id="clipitem-1">
+						<file id="file-1">
+							<pathurl>file://localhost/D:/%E5%88%87%E3%82%8A%E6%8A%9C%E3%81%8D/2025-6/2025-6-22/bandicam%202025-06-22%2002-16-39-762.mp4</pathurl>
+							<name>bandicam 2025-06-22 02-16-39-762.mp4</name>
+							<rate>
+								<timebase>59</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<duration>24549</duration>
+							<timecode>
+								<rate>
+									<timebase>59</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video/>
+								<audio/>
+							</media>
+						</file>
+						<name>bandicam 2025-06-22 02-16-39-762</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>24543</duration>
+						<start>0</start>
+						<end>24543</end>
+						<in>0</in>
+						<out>24543</out>
+					</clipitem>
+				</track>
+				<track>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-1">
+						<file id="file-2">
+							<name>グラフィック</name>
+							<mediaSource>GraphicAndType</mediaSource>
+							<rate>
+								<timebase>59</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<timecode>
+								<rate>
+									<timebase>59</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video>
+									<samplecharacteristics>
+										<rate>
+											<timebase>58</timebase>
+											<ntsc>TRUE</ntsc>
+										</rate>
+										<width>1080</width>
+										<height>1920</height>
+										<anamorphic>FALSE</anamorphic>
+										<pixelaspectratio>square</pixelaspectratio>
+										<fielddominance>none</fielddominance>
+									</samplecharacteristics>
+								</video>
+							</media>
+						</file>
+						<name>心配でございますミルクお嬢様でも全然大丈夫だよ 見る子女様睡眠というのはとても大事なものです</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>431</duration>
+						<start>0</start>
+						<end>431</end>
+						<in>0</in>
+						<out>431</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-2">
+						<file id="file-2"/>
+						<name>1日12時間寝てください 見る子も寝たいんだけど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>288</duration>
+						<start>431</start>
+						<end>719</end>
+						<in>0</in>
+						<out>288</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-3">
+						<file id="file-2"/>
+						<name>なんか全然寝れなくて 何かお困りごとでもん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>282</duration>
+						<start>719</start>
+						<end>1001</end>
+						<in>0</in>
+						<out>282</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-4">
+						<file id="file-2"/>
+						<name>なんかちょっと職場でなんか全然うまくいかなくて わかりますな気持ち</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>486</duration>
+						<start>1001</start>
+						<end>1487</end>
+						<in>0</in>
+						<out>486</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-5">
+						<file id="file-2"/>
+						<name>人もたくさん人がいる何をしたらいいね ちょっとちょっとねここの席ちょっと後ろがうるさすぎて全然波の声が聞こえないんだけど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>660</duration>
+						<start>1487</start>
+						<end>2147</end>
+						<in>0</in>
+						<out>660</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-6">
+						<file id="file-2"/>
+						<name>お嬢様ん ちょっと違う席でいいかな</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>354</duration>
+						<start>2147</start>
+						<end>2501</end>
+						<in>0</in>
+						<out>354</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-7">
+						<file id="file-2"/>
+						<name>うひよのチェキのお医者 大丈夫大丈夫大丈夫大丈夫</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>252</duration>
+						<start>2501</start>
+						<end>2753</end>
+						<in>0</in>
+						<out>252</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-8">
+						<file id="file-2"/>
+						<name>うひよのお嬢様あわれすぎてちょっととんでもないですよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>246</duration>
+						<start>2765</start>
+						<end>3011</end>
+						<in>0</in>
+						<out>246</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-9">
+						<file id="file-2"/>
+						<name>なんか室次悪口言ってませんあそこで 聞かないでください</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>3011</start>
+						<end>3251</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-10">
+						<file id="file-2"/>
+						<name>うひよの人があるわけでかの女のことではございません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>156</duration>
+						<start>3251</start>
+						<end>3407</end>
+						<in>0</in>
+						<out>156</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-11">
+						<file id="file-2"/>
+						<name>なんか悪口言ってますよ ミルクお嬢様</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>168</duration>
+						<start>3407</start>
+						<end>3575</end>
+						<in>0</in>
+						<out>168</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-12">
+						<file id="file-2"/>
+						<name>どうされましたかミルクお嬢様 なんかえちょっとえこえここのオーナーさんですよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>300</duration>
+						<start>3575</start>
+						<end>3875</end>
+						<in>0</in>
+						<out>300</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-13">
+						<file id="file-2"/>
+						<name>あはいこちらのオーナーでてなんかそこにいるなんか弁とか有出事がめっちゃ失礼で</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>378</duration>
+						<start>3875</start>
+						<end>4253</end>
+						<in>0</in>
+						<out>378</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-14">
+						<file id="file-2"/>
+						<name>なんかミルクめっちゃ無いだんだけど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>4313</start>
+						<end>4433</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-15">
+						<file id="file-2"/>
+						<name>ミルクお嬢様大変な人</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>4433</start>
+						<end>4553</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-16">
+						<file id="file-2"/>
+						<name>えなんかこのミラーとか言う人もなんか話つまんなかったし</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>4553</start>
+						<end>4793</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-17">
+						<file id="file-2"/>
+						<name>お嬢様 夜はなかったですよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>4793</start>
+						<end>4913</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-18">
+						<file id="file-2"/>
+						<name>なんかファミマのファミチキ頼むとしたらなんか7チキだったみたいな話されてマジ意味はないし</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>480</duration>
+						<start>4913</start>
+						<end>5393</end>
+						<in>0</in>
+						<out>480</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-19">
+						<file id="file-2"/>
+						<name>ご不快な思いをさせてしまい大変申し訳ございませんでした どのキャストが一番よろしかったでしょうか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>300</duration>
+						<start>5393</start>
+						<end>5693</end>
+						<in>0</in>
+						<out>300</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-20">
+						<file id="file-2"/>
+						<name>えでもなんか波がこれから接客してくれるって</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>5693</start>
+						<end>5873</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-21">
+						<file id="file-2"/>
+						<name>仕込まれました私もではまくせくださいませんラミス島と言う子女さんの世界の方を</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>5873</start>
+						<end>6113</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-22">
+						<file id="file-2"/>
+						<name>より落としてもらってよろしいでしょうか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>6113</start>
+						<end>6233</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-23">
+						<file id="file-2"/>
+						<name>え何他のお客様のボイスに乗ってしまいますののまれに</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>6233</start>
+						<end>6473</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-24">
+						<file id="file-2"/>
+						<name>えなんかミランがなんかファミチキの話を</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>6473</start>
+						<end>6713</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-25">
+						<file id="file-2"/>
+						<name>リーちゃんこっちでございますのでありがとうございました</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>6773</start>
+						<end>7013</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-26">
+						<file id="file-2"/>
+						<name>ありがとうございましたお嬢さんおめでとうございます</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>7013</start>
+						<end>7133</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-27">
+						<file id="file-2"/>
+						<name>おさめていただいてよろしいでしょうか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>7133</start>
+						<end>7253</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-28">
+						<file id="file-2"/>
+						<name>それかあの出勤していない出事はどこかに知ってください</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>7253</start>
+						<end>7493</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-29">
+						<file id="file-2"/>
+						<name>はい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>7493</start>
+						<end>7613</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-30">
+						<file id="file-2"/>
+						<name>お嬢様大変申し訳ございません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>7613</start>
+						<end>7793</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-31">
+						<file id="file-2"/>
+						<name>声がでかいですよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>7793</start>
+						<end>7853</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-32">
+						<file id="file-2"/>
+						<name>分かったつもりるく静かに喋るねじゃあ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>7853</start>
+						<end>8033</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-33">
+						<file id="file-2"/>
+						<name>すいません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>8033</start>
+						<end>8153</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-34">
+						<file id="file-2"/>
+						<name>こんなに優しいお嬢様だな</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>179</duration>
+						<start>8153</start>
+						<end>8332</end>
+						<in>0</in>
+						<out>179</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-35">
+						<file id="file-2"/>
+						<name>早くお座りに乗られては</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>8452</start>
+						<end>8572</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-36">
+						<file id="file-2"/>
+						<name>あここに座っていいの?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>8572</start>
+						<end>8632</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-37">
+						<file id="file-2"/>
+						<name>えもちろん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>8632</start>
+						<end>8692</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-38">
+						<file id="file-2"/>
+						<name>うんあここに座る</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>8692</start>
+						<end>8812</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-39">
+						<file id="file-2"/>
+						<name>先ほどのお話に戻ります</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>8812</start>
+						<end>8992</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-40">
+						<file id="file-2"/>
+						<name>何かお困り事でもあるのでしょうか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>8992</start>
+						<end>9112</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-41">
+						<file id="file-2"/>
+						<name>ガチャガチャガチャガチャ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>9112</start>
+						<end>9172</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-42">
+						<file id="file-2"/>
+						<name>じゃあここでやらないでくださいね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>9232</start>
+						<end>9412</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-43">
+						<file id="file-2"/>
+						<name>うんね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>9412</start>
+						<end>9472</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-44">
+						<file id="file-2"/>
+						<name>ミルクお嬢様</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>9472</start>
+						<end>9532</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-45">
+						<file id="file-2"/>
+						<name>何?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>9532</start>
+						<end>9592</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-46">
+						<file id="file-2"/>
+						<name>職場でのお話聞かせてください</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>9592</start>
+						<end>9712</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-47">
+						<file id="file-2"/>
+						<name>職場はミルクの話はどうでもいいんだけど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>9712</start>
+						<end>9952</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-48">
+						<file id="file-2"/>
+						<name>何の話聞かせてほしいな</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>9952</start>
+						<end>10132</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-49">
+						<file id="file-2"/>
+						<name>私の目の話ですか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>10132</start>
+						<end>10252</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-50">
+						<file id="file-2"/>
+						<name>めっそーもございません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>10252</start>
+						<end>10372</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-51">
+						<file id="file-2"/>
+						<name>今日はミルクお嬢様の疲れを癒せたら</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>10372</start>
+						<end>10552</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-52">
+						<file id="file-2"/>
+						<name>私とっても幸せでください</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>10552</start>
+						<end>10732</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-53">
+						<file id="file-2"/>
+						<name>えでもミルク</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>10732</start>
+						<end>10852</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-54">
+						<file id="file-2"/>
+						<name>なんか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>10852</start>
+						<end>10972</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-55">
+						<file id="file-2"/>
+						<name>ミルクに</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>10972</start>
+						<end>11092</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-56">
+						<file id="file-2"/>
+						<name>なんかおれ色の首は</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>11092</start>
+						<end>11212</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-57">
+						<file id="file-2"/>
+						<name>はめてくれる人が欲しいなって思ってて</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>11212</start>
+						<end>11452</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-58">
+						<file id="file-2"/>
+						<name>なるほど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>11452</start>
+						<end>11572</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-59">
+						<file id="file-2"/>
+						<name>うんなんか探してるんだよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>11572</start>
+						<end>11692</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-60">
+						<file id="file-2"/>
+						<name>それは何かを参考に出されたんですか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>11692</start>
+						<end>11872</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-61">
+						<file id="file-2"/>
+						<name>えなんか職場の人もなんか着信よんで</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>11872</start>
+						<end>12052</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-62">
+						<file id="file-2"/>
+						<name>なんかおれ色に染めてやるとか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>12052</start>
+						<end>12232</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-63">
+						<file id="file-2"/>
+						<name>なんか俺から逃げられないよみたいなこと言ってて</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>12232</start>
+						<end>12472</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-64">
+						<file id="file-2"/>
+						<name>なんでお前3目って言って</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>12472</start>
+						<end>12592</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-65">
+						<file id="file-2"/>
+						<name>なんかいいなって恨ましいなって思ったもん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>12592</start>
+						<end>12772</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-66">
+						<file id="file-2"/>
+						<name>もしかしてミルクお嬢様はそういう感じの男性が好きなのですか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>300</duration>
+						<start>12772</start>
+						<end>13072</end>
+						<in>0</in>
+						<out>300</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-67">
+						<file id="file-2"/>
+						<name>えなんかでもいいなって思って</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>13072</start>
+						<end>13252</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-68">
+						<file id="file-2"/>
+						<name>なるほど</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>13252</start>
+						<end>13372</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-69">
+						<file id="file-2"/>
+						<name>私も私もこのような対応することも可能でございますよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>360</duration>
+						<start>13372</start>
+						<end>13732</end>
+						<in>0</in>
+						<out>360</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-70">
+						<file id="file-2"/>
+						<name>もしくはあなたが望むボイスをお取りすることも可能です</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>480</duration>
+						<start>13732</start>
+						<end>14212</end>
+						<in>0</in>
+						<out>480</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-71">
+						<file id="file-2"/>
+						<name>なんか同様してる?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>14272</start>
+						<end>14392</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-72">
+						<file id="file-2"/>
+						<name>ほんとやん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>14392</start>
+						<end>14452</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-73">
+						<file id="file-2"/>
+						<name>いいいい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>14452</start>
+						<end>14512</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-74">
+						<file id="file-2"/>
+						<name>出事は同様なんて全くしませんよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>14512</start>
+						<end>14692</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-75">
+						<file id="file-2"/>
+						<name>したいよねそうだよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>14692</start>
+						<end>14812</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-76">
+						<file id="file-2"/>
+						<name>ミルクお嬢様がお幸せに今日寝れるように</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>14932</start>
+						<end>15172</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-77">
+						<file id="file-2"/>
+						<name>地域などボイスなどいかがですか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>15172</start>
+						<end>15412</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-78">
+						<file id="file-2"/>
+						<name>幸せに寝れるように地域って何?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>15412</start>
+						<end>15652</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-79">
+						<file id="file-2"/>
+						<name>それはもちろん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>15652</start>
+						<end>15712</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-80">
+						<file id="file-2"/>
+						<name>どういう意味それ?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>15712</start>
+						<end>15772</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-81">
+						<file id="file-2"/>
+						<name>ミルクお嬢様のおかげのことに</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>15772</start>
+						<end>15892</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-82">
+						<file id="file-2"/>
+						<name>ここの出事ってみんなメルクのことさ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>15892</start>
+						<end>16132</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-83">
+						<file id="file-2"/>
+						<name>必ずしか思ってないよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>16132</start>
+						<end>16252</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-84">
+						<file id="file-2"/>
+						<name>そうもございません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>119</duration>
+						<start>16252</start>
+						<end>16371</end>
+						<in>0</in>
+						<out>119</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-85">
+						<file id="file-2"/>
+						<name>ミルクのことを客って金としか思ってないような気がする</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>300</duration>
+						<start>16371</start>
+						<end>16671</end>
+						<in>0</in>
+						<out>300</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-86">
+						<file id="file-2"/>
+						<name>もちろん私もお嬢様の幸せを寝てることでございます</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>16671</start>
+						<end>16911</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-87">
+						<file id="file-2"/>
+						<name>なんかな</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>16911</start>
+						<end>16971</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-88">
+						<file id="file-2"/>
+						<name>それであれば全然今日お話だけでもまた会いに来てくれたら嬉しいななんて</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>360</duration>
+						<start>16971</start>
+						<end>17331</end>
+						<in>0</in>
+						<out>360</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-89">
+						<file id="file-2"/>
+						<name>波も思っておりますよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>17331</start>
+						<end>17451</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-90">
+						<file id="file-2"/>
+						<name>今おかわじゃさましてくださいます</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>17451</start>
+						<end>17571</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-91">
+						<file id="file-2"/>
+						<name>あった</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>17691</start>
+						<end>17751</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-92">
+						<file id="file-2"/>
+						<name>お嬢様</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>17751</start>
+						<end>17811</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-93">
+						<file id="file-2"/>
+						<name>ちょっと待ってね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>17931</start>
+						<end>17991</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-94">
+						<file id="file-2"/>
+						<name>ありがとう</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>17991</start>
+						<end>18051</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-95">
+						<file id="file-2"/>
+						<name>ちょっとあ、ちゃんちちしました</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>18051</start>
+						<end>18171</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-96">
+						<file id="file-2"/>
+						<name>ミルクお嬢様のご知事とあれば</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>18291</start>
+						<end>18531</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-97">
+						<file id="file-2"/>
+						<name>いくらでも</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>18531</start>
+						<end>18651</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-98">
+						<file id="file-2"/>
+						<name>さっきのような顔を</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>18651</start>
+						<end>18831</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-99">
+						<file id="file-2"/>
+						<name>かなおですよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>18891</start>
+						<end>18951</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-100">
+						<file id="file-2"/>
+						<name>お嬢様</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>18951</start>
+						<end>19071</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-101">
+						<file id="file-2"/>
+						<name>何回も言う</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>19071</start>
+						<end>19131</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-102">
+						<file id="file-2"/>
+						<name>お嬢様首をつけていますね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>19191</start>
+						<end>19311</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-103">
+						<file id="file-2"/>
+						<name>だから首をはめてほしいなって思って</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>19311</start>
+						<end>19551</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-104">
+						<file id="file-2"/>
+						<name>それをイメージして</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>19551</start>
+						<end>19671</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-105">
+						<file id="file-2"/>
+						<name>超カーつけてきたんだよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>19671</start>
+						<end>19791</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-106">
+						<file id="file-2"/>
+						<name>素敵ですねお嬢様は全く</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>19791</start>
+						<end>19911</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-107">
+						<file id="file-2"/>
+						<name>そうだよね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>19911</start>
+						<end>19971</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-108">
+						<file id="file-2"/>
+						<name>こう待ってお嬢様だ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>19971</start>
+						<end>20091</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-109">
+						<file id="file-2"/>
+						<name>両方</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20091</start>
+						<end>20151</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-110">
+						<file id="file-2"/>
+						<name>その首は</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20211</start>
+						<end>20271</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-111">
+						<file id="file-2"/>
+						<name>今私が</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>20271</start>
+						<end>20391</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-112">
+						<file id="file-2"/>
+						<name>お前が背負いろし</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20391</start>
+						<end>20451</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-113">
+						<file id="file-2"/>
+						<name>お前、ちょっと上手くできるのか?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>20451</start>
+						<end>20571</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-114">
+						<file id="file-2"/>
+						<name>そうかよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20571</start>
+						<end>20631</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-115">
+						<file id="file-2"/>
+						<name>波伝師はと</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20751</start>
+						<end>20811</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-116">
+						<file id="file-2"/>
+						<name>姉が入りましたよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20811</start>
+						<end>20871</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-117">
+						<file id="file-2"/>
+						<name>え、じゃあもう</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20931</start>
+						<end>20991</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-118">
+						<file id="file-2"/>
+						<name>ちょっとだけ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>20991</start>
+						<end>21051</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-119">
+						<file id="file-2"/>
+						<name>ちょっとだけ待ちなさい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>21051</start>
+						<end>21111</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-120">
+						<file id="file-2"/>
+						<name>え、行っちゃうの?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>21111</start>
+						<end>21171</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-121">
+						<file id="file-2"/>
+						<name>ちょっとだけ待ちなさい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>21171</start>
+						<end>21231</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-122">
+						<file id="file-2"/>
+						<name>まあ全然行っても</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>21231</start>
+						<end>21351</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-123">
+						<file id="file-2"/>
+						<name>行ってもいいよ全然</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>21351</start>
+						<end>21411</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-124">
+						<file id="file-2"/>
+						<name>もちろん私はミルクお嬢様のおそばに</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>21411</start>
+						<end>21591</end>
+						<in>0</in>
+						<out>180</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-125">
+						<file id="file-2"/>
+						<name>いや、ミルクお嬢様の首を出話しません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>21591</start>
+						<end>21831</end>
+						<in>0</in>
+						<out>240</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-126">
+						<file id="file-2"/>
+						<name>うん</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>21831</start>
+						<end>21891</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-127">
+						<file id="file-2"/>
+						<name>当たり前しちゃいました</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>21891</start>
+						<end>22011</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-128">
+						<file id="file-2"/>
+						<name>まあでも他の人呼んでるんだったら</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>22071</start>
+						<end>22191</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-129">
+						<file id="file-2"/>
+						<name>ミルク待ってるから行ってきていいよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>22191</start>
+						<end>22311</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-130">
+						<file id="file-2"/>
+						<name>お嬢様、待てができるんですか?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>22311</start>
+						<end>22431</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-131">
+						<file id="file-2"/>
+						<name>そうなんだか</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>22431</start>
+						<end>22491</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-132">
+						<file id="file-2"/>
+						<name>好き好き</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>22491</start>
+						<end>22551</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-133">
+						<file id="file-2"/>
+						<name>これで満足ですか?</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>22611</start>
+						<end>22671</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-134">
+						<file id="file-2"/>
+						<name>あっちうるさい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>22671</start>
+						<end>22731</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-135">
+						<file id="file-2"/>
+						<name>待ってるね</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>23331</start>
+						<end>23391</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-136">
+						<file id="file-2"/>
+						<name>うん、待ってる、泣いてらっしゃい</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>23391</start>
+						<end>23511</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-137">
+						<file id="file-2"/>
+						<name>強ぇ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>23631</start>
+						<end>23691</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-138">
+						<file id="file-2"/>
+						<name>こいつ強い</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>23751</start>
+						<end>23811</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-139">
+						<file id="file-2"/>
+						<name>勝てない</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>23811</start>
+						<end>23871</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-140">
+						<file id="file-2"/>
+						<name>いいよ</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>23991</start>
+						<end>24051</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-141">
+						<file id="file-2"/>
+						<name>いや、なんかもう帰ろうかな</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>24051</start>
+						<end>24171</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-142">
+						<file id="file-2"/>
+						<name>こっちの3名</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>24171</start>
+						<end>24231</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-143">
+						<file id="file-2"/>
+						<name>承知いたしました</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>60</duration>
+						<start>24231</start>
+						<end>24291</end>
+						<in>0</in>
+						<out>60</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-144">
+						<file id="file-2"/>
+						<name>もう最後生産しません</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>120</duration>
+						<start>24351</start>
+						<end>24471</end>
+						<in>0</in>
+						<out>120</out>
+					</clipitem>
+				</track>
+			</video>
+			<audio>
+				<track>
+					<clipitem frameBlend="FALSE" id="audioclip-1">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-22 02-16-39-762 - Audio</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>24543</duration>
+						<start>0</start>
+						<end>24543</end>
+						<in>0</in>
+						<out>24543</out>
+					</clipitem>
+				</track>
+			</audio>
+		</media>
+	</sequence>
+</xmeml>

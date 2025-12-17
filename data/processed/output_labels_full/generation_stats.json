@@ -1,0 +1,977 @@
+{
+  "total_videos": 110,
+  "successful": 106,
+  "failed": 4,
+  "videos": [
+    {
+      "name": "1",
+      "error": "Could not determine source video path"
+    },
+    {
+      "name": "bandicam 2025-03-03 22-34-57-492",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-03\\bandicam 2025-03-03 22-34-57-492.mp4",
+      "duration": 108.33331666666668,
+      "timesteps": 1084,
+      "used_frames": 662,
+      "cut_frames": 422,
+      "cut_ratio": 0.3892988929889299
+    },
+    {
+      "name": "bandicam 2025-03-09 02-08-04-903",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-9\\bandicam 2025-03-09 02-06-32-478.mp4",
+      "duration": 74.41665,
+      "timesteps": 745,
+      "used_frames": 478,
+      "cut_frames": 267,
+      "cut_ratio": 0.35838926174496644
+    },
+    {
+      "name": "bandicam 2025-03-11 22-57-01-575",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-11\\bandicam 2025-03-11 22-57-01-575.mp4",
+      "duration": 68.33331666666666,
+      "timesteps": 684,
+      "used_frames": 295,
+      "cut_frames": 389,
+      "cut_ratio": 0.5687134502923976
+    },
+    {
+      "name": "bandicam 2025-03-17 04-32-34-565",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-17\\bandicam 2025-03-17 04-36-30-162.mp4",
+      "duration": 62.349983333333334,
+      "timesteps": 624,
+      "used_frames": 334,
+      "cut_frames": 290,
+      "cut_ratio": 0.46474358974358976
+    },
+    {
+      "name": "bandicam 2025-03-17 04-38-49-645",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-17\\bandicam 2025-03-17 04-38-49-645.mp4",
+      "duration": 97.76665,
+      "timesteps": 978,
+      "used_frames": 720,
+      "cut_frames": 258,
+      "cut_ratio": 0.26380368098159507
+    },
+    {
+      "name": "bandicam 2025-03-17 04-38-49-645_1",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-17\\bandicam 2025-03-17 04-38-49-645.mp4",
+      "duration": 97.76665,
+      "timesteps": 978,
+      "used_frames": 720,
+      "cut_frames": 258,
+      "cut_ratio": 0.26380368098159507
+    },
+    {
+      "name": "bandicam 2025-03-21 19-14-01-443",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-18\\bandicam 2025-03-21 19-14-01-443.mp4",
+      "duration": 193.04998333333333,
+      "timesteps": 1931,
+      "used_frames": 489,
+      "cut_frames": 1442,
+      "cut_ratio": 0.7467633350595546
+    },
+    {
+      "name": "bandicam 2025-03-23 07-09-27-896",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-23\\bandicam 2025-03-23 07-09-27-896.mp4",
+      "duration": 161.78331666666668,
+      "timesteps": 1618,
+      "used_frames": 1182,
+      "cut_frames": 436,
+      "cut_ratio": 0.2694684796044499
+    },
+    {
+      "name": "bandicam 2025-03-26 13-09-28-006",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-26\\bandicam 2025-03-26 13-09-28-006.mp4",
+      "duration": 650.6833166666667,
+      "timesteps": 6507,
+      "used_frames": 3563,
+      "cut_frames": 2944,
+      "cut_ratio": 0.45243583832795453
+    },
+    {
+      "name": "bandicam 2025-03-29 11-00-32-141",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-29\\bandicam 2025-03-29 11-11-52-247.mp4",
+      "duration": 60.99998333333333,
+      "timesteps": 610,
+      "used_frames": 1181,
+      "cut_frames": -571,
+      "cut_ratio": -0.9360655737704918
+    },
+    {
+      "name": "bandicam 2025-03-29 12-00-07-119",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-29\\bandicam 2025-03-29 12-00-07-119.mp4",
+      "duration": 454.58331666666663,
+      "timesteps": 4546,
+      "used_frames": 1671,
+      "cut_frames": 2875,
+      "cut_ratio": 0.6324241091069072
+    },
+    {
+      "name": "bandicam 2025-03-30 08-29-04-892",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-29\\bandicam 2025-03-30 08-29-04-892.mp4",
+      "duration": 104.44998333333334,
+      "timesteps": 1045,
+      "used_frames": 654,
+      "cut_frames": 391,
+      "cut_ratio": 0.3741626794258373
+    },
+    {
+      "name": "bandicam 2025-03-31 22-53-45-158",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-31\\bandicam 2025-03-31 22-52-56-912.mp4",
+      "duration": 32.51665,
+      "timesteps": 326,
+      "used_frames": 250,
+      "cut_frames": 76,
+      "cut_ratio": 0.2331288343558282
+    },
+    {
+      "name": "bandicam 2025-04-03 15-06-08-368",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-03\\bandicam 2025-04-03 15-06-08-368.mp4",
+      "duration": 69.46665,
+      "timesteps": 695,
+      "used_frames": 839,
+      "cut_frames": -144,
+      "cut_ratio": -0.20719424460431654
+    },
+    {
+      "name": "bandicam 2025-04-03 20-49-02-095",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-03\\bandicam 2025-04-03 20-49-02-095.mp4",
+      "duration": 93.53331666666666,
+      "timesteps": 936,
+      "used_frames": 891,
+      "cut_frames": 45,
+      "cut_ratio": 0.04807692307692308
+    },
+    {
+      "name": "bandicam 2025-04-05 11-55-32-777",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-04\\bandicam 2025-04-05 11-55-32-777.mp4",
+      "duration": 68.49998333333333,
+      "timesteps": 685,
+      "used_frames": 348,
+      "cut_frames": 337,
+      "cut_ratio": 0.491970802919708
+    },
+    {
+      "name": "bandicam 2025-04-06 20-02-07-918",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-06\\bandicam 2025-04-06 20-02-07-918.mp4",
+      "duration": 258.14998333333335,
+      "timesteps": 2582,
+      "used_frames": 1457,
+      "cut_frames": 1125,
+      "cut_ratio": 0.435708752904725
+    },
+    {
+      "name": "bandicam 2025-04-07 13-45-56-274",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-07\\bandicam 2025-04-07 13-45-56-274.mp4",
+      "duration": 332.8999833333333,
+      "timesteps": 3329,
+      "used_frames": 3011,
+      "cut_frames": 318,
+      "cut_ratio": 0.09552418143586662
+    },
+    {
+      "name": "bandicam 2025-04-08 08-36-11-964",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-07\\bandicam 2025-04-08 08-36-11-964.mp4",
+      "duration": 653.3833166666666,
+      "timesteps": 6534,
+      "used_frames": 1212,
+      "cut_frames": 5322,
+      "cut_ratio": 0.8145087235996327
+    },
+    {
+      "name": "bandicam 2025-04-09 18-52-10-387",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-09\\bandicam 2025-04-09 18-52-10-387.mp4",
+      "duration": 101.24998333333333,
+      "timesteps": 1013,
+      "used_frames": 496,
+      "cut_frames": 517,
+      "cut_ratio": 0.510365251727542
+    },
+    {
+      "name": "bandicam 2025-04-11 19-13-23-008",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-10\\bandicam 2025-04-11 19-13-23-008.mp4",
+      "duration": 111.86665,
+      "timesteps": 1119,
+      "used_frames": 916,
+      "cut_frames": 203,
+      "cut_ratio": 0.18141197497765862
+    },
+    {
+      "name": "bandicam 2025-04-12 20-28-10-187",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-12\\Videos\\bandicam 2025-04-12 21-37-51-801.mp4",
+      "duration": 94.46665,
+      "timesteps": 945,
+      "used_frames": 1022,
+      "cut_frames": -77,
+      "cut_ratio": -0.08148148148148149
+    },
+    {
+      "name": "bandicam 2025-04-12 23-19-38-997",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-12\\Videos\\bandicam 2025-04-12 23-19-38-997.mp4",
+      "duration": 71.43331666666667,
+      "timesteps": 715,
+      "used_frames": 1084,
+      "cut_frames": -369,
+      "cut_ratio": -0.5160839160839161
+    },
+    {
+      "name": "bandicam 2025-04-13 00-49-19-266",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-12\\Videos\\bandicam 2025-04-13 00-49-19-266.mp4",
+      "duration": 116.04998333333333,
+      "timesteps": 1161,
+      "used_frames": 408,
+      "cut_frames": 753,
+      "cut_ratio": 0.648578811369509
+    },
+    {
+      "name": "bandicam 2025-04-13 14-24-17-596",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-13\\Videos\\bandicam 2025-04-13 14-24-17-596.mp4",
+      "duration": 230.41665,
+      "timesteps": 2305,
+      "used_frames": 750,
+      "cut_frames": 1555,
+      "cut_ratio": 0.6746203904555315
+    },
+    {
+      "name": "bandicam 2025-04-15 19-05-00-357",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-15\\bandicam 2025-04-15 19-05-00-357.mp4",
+      "duration": 162.16665,
+      "timesteps": 1622,
+      "used_frames": 886,
+      "cut_frames": 736,
+      "cut_ratio": 0.45376078914919854
+    },
+    {
+      "name": "bandicam 2025-04-15 23-14-37-992",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-15\\bandicam 2025-04-15 23-27-08-753.mp4",
+      "duration": 97.38331666666667,
+      "timesteps": 974,
+      "used_frames": 380,
+      "cut_frames": 594,
+      "cut_ratio": 0.6098562628336756
+    },
+    {
+      "name": "bandicam 2025-04-16 11-08-41-120",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-16\\bandicam 2025-04-16 11-08-41-120.mp4",
+      "duration": 251.99998333333335,
+      "timesteps": 2520,
+      "used_frames": 2154,
+      "cut_frames": 366,
+      "cut_ratio": 0.14523809523809525
+    },
+    {
+      "name": "bandicam 2025-04-17 23-16-32-882",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-17\\bandicam 2025-04-17 23-16-32-882.mp4",
+      "duration": 93.08331666666668,
+      "timesteps": 931,
+      "used_frames": 892,
+      "cut_frames": 39,
+      "cut_ratio": 0.04189044038668099
+    },
+    {
+      "name": "bandicam 2025-04-19 20-17-32-717",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-19\\bandicam 2025-04-19 20-17-32-717.mp4",
+      "duration": 95.64998333333334,
+      "timesteps": 957,
+      "used_frames": 814,
+      "cut_frames": 143,
+      "cut_ratio": 0.14942528735632185
+    },
+    {
+      "name": "bandicam 2025-04-19 21-02-54-331",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-19\\bandicam 2025-04-19 21-02-54-331.mp4",
+      "duration": 149.31664999999998,
+      "timesteps": 1494,
+      "used_frames": 562,
+      "cut_frames": 932,
+      "cut_ratio": 0.6238286479250335
+    },
+    {
+      "name": "bandicam 2025-04-21 11-41-59-633",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-21\\bandicam 2025-04-21 11-41-59-633.mp4",
+      "duration": 284.7833166666667,
+      "timesteps": 2848,
+      "used_frames": 389,
+      "cut_frames": 2459,
+      "cut_ratio": 0.8634129213483146
+    },
+    {
+      "name": "bandicam 2025-04-23 16-27-34-232",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-23\\bandicam 2025-04-23 16-27-34-232.mp4",
+      "duration": 80.06665,
+      "timesteps": 801,
+      "used_frames": 624,
+      "cut_frames": 177,
+      "cut_ratio": 0.2209737827715356
+    },
+    {
+      "name": "bandicam 2025-04-24 14-42-33-329",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-24\\bandicam 2025-04-24 14-42-33-329.mp4",
+      "duration": 96.98331666666667,
+      "timesteps": 970,
+      "used_frames": 701,
+      "cut_frames": 269,
+      "cut_ratio": 0.277319587628866
+    },
+    {
+      "name": "bandicam 2025-04-25 18-46-14-031",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-25\\bandicam 2025-04-25 18-54-27-475.mp4",
+      "duration": 161.49998333333335,
+      "timesteps": 1615,
+      "used_frames": 1009,
+      "cut_frames": 606,
+      "cut_ratio": 0.3752321981424149
+    },
+    {
+      "name": "bandicam 2025-04-28 20-47-14-215",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-28\\bandicam 2025-04-28 20-45-37-244.mp4",
+      "duration": 80.34998333333333,
+      "timesteps": 804,
+      "used_frames": 952,
+      "cut_frames": -148,
+      "cut_ratio": -0.18407960199004975
+    },
+    {
+      "name": "bandicam 2025-04-29 18-51-06-891",
+      "source_path": "D:\\切り抜き\\2025-4\\2025-4-29\\bandicam 2025-04-29 18-51-06-891.mp4",
+      "duration": 130.14998333333332,
+      "timesteps": 1302,
+      "used_frames": 2553,
+      "cut_frames": -1251,
+      "cut_ratio": -0.9608294930875576
+    },
+    {
+      "name": "bandicam 2025-05-02 21-40-22-840",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-02\\bandicam 2025-05-02 21-18-20-292.mp4",
+      "duration": 339.31665,
+      "timesteps": 3394,
+      "used_frames": 2412,
+      "cut_frames": 982,
+      "cut_ratio": 0.2893341190335887
+    },
+    {
+      "name": "bandicam 2025-05-03 18-34-23-163",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-03\\bandicam 2025-05-03 18-29-34-140.mp4",
+      "duration": 187.54998333333333,
+      "timesteps": 1876,
+      "used_frames": 1273,
+      "cut_frames": 603,
+      "cut_ratio": 0.32142857142857145
+    },
+    {
+      "name": "bandicam 2025-05-03 23-29-54-620",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-03\\bandicam 2025-05-03 23-29-54-620.mp4",
+      "duration": 231.01665,
+      "timesteps": 2311,
+      "used_frames": 1989,
+      "cut_frames": 322,
+      "cut_ratio": 0.13933362180874082
+    },
+    {
+      "name": "bandicam 2025-05-04 01-08-57-801",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-03\\bandicam 2025-05-04 01-08-57-801.mp4",
+      "duration": 92.09998333333333,
+      "timesteps": 921,
+      "used_frames": 374,
+      "cut_frames": 547,
+      "cut_ratio": 0.5939196525515744
+    },
+    {
+      "name": "bandicam 2025-05-04 17-02-34-522",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-04\\bandicam 2025-05-04 17-02-34-522.mp4",
+      "duration": 171.74998333333332,
+      "timesteps": 1718,
+      "used_frames": 441,
+      "cut_frames": 1277,
+      "cut_ratio": 0.7433061699650757
+    },
+    {
+      "name": "bandicam 2025-05-09 20-54-12-924",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-09\\bandicam 2025-05-09 20-54-12-924.mp4",
+      "duration": 821.61665,
+      "timesteps": 8217,
+      "used_frames": 1588,
+      "cut_frames": 6629,
+      "cut_ratio": 0.806742119995132
+    },
+    {
+      "name": "bandicam 2025-05-10 00-57-56-658",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-09\\bandicam 2025-05-10 00-57-56-658.mp4",
+      "duration": 53.33331666666666,
+      "timesteps": 534,
+      "used_frames": 700,
+      "cut_frames": -166,
+      "cut_ratio": -0.31086142322097376
+    },
+    {
+      "name": "bandicam 2025-05-11 10-16-52-427",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-10\\bandicam 2025-05-11 10-16-52-427.mp4",
+      "duration": 177.94998333333334,
+      "timesteps": 1780,
+      "used_frames": 1024,
+      "cut_frames": 756,
+      "cut_ratio": 0.4247191011235955
+    },
+    {
+      "name": "bandicam 2025-05-11 19-25-14-768",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-11\\bandicam 2025-05-11 20-00-54-911.mp4",
+      "duration": 1048.01665,
+      "timesteps": 10481,
+      "used_frames": 1487,
+      "cut_frames": 8994,
+      "cut_ratio": 0.8581242247877111
+    },
+    {
+      "name": "bandicam 2025-05-12 17-38-07-482",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-12\\bandicam 2025-05-12 17-38-07-482.mp4",
+      "duration": 484.48331666666667,
+      "timesteps": 4845,
+      "used_frames": 2886,
+      "cut_frames": 1959,
+      "cut_ratio": 0.4043343653250774
+    },
+    {
+      "name": "bandicam 2025-05-17 01-39-39-170",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-17\\bandicam 2025-05-17 01-39-39-170.mp4",
+      "duration": 180.74998333333335,
+      "timesteps": 1808,
+      "used_frames": 1371,
+      "cut_frames": 437,
+      "cut_ratio": 0.24170353982300885
+    },
+    {
+      "name": "bandicam 2025-05-18 00-23-00-002",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-18\\bandicam 2025-05-18 00-23-00-002.mp4",
+      "duration": 102.58331666666666,
+      "timesteps": 1026,
+      "used_frames": 704,
+      "cut_frames": 322,
+      "cut_ratio": 0.3138401559454191
+    },
+    {
+      "name": "bandicam 2025-05-18 12-41-39-498",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-18\\bandicam 2025-05-18 12-41-39-498.mp4",
+      "duration": 20.333316666666665,
+      "timesteps": 204,
+      "used_frames": 241,
+      "cut_frames": -37,
+      "cut_ratio": -0.18137254901960784
+    },
+    {
+      "name": "bandicam 2025-05-19 00-42-26-739",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-18\\bandicam 2025-05-19 00-42-26-739.mp4",
+      "duration": 71.81665,
+      "timesteps": 719,
+      "used_frames": 952,
+      "cut_frames": -233,
+      "cut_ratio": -0.3240611961057024
+    },
+    {
+      "name": "bandicam 2025-05-21 16-45-09-265",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-21\\bandicam 2025-05-21 16-45-09-265.mp4",
+      "duration": 256.7499833333333,
+      "timesteps": 2568,
+      "used_frames": 402,
+      "cut_frames": 2166,
+      "cut_ratio": 0.8434579439252337
+    },
+    {
+      "name": "bandicam 2025-05-23 18-45-09-594",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-23\\bandicam 2025-05-23 18-45-09-594.mp4",
+      "duration": 195.14998333333335,
+      "timesteps": 1952,
+      "used_frames": 781,
+      "cut_frames": 1171,
+      "cut_ratio": 0.5998975409836066
+    },
+    {
+      "name": "bandicam 2025-05-24 00-08-42-307",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-23\\bandicam 2025-05-24 00-08-42-307.mp4",
+      "duration": 145.56665,
+      "timesteps": 1456,
+      "used_frames": 678,
+      "cut_frames": 778,
+      "cut_ratio": 0.5343406593406593
+    },
+    {
+      "name": "bandicam 2025-05-26 00-01-21-701",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-25\\bandicam 2025-05-26 00-01-21-701.mp4",
+      "duration": 1581.9499833333334,
+      "timesteps": 15820,
+      "used_frames": 649,
+      "cut_frames": 15171,
+      "cut_ratio": 0.95897597977244
+    },
+    {
+      "name": "bandicam 2025-05-26 21-33-09-780",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-26\\bandicam 2025-05-26 21-33-09-780.mp4",
+      "duration": 176.29998333333333,
+      "timesteps": 1763,
+      "used_frames": 446,
+      "cut_frames": 1317,
+      "cut_ratio": 0.7470221213840046
+    },
+    {
+      "name": "bandicam 2025-05-29 23-37-32-701",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-29\\bandicam 2025-05-29 23-37-32-701.mp4",
+      "duration": 130.09998333333334,
+      "timesteps": 1301,
+      "used_frames": 563,
+      "cut_frames": 738,
+      "cut_ratio": 0.5672559569561876
+    },
+    {
+      "name": "bandicam 2025-05-31 01-17-09-254",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-31\\bandicam 2025-05-31 01-17-09-254.mp4",
+      "duration": 600.9666500000001,
+      "timesteps": 6010,
+      "used_frames": 1751,
+      "cut_frames": 4259,
+      "cut_ratio": 0.7086522462562396
+    },
+    {
+      "name": "bandicam 2025-05-31 16-31-02-060",
+      "source_path": "D:\\切り抜き\\2025-5\\2025-5-31\\bandicam 2025-05-31 16-31-02-060.mp4",
+      "duration": 123.91665,
+      "timesteps": 1240,
+      "used_frames": 680,
+      "cut_frames": 560,
+      "cut_ratio": 0.45161290322580644
+    },
+    {
+      "name": "bandicam 2025-06-02 00-03-33-780",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-02\\bandicam 2025-06-02 00-03-33-780.mp4",
+      "duration": 304.81665,
+      "timesteps": 3049,
+      "used_frames": 394,
+      "cut_frames": 2655,
+      "cut_ratio": 0.8707773040341096
+    },
+    {
+      "name": "bandicam 2025-06-02 01-25-04-653",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-02\\bandicam 2025-06-02 01-25-04-653.mp4",
+      "duration": 99.09998333333333,
+      "timesteps": 991,
+      "used_frames": 1153,
+      "cut_frames": -162,
+      "cut_ratio": -0.16347124117053483
+    },
+    {
+      "name": "bandicam 2025-06-02 19-43-24-594",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-03\\bandicam 2025-06-02 19-34-34-842.mp4",
+      "duration": 444.0833166666667,
+      "timesteps": 4441,
+      "used_frames": 2555,
+      "cut_frames": 1886,
+      "cut_ratio": 0.4246791263229002
+    },
+    {
+      "name": "bandicam 2025-06-02 19-43-24-594_1",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-03\\bandicam 2025-06-02 19-34-34-842.mp4",
+      "duration": 444.0833166666667,
+      "timesteps": 4441,
+      "used_frames": 2555,
+      "cut_frames": 1886,
+      "cut_ratio": 0.4246791263229002
+    },
+    {
+      "name": "bandicam 2025-06-05 12-57-27-317",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-04\\bandicam 2025-06-05 12-57-27-317.mp4",
+      "duration": 110.29998333333333,
+      "timesteps": 1103,
+      "used_frames": 1044,
+      "cut_frames": 59,
+      "cut_ratio": 0.05349048050770626
+    },
+    {
+      "name": "bandicam 2025-06-07 00-18-25-554",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-07\\bandicam 2025-06-07 00-18-25-554.mp4",
+      "duration": 220.16665,
+      "timesteps": 2202,
+      "used_frames": 1168,
+      "cut_frames": 1034,
+      "cut_ratio": 0.4695731153496821
+    },
+    {
+      "name": "bandicam 2025-06-07 11-22-33-711",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-07\\bandicam 2025-06-07 11-22-33-711.mp4",
+      "duration": 259.38331666666664,
+      "timesteps": 2594,
+      "used_frames": 1843,
+      "cut_frames": 751,
+      "cut_ratio": 0.28951426368542793
+    },
+    {
+      "name": "bandicam 2025-06-09 00-30-34-101",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-09\\bandicam 2025-06-09 00-30-34-101.mp4",
+      "duration": 180.99998333333332,
+      "timesteps": 1810,
+      "used_frames": 618,
+      "cut_frames": 1192,
+      "cut_ratio": 0.6585635359116022
+    },
+    {
+      "name": "bandicam 2025-06-11 22-48-40-994",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-11\\bandicam 2025-06-11 22-48-40-994.mp4",
+      "duration": 235.33331666666666,
+      "timesteps": 2354,
+      "used_frames": 1468,
+      "cut_frames": 886,
+      "cut_ratio": 0.37638062871707734
+    },
+    {
+      "name": "bandicam 2025-06-12 23-04-57-946",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-12\\bandicam 2025-06-12 23-04-57-946.mp4",
+      "duration": 302.5833166666667,
+      "timesteps": 3026,
+      "used_frames": 2408,
+      "cut_frames": 618,
+      "cut_ratio": 0.20423000660938534
+    },
+    {
+      "name": "bandicam 2025-06-14 03-07-38-773",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-12\\bandicam 2025-06-14 03-07-38-773.mp4",
+      "duration": 614.7833166666667,
+      "timesteps": 6148,
+      "used_frames": 1387,
+      "cut_frames": 4761,
+      "cut_ratio": 0.7743981782693559
+    },
+    {
+      "name": "bandicam 2025-06-15 00-15-18-903",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-15\\bandicam 2025-06-15 00-40-07-447.mp4",
+      "duration": 861.4833166666666,
+      "timesteps": 8615,
+      "used_frames": 3172,
+      "cut_frames": 5443,
+      "cut_ratio": 0.6318049912942542
+    },
+    {
+      "name": "bandicam 2025-06-19 22-09-39-985",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-19\\bandicam 2025-06-19 22-09-39-985.mp4",
+      "duration": 319.14998333333335,
+      "timesteps": 3192,
+      "used_frames": 1491,
+      "cut_frames": 1701,
+      "cut_ratio": 0.5328947368421053
+    },
+    {
+      "name": "bandicam 2025-06-21 01-38-26-002",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-20\\bandicam 2025-06-21 01-38-26-002.mp4",
+      "duration": 126.04998333333334,
+      "timesteps": 1261,
+      "used_frames": 1190,
+      "cut_frames": 71,
+      "cut_ratio": 0.056304520222045996
+    },
+    {
+      "name": "bandicam 2025-06-21 16-27-03-700",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-21\\bandicam 2025-06-21 16-27-03-700.mp4",
+      "duration": 540.9499833333333,
+      "timesteps": 5410,
+      "used_frames": 4344,
+      "cut_frames": 1066,
+      "cut_ratio": 0.19704251386321628
+    },
+    {
+      "name": "bandicam 2025-06-21 23-02-47-319",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-22\\bandicam 2025-06-21 23-02-47-319.mp4",
+      "duration": 361.48331666666667,
+      "timesteps": 3615,
+      "used_frames": 2600,
+      "cut_frames": 1015,
+      "cut_ratio": 0.28077455048409405
+    },
+    {
+      "name": "bandicam 2025-06-22 03-00-44-005",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-22\\bandicam 2025-06-22 03-00-44-005.mp4",
+      "duration": 858.16665,
+      "timesteps": 8582,
+      "used_frames": 786,
+      "cut_frames": 7796,
+      "cut_ratio": 0.9084129573525984
+    },
+    {
+      "name": "bandicam 2025-06-22 15-52-13-599",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-22\\bandicam 2025-06-22 15-52-13-599.mp4",
+      "duration": 236.3333166666667,
+      "timesteps": 2364,
+      "used_frames": 1135,
+      "cut_frames": 1229,
+      "cut_ratio": 0.5198815566835872
+    },
+    {
+      "name": "bandicam 2025-06-22 23-18-13-912",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-23\\bandicam 2025-06-22 23-18-13-912.mp4",
+      "duration": 562.6833166666667,
+      "timesteps": 5627,
+      "used_frames": 2620,
+      "cut_frames": 3007,
+      "cut_ratio": 0.5343877732361827
+    },
+    {
+      "name": "bandicam 2025-06-23 15-04-27-583",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-24\\bandicam 2025-06-23 15-04-27-583.mp4",
+      "duration": 184.86665,
+      "timesteps": 1849,
+      "used_frames": 773,
+      "cut_frames": 1076,
+      "cut_ratio": 0.5819361817198486
+    },
+    {
+      "name": "bandicam 2025-06-27 01-50-33-972",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-27\\bandicam 2025-06-27 01-50-33-972.mp4",
+      "duration": 517.4499833333333,
+      "timesteps": 5175,
+      "used_frames": 1536,
+      "cut_frames": 3639,
+      "cut_ratio": 0.7031884057971014
+    },
+    {
+      "name": "bandicam 2025-06-27 21-47-45-882",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-27\\bandicam 2025-06-27 21-47-45-882.mp4",
+      "duration": 78.51665,
+      "timesteps": 786,
+      "used_frames": 909,
+      "cut_frames": -123,
+      "cut_ratio": -0.15648854961832062
+    },
+    {
+      "name": "bandicam 2025-06-28 15-28-13-573",
+      "source_path": "D:\\切り抜き\\2025-6\\2025-6-28\\bandicam 2025-06-28 15-28-13-573.mp4",
+      "duration": 747.1166499999999,
+      "timesteps": 7472,
+      "used_frames": 1085,
+      "cut_frames": 6387,
+      "cut_ratio": 0.8547912205567452
+    },
+    {
+      "name": "bandicam 2025-07-08 19-31-57-561",
+      "source_path": "D:\\切り抜き\\2025-7\\2025-7-08\\bandicam 2025-07-08 19-53-30-108.mp4",
+      "duration": 34.96665,
+      "timesteps": 350,
+      "used_frames": 382,
+      "cut_frames": -32,
+      "cut_ratio": -0.09142857142857143
+    },
+    {
+      "name": "bandicam 2025-07-09 20-43-36-952",
+      "source_path": "D:\\切り抜き\\2025-7\\2025-7-09\\bandicam 2025-07-10 05-20-31-104.mp4",
+      "duration": 113.53331666666668,
+      "timesteps": 1136,
+      "used_frames": 1558,
+      "cut_frames": -422,
+      "cut_ratio": -0.3714788732394366
+    },
+    {
+      "name": "bandicam 2025-07-11 01-48-33-683",
+      "source_path": "D:\\切り抜き\\2025-7\\2025-7-10\\bandicam 2025-07-11 01-28-11-734.mp4",
+      "duration": 40.76665,
+      "timesteps": 408,
+      "used_frames": 471,
+      "cut_frames": -63,
+      "cut_ratio": -0.15441176470588236
+    },
+    {
+      "name": "bandicam 2025-07-20 13-13-55-201",
+      "source_path": "D:\\切り抜き\\2025-7\\2025-7-20\\bandicam 2025-07-20 13-13-55-201.mp4",
+      "duration": 183.34998333333334,
+      "timesteps": 1834,
+      "used_frames": 1124,
+      "cut_frames": 710,
+      "cut_ratio": 0.3871319520174482
+    },
+    {
+      "name": "bandicam 2025-07-20 15-14-33-879",
+      "source_path": "D:\\切り抜き\\2025-7\\2025-7-20\\bandicam 2025-07-20 15-14-33-879.mp4",
+      "duration": 243.41665,
+      "timesteps": 2435,
+      "used_frames": 521,
+      "cut_frames": 1914,
+      "cut_ratio": 0.7860369609856263
+    },
+    {
+      "name": "bandicam 2025-08-01 23-21-42-054",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-01\\bandicam 2025-08-01 23-21-42-054.mp4",
+      "duration": 96.04998333333333,
+      "timesteps": 961,
+      "used_frames": 756,
+      "cut_frames": 205,
+      "cut_ratio": 0.2133194588969823
+    },
+    {
+      "name": "bandicam 2025-08-07 00-11-09-131",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-07\\bandicam 2025-08-07 00-15-08-162.mp4",
+      "duration": 86.93331666666667,
+      "timesteps": 870,
+      "used_frames": 742,
+      "cut_frames": 128,
+      "cut_ratio": 0.1471264367816092
+    },
+    {
+      "name": "bandicam 2025-08-08 22-19-12-409",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-08\\bandicam 2025-08-08 22-19-12-409.mp4",
+      "duration": 101.14998333333332,
+      "timesteps": 1012,
+      "used_frames": 947,
+      "cut_frames": 65,
+      "cut_ratio": 0.06422924901185771
+    },
+    {
+      "name": "bandicam 2025-08-11 03-05-43-944",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-11\\bandicam 2025-08-11 03-05-43-944.mp4",
+      "duration": 113.13331666666666,
+      "timesteps": 1132,
+      "used_frames": 674,
+      "cut_frames": 458,
+      "cut_ratio": 0.4045936395759717
+    },
+    {
+      "name": "bandicam 2025-08-13 01-46-34-869",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-12\\bandicam 2025-08-13 01-46-34-869.mp4",
+      "duration": 324.86665,
+      "timesteps": 3249,
+      "used_frames": 1481,
+      "cut_frames": 1768,
+      "cut_ratio": 0.5441674361341952
+    },
+    {
+      "name": "bandicam 2025-08-18 00-05-31-675",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-18\\bandicam 2025-08-18 00-05-31-675.mp4",
+      "duration": 143.71665,
+      "timesteps": 1438,
+      "used_frames": 1853,
+      "cut_frames": -415,
+      "cut_ratio": -0.2885952712100139
+    },
+    {
+      "name": "bandicam 2025-08-20 01-43-17-728",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-20\\bandicam 2025-08-20 01-43-17-728.mp4",
+      "duration": 151.28331666666665,
+      "timesteps": 1513,
+      "used_frames": 401,
+      "cut_frames": 1112,
+      "cut_ratio": 0.7349636483807006
+    },
+    {
+      "name": "bandicam 2025-08-22 14-13-30-683",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-21\\bandicam 2025-08-22 14-13-30-683.mp4",
+      "duration": 245.03331666666668,
+      "timesteps": 2451,
+      "used_frames": 1226,
+      "cut_frames": 1225,
+      "cut_ratio": 0.49979600163198695
+    },
+    {
+      "name": "bandicam 2025-08-25 00-36-47-562",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-25\\bandicam 2025-08-25 00-36-47-562.mp4",
+      "duration": 73.88331666666667,
+      "timesteps": 739,
+      "used_frames": 964,
+      "cut_frames": -225,
+      "cut_ratio": -0.3044654939106901
+    },
+    {
+      "name": "bandicam 2025-08-26 23-15-36-215",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-26\\bandicam 2025-08-26 23-15-36-215.mp4",
+      "duration": 233.56665,
+      "timesteps": 2336,
+      "used_frames": 980,
+      "cut_frames": 1356,
+      "cut_ratio": 0.5804794520547946
+    },
+    {
+      "name": "bandicam 2025-08-27 22-43-47-707",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-28\\bandicam 2025-08-27 22-43-47-707.mp4",
+      "duration": 201.69998333333334,
+      "timesteps": 2017,
+      "used_frames": 1319,
+      "cut_frames": 698,
+      "cut_ratio": 0.34605850272682204
+    },
+    {
+      "name": "bandicam 2025-08-28 01-51-17-963",
+      "source_path": "D:\\切り抜き\\2025-8\\2025-8-28\\bandicam 2025-08-28 01-51-17-963.mp4",
+      "duration": 109.49998333333333,
+      "timesteps": 1095,
+      "used_frames": 644,
+      "cut_frames": 451,
+      "cut_ratio": 0.41187214611872147
+    },
+    {
+      "name": "bandicam 2025-09-01 20-02-21-749",
+      "source_path": "D:\\切り抜き\\2025-9\\2025-9-01\\bandicam 2025-09-01 20-09-16-234.mp4",
+      "duration": 33.56665,
+      "timesteps": 336,
+      "used_frames": 227,
+      "cut_frames": 109,
+      "cut_ratio": 0.3244047619047619
+    },
+    {
+      "name": "bandicam 2025-09-06 20-09-52-482",
+      "source_path": "D:\\切り抜き\\2025-9\\2025-9-06\\bandicam 2025-09-06 20-13-55-029.mp4",
+      "duration": 69.11664999999999,
+      "timesteps": 692,
+      "used_frames": 711,
+      "cut_frames": -19,
+      "cut_ratio": -0.02745664739884393
+    },
+    {
+      "name": "bandicam 2025-09-15 09-10-17-861",
+      "source_path": "D:\\切り抜き\\2025-9\\2025-9-17\\bandicam 2025-09-15 09-10-17-861.mp4",
+      "duration": 53.51665,
+      "timesteps": 536,
+      "used_frames": 640,
+      "cut_frames": -104,
+      "cut_ratio": -0.19402985074626866
+    },
+    {
+      "name": "bandicam 2025-09-22 21-41-46-698",
+      "source_path": "D:\\切り抜き\\2025-9\\2025-9-22\\bandicam 2025-09-22 21-41-46-698.mp4",
+      "duration": 68.76665,
+      "timesteps": 688,
+      "used_frames": 812,
+      "cut_frames": -124,
+      "cut_ratio": -0.18023255813953487
+    },
+    {
+      "name": "bandicam 2025-10-02 23-44-01-083",
+      "source_path": "D:\\切り抜き\\2025-10-01\\bandicam 2025-10-02 23-51-32-331.mp4",
+      "duration": 30.099983333333334,
+      "timesteps": 301,
+      "used_frames": 257,
+      "cut_frames": 44,
+      "cut_ratio": 0.1461794019933555
+    },
+    {
+      "name": "gg2",
+      "error": "Could not determine source video path"
+    },
+    {
+      "name": "シーケンス 01",
+      "source_path": "D:\\切り抜き\\2025-10-2\\bandicam 2025-10-02 20-32-12-785.mp4",
+      "duration": 150.94998333333334,
+      "timesteps": 1510,
+      "used_frames": 776,
+      "cut_frames": 734,
+      "cut_ratio": 0.4860927152317881
+    },
+    {
+      "name": "名称未設定",
+      "error": "Could not determine source video path"
+    },
+    {
+      "name": "直線",
+      "source_path": "D:\\切り抜き\\2025-3\\2025-3-26\\bandicam 2025-03-26 19-13-58-071.mp4",
+      "duration": 52.36665,
+      "timesteps": 524,
+      "used_frames": 571,
+      "cut_frames": -47,
+      "cut_ratio": -0.08969465648854962
+    },
+    {
+      "name": "２",
+      "error": "Could not determine source video path"
+    }
+  ]
+}

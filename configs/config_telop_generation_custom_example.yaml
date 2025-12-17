@@ -1,0 +1,127 @@
+# AI Telop Generation Configuration - カスタマイズ例
+# このファイルをコピーして、自分の好みに合わせて編集してください
+
+telop_generation:
+  enabled: true
+  
+  # 音声認識設定
+  speech:
+    enabled: true
+    model: "whisper"
+    model_size: "small"  # "tiny" (高速), "small" (バランス), "medium" (高精度), "large" (最高精度)
+    language: "ja"  # "ja" (日本語), "en" (英語)
+    min_segment_duration: 0.5  # 短いセグメントをマージする閾値（秒）
+    max_segment_duration: 5.0  # 長いセグメントを分割する閾値（秒）
+    cache_results: true
+  
+  # 感情検出設定
+  emotion:
+    enabled: true
+    confidence_threshold: 0.5  # 🔧 感度調整: 低いほど検出しやすい (0.0〜1.0)
+                                # 0.3 = 非常に敏感（誤検出が増える）
+                                # 0.5 = バランス（推奨）
+                                # 0.7 = 厳格（確実な感情のみ）
+    
+    # 笑い検出
+    laughter:
+      enabled: true
+      # 🎨 カスタムテキストパターン
+      text_short: "w"        # 短い笑い (< 1秒)
+      text_medium: "www"     # 中程度の笑い (1-2秒)
+      text_long: "wwwww"     # 長い笑い (> 2秒)
+      
+      # 🔧 検出感度調整
+      pitch_std_threshold: 40.0  # ピッチ変動の閾値 (Hz)
+                                  # 低いほど検出しやすい
+                                  # デフォルト: 50.0
+                                  # 敏感: 30.0〜40.0
+                                  # 厳格: 60.0〜80.0
+      
+      energy_threshold: 0.25     # エネルギーの閾値 (0.0〜1.0)
+                                  # 低いほど検出しやすい
+                                  # デフォルト: 0.3
+                                  # 敏感: 0.2〜0.25
+                                  # 厳格: 0.4〜0.5
+    
+    # 驚き検出
+    surprise:
+      enabled: true
+      # 🎨 カスタムテキストパターン
+      text: "！！"           # メインテキスト
+      text_alt: "えっ！？"   # 代替テキスト（現在未使用）
+      
+      # 🔧 検出感度調整
+      pitch_delta_threshold: 80.0  # 急激なピッチ上昇の閾値 (Hz)
+                                    # 低いほど検出しやすい
+                                    # デフォルト: 100.0
+                                    # 敏感: 60.0〜80.0
+                                    # 厳格: 120.0〜150.0
+      
+      max_duration: 1.0  # 驚きの最大持続時間（秒）
+    
+    # 悲しみ検出
+    sadness:
+      enabled: true
+      # 🎨 カスタムテキストパターン
+      text: "..."         # メインテキスト
+      text_alt: "しょんぼり"  # 代替テキスト（現在未使用）
+      
+      # 🔧 検出感度調整
+      pitch_mean_threshold: 160.0  # 低ピッチの閾値 (Hz)
+                                    # 高いほど検出しやすい
+                                    # デフォルト: 150.0
+                                    # 敏感: 160.0〜180.0
+                                    # 厳格: 120.0〜140.0
+      
+      energy_threshold: 0.12       # 低エネルギーの閾値 (0.0〜1.0)
+                                    # 高いほど検出しやすい
+                                    # デフォルト: 0.1
+                                    # 敏感: 0.12〜0.15
+                                    # 厳格: 0.05〜0.08
+  
+  # 出力設定
+  output:
+    separate_tracks: true
+    ocr_track_prefix: "OCR"
+    speech_track_prefix: "字幕"      # 🎨 カスタムプレフィックス
+    emotion_track_prefix: "感情"     # 🎨 カスタムプレフィックス
+
+
+# ==========================================
+# 使用例
+# ==========================================
+# 
+# 1. このファイルを好みに合わせて編集
+# 2. 推論時に指定：
+#    python src/inference/inference_pipeline.py video.mp4 \
+#      --telop_config configs/config_telop_generation_custom_example.yaml
+# 
+# ==========================================
+# よくあるカスタマイズ
+# ==========================================
+# 
+# 【笑いを検出しやすくする】
+# laughter:
+#   pitch_std_threshold: 30.0  # 50.0 → 30.0
+#   energy_threshold: 0.2      # 0.3 → 0.2
+# 
+# 【笑いのテキストを変更】
+# laughter:
+#   text_short: "笑"
+#   text_medium: "笑笑"
+#   text_long: "爆笑"
+# 
+# 【驚きを検出しやすくする】
+# surprise:
+#   pitch_delta_threshold: 60.0  # 100.0 → 60.0
+# 
+# 【全体的に検出を厳しくする】
+# emotion:
+#   confidence_threshold: 0.7  # 0.6 → 0.7
+# 
+# 【特定の感情を無効化】
+# sadness:
+#   enabled: false
+# 
+# ==========================================
+

@@ -368,3 +368,11 @@
 
   - Run all tests one final time
   - Ensure all tests pass, ask the user if questions arise
+
+- [x] 19. Data Integrity Verification
+
+  - Verify that all features are extracted from source videos (bandicam recordings)
+  - Confirm that labels cover the entire source video duration
+  - Validate timestamp alignment between features and labels
+  - Document the data flow and structure
+  - _Status: COMPLETED - All features confirmed to be from source videos_

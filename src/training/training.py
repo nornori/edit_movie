@@ -94,6 +94,7 @@ class TrainingPipeline:
             'asset': 0.0,
             'scale': 0.0,
             'position': 0.0,
+            'rotation': 0.0,
             'crop': 0.0
         }
         num_batches = 0
@@ -232,6 +233,7 @@ class TrainingPipeline:
             'asset': 0.0,
             'scale': 0.0,
             'position': 0.0,
+            'rotation': 0.0,
             'crop': 0.0
         }
         num_batches = 0
@@ -355,7 +357,17 @@ class TrainingPipeline:
             'val_metrics': val_metrics,
             'history': self.history,
             'best_val_loss': self.best_val_loss,
-            'best_epoch': self.best_epoch
+            'best_epoch': self.best_epoch,
+            'config': {
+                'audio_features': self.model.audio_features,
+                'visual_features': self.model.visual_features,
+                'track_features': self.model.track_features,
+                'd_model': self.model.d_model,
+                'nhead': self.model.nhead,
+                'num_layers': self.model.num_layers,
+                'enable_multimodal': self.model.enable_multimodal,
+                'fusion_type': self.model.fusion_type,
+            }
         }
         
         if self.scheduler is not None:
@@ -472,12 +484,14 @@ class TrainingPipeline:
             logger.info(f"  - Asset: {train_metrics['asset']:.4f}")
             logger.info(f"  - Scale: {train_metrics['scale']:.4f}")
             logger.info(f"  - Position: {train_metrics['position']:.4f}")
+            logger.info(f"  - Rotation: {train_metrics['rotation']:.4f}")
             logger.info(f"  - Crop: {train_metrics['crop']:.4f}")
             logger.info(f"\nVal Loss: {val_metrics['total_loss']:.4f}")
             logger.info(f"  - Active: {val_metrics['active']:.4f}")
             logger.info(f"  - Asset: {val_metrics['asset']:.4f}")
             logger.info(f"  - Scale: {val_metrics['scale']:.4f}")
             logger.info(f"  - Position: {val_metrics['position']:.4f}")
+            logger.info(f"  - Rotation: {val_metrics['rotation']:.4f}")
             logger.info(f"  - Crop: {val_metrics['crop']:.4f}")
             
             if is_best:
@@ -505,32 +519,74 @@ class TrainingPipeline:
 
 
 if __name__ == "__main__":
-    # Test training pipeline
-    logger.info("Testing TrainingPipeline...")
+    import argparse
+    import yaml
     
-    from model import create_model
-    from loss import create_optimizer, create_scheduler
-    from dataset import create_dataloaders
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Train Multi-Track Transformer')
+    parser.add_argument('--config', type=str, required=True, help='Path to config file')
+    args = parser.parse_args()
+    
+    # Load config
+    with open(args.config, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    logger.info(f"Loading config from: {args.config}")
+    
+    from src.model.model import create_model
+    from src.model.loss import create_optimizer, create_scheduler
+    from src.training.multimodal_dataset import create_multimodal_dataloaders
+    
+    # Determine device
+    device = 'cuda' if torch.cuda.is_available() and not config.get('cpu', False) else 'cpu'
+    logger.info(f"Using device: {device}")
     
     # Create model
     model = create_model(
-        d_model=128,
-        nhead=4,
-        num_encoder_layers=2,
-        dim_feedforward=256
+        input_features=config.get('track_features', 240),
+        d_model=config.get('d_model', 256),
+        nhead=config.get('nhead', 8),
+        num_encoder_layers=config.get('num_encoder_layers', 6),
+        dim_feedforward=config.get('dim_feedforward', 1024),
+        dropout=config.get('dropout', 0.1),
+        num_tracks=config.get('num_tracks', 20),
+        max_asset_classes=config.get('max_asset_classes', 10),
+        enable_multimodal=config.get('enable_multimodal', False),
+        audio_features=config.get('audio_features', 17),
+        visual_features=config.get('visual_features', 522),
+        fusion_type=config.get('fusion_type', 'gated')
     )
     
     # Create loss function
-    loss_fn = MultiTrackLoss()
+    loss_fn = MultiTrackLoss(
+        active_weight=config.get('active_weight', 1.0),
+        asset_weight=config.get('asset_weight', 1.0),
+        scale_weight=config.get('scale_weight', 1.0),
+        position_weight=config.get('position_weight', 1.0),
+        rotation_weight=config.get('rotation_weight', 1.0),
+        crop_weight=config.get('crop_weight', 1.0),
+        ignore_inactive=config.get('ignore_inactive', True)
+    )
     
     # Create optimizer
-    optimizer = create_optimizer(model, learning_rate=1e-4)
+    optimizer = create_optimizer(
+        model, 
+        learning_rate=config.get('learning_rate', 1e-4),
+        weight_decay=config.get('weight_decay', 1e-5),
+        optimizer_type=config.get('optimizer', 'adam')
+    )
     
     # Create scheduler
-    scheduler = create_scheduler(optimizer, scheduler_type='cosine', num_epochs=10)
+    scheduler = create_scheduler(
+        optimizer, 
+        scheduler_type=config.get('scheduler', 'cosine'),
+        num_epochs=config.get('num_epochs', 100),
+        warmup_epochs=config.get('warmup_epochs', 2),
+        min_lr=config.get('min_lr', 1e-6)
+    )
     
     # Create gradient clipper
-    gradient_clipper = GradientClipper(max_norm=1.0)
+    gradient_clipper = GradientClipper(max_norm=config.get('grad_clip', 1.0))
     
     # Create training pipeline
     pipeline = TrainingPipeline(
@@ -539,30 +595,27 @@ if __name__ == "__main__":
         optimizer=optimizer,
         scheduler=scheduler,
         gradient_clipper=gradient_clipper,
-        device='cpu',
-        checkpoint_dir='test_checkpoints'
+        device=device,
+        checkpoint_dir=config.get('checkpoint_dir', 'checkpoints')
     )
     
-    # Create dummy dataloaders
-    logger.info("\nCreating dataloaders...")
-    try:
-        train_loader, val_loader = create_dataloaders(
-            'preprocessed_data/train_sequences.npz',
-            'preprocessed_data/val_sequences.npz',
-            batch_size=8
-        )
-        
-        # Train for 2 epochs
-        logger.info("\nTraining for 2 epochs...")
-        pipeline.train(
-            train_loader=train_loader,
-            val_loader=val_loader,
-            num_epochs=2,
-            save_every=1
-        )
-        
-        logger.info("\n✅ Training pipeline test complete!")
-        
-    except FileNotFoundError:
-        logger.warning("⚠️  Preprocessed data not found. Skipping training test.")
-        logger.info("✅ Training pipeline initialization test complete!")
+    # Create dataloaders
+    logger.info("Creating dataloaders...")
+    train_loader, val_loader = create_multimodal_dataloaders(
+        train_npz=config.get('train_data', 'preprocessed_data/train_sequences.npz'),
+        val_npz=config.get('val_data', 'preprocessed_data/val_sequences.npz'),
+        features_dir=config.get('features_dir', 'data/processed/input_features'),
+        batch_size=config.get('batch_size', 8),
+        num_workers=config.get('num_workers', 0)
+    )
+    
+    # Train
+    logger.info(f"Starting training for {config.get('num_epochs', 100)} epochs...")
+    pipeline.train(
+        train_loader=train_loader,
+        val_loader=val_loader,
+        num_epochs=config.get('num_epochs', 100),
+        save_every=config.get('save_every', 5)
+    )
+    
+    logger.info("\n✅ Training complete!")

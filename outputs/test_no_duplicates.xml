@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence id="sequence-1">
+		<name>bandicam 2025-06-02 00-01-10-144</name>
+		<duration>7071</duration>
+		<rate>
+			<timebase>59</timebase>
+			<ntsc>TRUE</ntsc>
+		</rate>
+		<media>
+			<video>
+				<format/>
+				<track>
+					<clipitem frameBlend="FALSE" id="clipitem-1">
+						<file id="file-1">
+							<pathurl>file://localhost/D:/%E5%88%87%E3%82%8A%E6%8A%9C%E3%81%8D/2025-6/2025-6-02/bandicam%202025-06-02%2000-01-10-144.mp4</pathurl>
+							<name>bandicam 2025-06-02 00-01-10-144.mp4</name>
+							<rate>
+								<timebase>59</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<duration>7071</duration>
+							<timecode>
+								<rate>
+									<timebase>59</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video/>
+								<audio/>
+							</media>
+						</file>
+						<name>bandicam 2025-06-02 00-01-10-144</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>809</duration>
+						<start>0</start>
+						<end>809</end>
+						<in>0</in>
+						<out>809</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-2">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-02 00-01-10-144</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>18</duration>
+						<start>809</start>
+						<end>827</end>
+						<in>905</in>
+						<out>923</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-3">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-02 00-01-10-144</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>6083</duration>
+						<start>827</start>
+						<end>6910</end>
+						<in>983</in>
+						<out>7066</out>
+					</clipitem>
+				</track>
+			</video>
+			<audio>
+				<track>
+					<clipitem frameBlend="FALSE" id="audioclip-1">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>809</duration>
+						<start>0</start>
+						<end>809</end>
+						<in>0</in>
+						<out>809</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="audioclip-2">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>18</duration>
+						<start>809</start>
+						<end>827</end>
+						<in>905</in>
+						<out>923</out>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="audioclip-3">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-02 00-01-10-144 - Audio</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>6083</duration>
+						<start>827</start>
+						<end>6910</end>
+						<in>983</in>
+						<out>7066</out>
+					</clipitem>
+				</track>
+			</audio>
+		</media>
+	</sequence>
+</xmeml>

@@ -12,9 +12,9 @@ import logging
 from typing import Dict, Optional, Tuple
 from pathlib import Path
 
-from feature_alignment import FeatureAligner
-from multimodal_preprocessing import AudioFeaturePreprocessor, VisualFeaturePreprocessor
-from text_embedding import SimpleTextEmbedder
+from src.utils.feature_alignment import FeatureAligner
+from src.training.multimodal_preprocessing import AudioFeaturePreprocessor, VisualFeaturePreprocessor
+from src.data_preparation.text_embedding import SimpleTextEmbedder
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -104,19 +104,18 @@ class MultimodalDataset(Dataset):
         for idx in range(len(self.track_sequences)):
             video_id = self._get_video_id(idx)
             
-            audio_path = self.features_dir / f"{video_id}_features.csv"
-            visual_path = self.features_dir / f"{video_id}_visual_features.csv"
+            # Remove chunk suffix if present (e.g., "_chunk0", "_chunk1")
+            base_video_id = video_id.rsplit('_chunk', 1)[0] if '_chunk' in video_id else video_id
             
-            has_audio = audio_path.exists()
-            has_visual = visual_path.exists()
+            # Check for unified features file
+            features_path = self.features_dir / f"{base_video_id}_features.csv"
             
-            if has_audio:
+            if features_path.exists():
+                # Unified file contains both audio and visual features
                 self.stats['audio_available'] += 1
-            if has_visual:
                 self.stats['visual_available'] += 1
-            if has_audio and has_visual:
                 self.stats['both_available'] += 1
-            if not has_audio and not has_visual:
+            else:
                 self.stats['track_only'] += 1
     
     def _get_video_id(self, idx: int) -> str:
@@ -142,7 +141,10 @@ class MultimodalDataset(Dataset):
         if video_id in self._audio_cache:
             return self._audio_cache[video_id]
         
-        audio_path = self.features_dir / f"{video_id}_features.csv"
+        # Remove chunk suffix if present
+        base_video_id = video_id.rsplit('_chunk', 1)[0] if '_chunk' in video_id else video_id
+        
+        audio_path = self.features_dir / f"{base_video_id}_features.csv"
         
         if not audio_path.exists():
             self._audio_cache[video_id] = None
@@ -197,14 +199,18 @@ class MultimodalDataset(Dataset):
         if video_id in self._visual_cache:
             return self._visual_cache[video_id]
         
-        visual_path = self.features_dir / f"{video_id}_visual_features.csv"
+        # Remove chunk suffix if present
+        base_video_id = video_id.rsplit('_chunk', 1)[0] if '_chunk' in video_id else video_id
         
-        if not visual_path.exists():
+        # Visual features are in the same unified file as audio features
+        features_path = self.features_dir / f"{base_video_id}_features.csv"
+        
+        if not features_path.exists():
             self._visual_cache[video_id] = None
             return None
         
         try:
-            df = pd.read_csv(visual_path)
+            df = pd.read_csv(features_path)
             
             # Verify required columns
             required_cols = ['time', 'scene_change', 'visual_motion', 'saliency_x', 'saliency_y',
@@ -310,8 +316,8 @@ class MultimodalDataset(Dataset):
             modality_mask[:, 0] = False  # No audio
             modality_mask[:, 1] = False  # No visual
         
-        # Reshape track sequence to (seq_len, 20, 9) for targets
-        targets = track_seq.reshape(seq_len, 20, 9)
+        # Reshape track sequence to (seq_len, 20, 12) for targets
+        targets = track_seq.reshape(seq_len, 20, 12)
         
         # Determine audio feature dimension
         # 4 base + 1 telop_active + 6 speech embedding + 6 telop embedding if enabled

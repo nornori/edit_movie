@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Dict, Optional
 from datetime import datetime
 
-from model import MultiTrackTransformer, create_model
+from src.model.model import MultiTrackTransformer, create_model
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -37,7 +37,7 @@ def save_model(
     save_path.parent.mkdir(parents=True, exist_ok=True)
     
     # Detect model type
-    from model import MultimodalTransformer
+    from src.model.model import MultimodalTransformer
     is_multimodal = isinstance(model, MultimodalTransformer)
     
     # Model configuration - save all necessary parameters
@@ -213,7 +213,13 @@ def load_model(
             raise ValueError("モデルの構造を推測できませんでした。'audio_projection.weight'または'input_projection.weight'が見つかりません。")
     
     # Detect model type
-    model_type = config.get('model_type', 'track_only')  # Default to track_only for old checkpoints
+    # If model_type is not explicitly set, infer from enable_multimodal or presence of multimodal features
+    if 'model_type' in config:
+        model_type = config['model_type']
+    elif config.get('enable_multimodal', False) or ('audio_features' in config and 'visual_features' in config):
+        model_type = 'multimodal'
+    else:
+        model_type = 'track_only'
     
     if force_track_only:
         model_type = 'track_only'
@@ -223,7 +229,10 @@ def load_model(
     
     # Create model based on type
     if model_type == 'multimodal' and not force_track_only:
-        from model import MultimodalTransformer
+        from src.model.model import MultimodalTransformer
+        
+        # Support both 'num_encoder_layers' and 'num_layers' keys
+        num_layers = config.get('num_encoder_layers', config.get('num_layers', 6))
         
         model = MultimodalTransformer(
             audio_features=config['audio_features'],
@@ -231,10 +240,10 @@ def load_model(
             track_features=config['track_features'],
             d_model=config['d_model'],
             nhead=config['nhead'],
-            num_encoder_layers=config['num_encoder_layers'],
-            dim_feedforward=config['dim_feedforward'],
-            num_tracks=config['num_tracks'],
-            max_asset_classes=config['max_asset_classes'],
+            num_encoder_layers=num_layers,
+            dim_feedforward=config.get('dim_feedforward', 1024),
+            num_tracks=config.get('num_tracks', 20),
+            max_asset_classes=config.get('max_asset_classes', 10),
             enable_multimodal=config.get('enable_multimodal', True),
             fusion_type=config.get('fusion_type', 'gated')
         )
@@ -247,14 +256,17 @@ def load_model(
         # For multimodal checkpoints forced to track-only, use track_features as input_features
         input_features = config.get('input_features', config.get('track_features', 180))
         
+        # Support both 'num_encoder_layers' and 'num_layers' keys
+        num_layers = config.get('num_encoder_layers', config.get('num_layers', 6))
+        
         model = MultiTrackTransformer(
             input_features=input_features,
             d_model=config['d_model'],
             nhead=config['nhead'],
-            num_encoder_layers=config['num_encoder_layers'],
-            dim_feedforward=config['dim_feedforward'],
-            num_tracks=config['num_tracks'],
-            max_asset_classes=config['max_asset_classes']
+            num_encoder_layers=num_layers,
+            dim_feedforward=config.get('dim_feedforward', 1024),
+            num_tracks=config.get('num_tracks', 20),
+            max_asset_classes=config.get('max_asset_classes', 10)
         )
         logger.info(f"   Input features: {input_features}")
     

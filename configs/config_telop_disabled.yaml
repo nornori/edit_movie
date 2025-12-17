@@ -1,0 +1,48 @@
+# AI Telop Generation Configuration - Telop Disabled
+
+telop_generation:
+  enabled: false
+  
+  # Speech Recognition Settings
+  speech:
+    enabled: false
+    model: "whisper"
+    model_size: "small"
+    language: "ja"
+    min_segment_duration: 0.5
+    max_segment_duration: 5.0
+    cache_results: true
+  
+  # Emotion Detection Settings
+  emotion:
+    enabled: false
+    confidence_threshold: 0.6
+    
+    laughter:
+      enabled: false
+      text_short: "w"
+      text_medium: "www"
+      text_long: "wwww"
+      pitch_std_threshold: 50.0
+      energy_threshold: 0.3
+    
+    surprise:
+      enabled: false
+      text: "！"
+      text_alt: "えっ"
+      pitch_delta_threshold: 100.0
+      max_duration: 1.0
+    
+    sadness:
+      enabled: false
+      text: "..."
+      text_alt: "悲"
+      pitch_mean_threshold: 150.0
+      energy_threshold: 0.1
+  
+  # Output Settings
+  output:
+    separate_tracks: true
+    ocr_track_prefix: "OCR"
+    speech_track_prefix: "Speech"
+    emotion_track_prefix: "Emotion"

@@ -1,5 +1,5 @@
 """
-シンプルなテロップ修正スクリプト
+テロップ修正スクリプト（OCR + AI字幕対応）
 """
 import re
 import sys
@@ -8,19 +8,19 @@ def fix_telops(input_xml, output_xml):
     with open(input_xml, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # [Telop]マーカーを削除
+    # すべてのテロップマーカーを削除
     content = re.sub(r'\[Telop\]\s*', '', content)
+    content = re.sub(r'\[AI-Speech\]\s*', '', content)
+    content = re.sub(r'\[AI-Emotion-\w+\]\s*', '', content)
     
-    # 最初のテロップのfile要素を完全な形式に変換
-    # パターン: テロップtrack内の最初のfile要素
-    telop_track_pattern = r'(<track>.*?<name>はみがきさん.*?<file id=")(file-\d+)(">.*?</file>)'
+    # file-2を参照しているclipitemを検出してカウント
+    telop_matches = re.findall(r'<file id="file-2"', content)
+    telop_counter = len(telop_matches)
     
-    def replace_first_telop_file(match):
-        prefix = match.group(1)
-        file_id = match.group(2)
-        
-        # 新しいfile要素
-        new_file = f'''{prefix}file-2">
+    # file-2の最初の出現を完全なfile要素に置き換え
+    first_file_pattern = r'<file id="file-2">.*?</file>'
+    
+    complete_file = '''<file id="file-2">
                                     <name>グラフィック</name>
                                     <mediaSource>GraphicAndType</mediaSource>
                                     <rate>
@@ -52,25 +52,18 @@ def fix_telops(input_xml, output_xml):
                                         </video>
                                     </media>
                                 </file>'''
-        
-        return new_file
     
-    content = re.sub(telop_track_pattern, replace_first_telop_file, content, count=1, flags=re.DOTALL)
+    # 最初のfile-2を完全な形式に置き換え
+    content = re.sub(first_file_pattern, complete_file, content, count=1, flags=re.DOTALL)
     
-    # 残りのテロップのfile要素をfile-2参照に変換
-    # パターン: テロップtrack内のfile要素（2番目以降）
-    remaining_telop_pattern = r'(<track>.*?<name>(?:まっててー|うん|うちめっちゃ|大丈夫！|…ｗ|うざっ).*?<file id=")(file-\d+)(">.*?</file>|"\s*/>)'
-    
-    def replace_remaining_telop_file(match):
-        prefix = match.group(1)
-        return f'{prefix}file-2"/>'
-    
-    content = re.sub(remaining_telop_pattern, replace_remaining_telop_file, content, flags=re.DOTALL)
+    # 残りのfile-2を参照形式に置き換え
+    content = re.sub(r'<file id="file-2">.*?</file>', '<file id="file-2"/>', content, flags=re.DOTALL)
     
     with open(output_xml, 'w', encoding='utf-8') as f:
         f.write(content)
     
-    print(f"Done! Output: {output_xml}")
+    print(f"✅ Converted {telop_counter} telops to Premiere Pro graphics")
+    print(f"Output: {output_xml}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

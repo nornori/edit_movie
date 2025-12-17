@@ -17,6 +17,7 @@ from src.model.model import create_model
 from src.model.model_persistence import load_model
 from src.training.multimodal_preprocessing import AudioFeaturePreprocessor, VisualFeaturePreprocessor
 from src.utils.feature_alignment import FeatureAligner
+from src.utils.config_loader import load_telop_config
 
 # pdはすでにインポート済み
 
@@ -34,7 +35,8 @@ class InferencePipeline:
         fps: float = 10.0,
         num_tracks: int = 20,
         audio_preprocessor_path: str = None,
-        visual_preprocessor_path: str = None
+        visual_preprocessor_path: str = None,
+        telop_config_path: str = None
     ):
         """
         初期化
@@ -46,8 +48,17 @@ class InferencePipeline:
             num_tracks: トラック数
             audio_preprocessor_path: 音声前処理器のパス（Noneの場合は自動検出）
             visual_preprocessor_path: 映像前処理器のパス（Noneの場合は自動検出）
+            telop_config_path: テロップ生成設定ファイルのパス（Noneの場合はデフォルト）
         """
         self.device = device
+        
+        # テロップ生成設定をロード
+        self.telop_config = load_telop_config(telop_config_path)
+        logger.info(f"Telop generation enabled: {self.telop_config.is_enabled()}")
+        if self.telop_config.is_speech_enabled():
+            logger.info("  Speech recognition: enabled")
+        if self.telop_config.is_emotion_enabled():
+            logger.info("  Emotion detection: enabled")
         self.fps = fps
         self.num_tracks = num_tracks
         
@@ -57,6 +68,13 @@ class InferencePipeline:
         self.model = result['model']
         self.config = result['config']
         self.model.eval()
+        
+        # モデルタイプを判定（enable_multimodalまたはaudio_featuresの存在から）
+        if 'model_type' not in self.config:
+            if self.config.get('enable_multimodal', False) or ('audio_features' in self.config and 'visual_features' in self.config):
+                self.config['model_type'] = 'multimodal'
+            else:
+                self.config['model_type'] = 'track_only'
         
         # 特徴量アライナー
         self.aligner = FeatureAligner(tolerance=0.05)
@@ -355,6 +373,15 @@ class InferencePipeline:
         Returns:
             予測結果の辞書
         """
+        # シーケンス長を取得
+        seq_len = features['track'].shape[1]
+        max_chunk_size = 5000  # 位置エンコーディングの最大長
+        
+        # チャンク分割が必要かチェック
+        if seq_len > max_chunk_size:
+            logger.info(f"  シーケンス長 {seq_len} > {max_chunk_size}、チャンク分割して処理します")
+            return self._predict_with_chunks(features, max_chunk_size)
+        
         # デバイスに転送
         for key in features:
             features[key] = features[key].to(self.device)
@@ -390,6 +417,66 @@ class InferencePipeline:
                 logger.warning(f"  ⚠️  {key} contains NaN values!")
             if np.isinf(predictions[key]).any():
                 logger.warning(f"  ⚠️  {key} contains Inf values!")
+    
+    def _predict_with_chunks(self, features: Dict[str, torch.Tensor], chunk_size: int) -> Dict[str, np.ndarray]:
+        """
+        長いシーケンスをチャンクに分割して予測
+        
+        Args:
+            features: 入力特徴量
+            chunk_size: チャンクサイズ
+        
+        Returns:
+            予測結果の辞書
+        """
+        seq_len = features['track'].shape[1]
+        num_chunks = (seq_len + chunk_size - 1) // chunk_size
+        logger.info(f"  {num_chunks}個のチャンクに分割")
+        
+        # 結果を格納するリスト
+        all_predictions = {}
+        
+        model_type = self.config.get('model_type', 'track_only')
+        
+        for i in range(num_chunks):
+            start_idx = i * chunk_size
+            end_idx = min((i + 1) * chunk_size, seq_len)
+            logger.info(f"  チャンク {i+1}/{num_chunks}: {start_idx}-{end_idx}")
+            
+            # チャンクを抽出
+            chunk_features = {}
+            for key, value in features.items():
+                chunk_features[key] = value[:, start_idx:end_idx].to(self.device)
+            
+            # 推論
+            with torch.no_grad():
+                if model_type == 'multimodal':
+                    outputs = self.model(
+                        audio=chunk_features['audio'],
+                        visual=chunk_features['visual'],
+                        track=chunk_features['track'],
+                        padding_mask=chunk_features['padding_mask'],
+                        modality_mask=chunk_features['modality_mask']
+                    )
+                else:
+                    outputs = self.model(
+                        chunk_features['track'],
+                        chunk_features['padding_mask']
+                    )
+            
+            # 結果を保存
+            for key, value in outputs.items():
+                if key not in all_predictions:
+                    all_predictions[key] = []
+                all_predictions[key].append(value.cpu().numpy()[0])
+        
+        # チャンクを結合
+        predictions = {}
+        for key, chunks in all_predictions.items():
+            predictions[key] = np.concatenate(chunks, axis=0)
+            logger.info(f"  {key}: {predictions[key].shape}")
+        
+        return predictions
         
         logger.info(f"  予測完了: {len(predictions)}種類のパラメータ")
         logger.info(f"  出力キー: {list(predictions.keys())}")
@@ -456,6 +543,506 @@ class InferencePipeline:
             logger.warning(f"  Failed to extract telop info: {e}")
             return []
     
+    def _extract_speech_telops(self, video_path: str, video_name: str) -> list:
+        """
+        Extract speech and generate telops using ASR
+        
+        Args:
+            video_path: Path to video file
+            video_name: Video name for caching
+        
+        Returns:
+            List of dicts with keys: 'text', 'start_frame', 'end_frame', 'type'='speech'
+        """
+        if not self.telop_config.is_speech_enabled():
+            logger.info("  Speech recognition disabled")
+            return []
+        
+        try:
+            # Check for cached results
+            cache_dir = Path("temp_features")
+            cache_dir.mkdir(exist_ok=True)
+            cache_path = cache_dir / f"{video_name}_speech.json"
+            
+            speech_config = self.telop_config.get_speech_config()
+            
+            if cache_path.exists() and speech_config.get('cache_results', True):
+                logger.info(f"  Loading cached speech recognition results from {cache_path}")
+                import json
+                with open(cache_path, 'r', encoding='utf-8') as f:
+                    segments = json.load(f)
+                logger.info(f"  Loaded {len(segments)} speech segments from cache")
+                return segments
+            
+            # Import Whisper
+            try:
+                import whisper
+            except ImportError:
+                logger.warning("  Whisper not installed. Install with: pip install openai-whisper")
+                logger.warning("  Skipping speech recognition")
+                return []
+            
+            # Load Whisper model
+            model_size = speech_config.get('model_size', 'small')
+            language = speech_config.get('language', 'ja')
+            
+            logger.info(f"  Loading Whisper model: {model_size}")
+            model = whisper.load_model(model_size)
+            
+            # Transcribe audio
+            logger.info(f"  Transcribing audio (language: {language})...")
+            result = whisper.transcribe(
+                model,
+                video_path,
+                language=language,
+                verbose=False
+            )
+            
+            # Extract segments
+            segments = []
+            for segment in result['segments']:
+                text = segment['text'].strip()
+                if not text:
+                    continue
+                
+                start_time = segment['start']
+                end_time = segment['end']
+                
+                segments.append({
+                    'text': text,
+                    'start_frame': int(start_time * self.fps),
+                    'end_frame': int(end_time * self.fps),
+                    'type': 'speech',
+                    'start_time': start_time,
+                    'end_time': end_time
+                })
+            
+            logger.info(f"  Extracted {len(segments)} raw speech segments")
+            
+            # Process segments (merge short, split long)
+            segments = self._process_speech_segments(segments, speech_config)
+            logger.info(f"  Processed to {len(segments)} speech segments")
+            
+            # Cache results
+            if speech_config.get('cache_results', True):
+                import json
+                with open(cache_path, 'w', encoding='utf-8') as f:
+                    json.dump(segments, f, ensure_ascii=False, indent=2)
+                logger.info(f"  Cached speech recognition results to {cache_path}")
+            
+            return segments
+            
+        except Exception as e:
+            logger.error(f"  Speech recognition failed: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
+            return []
+    
+    def _process_speech_segments(self, segments: list, config: dict) -> list:
+        """
+        Process speech segments: merge short segments, split long segments
+        
+        Args:
+            segments: List of speech segments
+            config: Speech configuration
+        
+        Returns:
+            Processed list of segments
+        """
+        if not segments:
+            return segments
+        
+        min_duration = config.get('min_segment_duration', 0.5)
+        max_duration = config.get('max_segment_duration', 5.0)
+        
+        # Step 1: Merge short segments
+        merged_segments = []
+        i = 0
+        while i < len(segments):
+            current = segments[i]
+            duration = current['end_time'] - current['start_time']
+            
+            # If segment is short and there's a next segment, try to merge
+            if duration < min_duration and i + 1 < len(segments):
+                next_seg = segments[i + 1]
+                gap = next_seg['start_time'] - current['end_time']
+                
+                # Merge if gap is small (< 0.5 seconds)
+                if gap < 0.5:
+                    merged = {
+                        'text': current['text'] + ' ' + next_seg['text'],
+                        'start_time': current['start_time'],
+                        'end_time': next_seg['end_time'],
+                        'start_frame': current['start_frame'],
+                        'end_frame': next_seg['end_frame'],
+                        'type': 'speech'
+                    }
+                    merged_segments.append(merged)
+                    i += 2  # Skip next segment
+                    continue
+            
+            merged_segments.append(current)
+            i += 1
+        
+        # Step 2: Split long segments
+        final_segments = []
+        for segment in merged_segments:
+            duration = segment['end_time'] - segment['start_time']
+            
+            if duration > max_duration:
+                # Split at sentence boundaries (。、！？)
+                text = segment['text']
+                sentences = []
+                current_sentence = ""
+                
+                for char in text:
+                    current_sentence += char
+                    if char in ['。', '、', '！', '？', '.', ',', '!', '?']:
+                        sentences.append(current_sentence.strip())
+                        current_sentence = ""
+                
+                if current_sentence.strip():
+                    sentences.append(current_sentence.strip())
+                
+                # If we have multiple sentences, split proportionally
+                if len(sentences) > 1:
+                    time_per_char = duration / len(text)
+                    current_time = segment['start_time']
+                    
+                    for sentence in sentences:
+                        sentence_duration = len(sentence) * time_per_char
+                        end_time = min(current_time + sentence_duration, segment['end_time'])
+                        
+                        final_segments.append({
+                            'text': sentence,
+                            'start_time': current_time,
+                            'end_time': end_time,
+                            'start_frame': int(current_time * self.fps),
+                            'end_frame': int(end_time * self.fps),
+                            'type': 'speech'
+                        })
+                        
+                        current_time = end_time
+                else:
+                    # Can't split, keep as is
+                    final_segments.append(segment)
+            else:
+                final_segments.append(segment)
+        
+        return final_segments
+    
+    def _detect_emotion_telops(self, video_path: str, video_name: str) -> list:
+        """
+        Detect emotions and generate telops
+        
+        Args:
+            video_path: Path to video file
+            video_name: Video name for caching
+        
+        Returns:
+            List of dicts with keys: 'text', 'start_frame', 'end_frame', 'type'='emotion', 'emotion_type'
+        """
+        if not self.telop_config.is_emotion_enabled():
+            logger.info("  Emotion detection disabled")
+            return []
+        
+        try:
+            # Check for cached results
+            cache_dir = Path("temp_features")
+            cache_dir.mkdir(exist_ok=True)
+            cache_path = cache_dir / f"{video_name}_emotions.json"
+            
+            emotion_config = self.telop_config.get_emotion_config()
+            
+            if cache_path.exists():
+                logger.info(f"  Loading cached emotion detection results from {cache_path}")
+                import json
+                with open(cache_path, 'r', encoding='utf-8') as f:
+                    emotions = json.load(f)
+                logger.info(f"  Loaded {len(emotions)} emotion segments from cache")
+                return emotions
+            
+            # Import audio processing libraries
+            try:
+                import librosa
+                import soundfile as sf
+            except ImportError:
+                logger.warning("  librosa or soundfile not installed. Install with: pip install librosa soundfile")
+                logger.warning("  Skipping emotion detection")
+                return []
+            
+            # Load audio
+            logger.info(f"  Loading audio for emotion detection...")
+            y, sr = librosa.load(video_path, sr=22050)
+            
+            # Extract audio features
+            logger.info(f"  Extracting audio features...")
+            features = self._extract_audio_features_for_emotion(y, sr)
+            
+            # Detect emotions
+            logger.info(f"  Detecting emotions...")
+            emotions = []
+            
+            # Detect laughter
+            if emotion_config.get('laughter', {}).get('enabled', True):
+                laughter_segments = self._detect_laughter(features, emotion_config)
+                emotions.extend(laughter_segments)
+            
+            # Detect surprise
+            if emotion_config.get('surprise', {}).get('enabled', True):
+                surprise_segments = self._detect_surprise(features, emotion_config)
+                emotions.extend(surprise_segments)
+            
+            # Detect sadness
+            if emotion_config.get('sadness', {}).get('enabled', True):
+                sadness_segments = self._detect_sadness(features, emotion_config)
+                emotions.extend(sadness_segments)
+            
+            # Sort by start time
+            emotions.sort(key=lambda x: x['start_time'])
+            
+            logger.info(f"  Detected {len(emotions)} emotion segments")
+            
+            # Cache results
+            import json
+            with open(cache_path, 'w', encoding='utf-8') as f:
+                json.dump(emotions, f, ensure_ascii=False, indent=2)
+            logger.info(f"  Cached emotion detection results to {cache_path}")
+            
+            return emotions
+            
+        except Exception as e:
+            logger.error(f"  Emotion detection failed: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
+            return []
+    
+    def _extract_audio_features_for_emotion(self, y: np.ndarray, sr: int) -> dict:
+        """
+        Extract audio features for emotion detection
+        
+        Args:
+            y: Audio signal
+            sr: Sample rate
+        
+        Returns:
+            Dictionary of features
+        """
+        import librosa
+        
+        # Frame-level features (hop_length = 512 samples ≈ 0.023s at 22050Hz)
+        hop_length = 512
+        
+        # Energy (RMS)
+        rms = librosa.feature.rms(y=y, hop_length=hop_length)[0]
+        
+        # Zero-crossing rate
+        zcr = librosa.feature.zero_crossing_rate(y, hop_length=hop_length)[0]
+        
+        # Pitch (F0) using piptrack
+        pitches, magnitudes = librosa.piptrack(y=y, sr=sr, hop_length=hop_length)
+        # Get the pitch with highest magnitude at each frame
+        pitch = []
+        for t in range(pitches.shape[1]):
+            index = magnitudes[:, t].argmax()
+            pitch.append(pitches[index, t])
+        pitch = np.array(pitch)
+        
+        # MFCCs
+        mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13, hop_length=hop_length)
+        
+        # Time axis
+        times = librosa.frames_to_time(np.arange(len(rms)), sr=sr, hop_length=hop_length)
+        
+        return {
+            'times': times,
+            'rms': rms,
+            'zcr': zcr,
+            'pitch': pitch,
+            'mfccs': mfccs,
+            'sr': sr,
+            'hop_length': hop_length
+        }
+    
+    def _detect_laughter(self, features: dict, config: dict) -> list:
+        """
+        Detect laughter segments
+        
+        Args:
+            features: Audio features
+            config: Emotion configuration
+        
+        Returns:
+            List of laughter segments
+        """
+        laughter_config = config.get('laughter', {})
+        pitch_std_threshold = laughter_config.get('pitch_std_threshold', 50.0)
+        energy_threshold = laughter_config.get('energy_threshold', 0.3)
+        confidence_threshold = config.get('confidence_threshold', 0.6)
+        
+        times = features['times']
+        pitch = features['pitch']
+        rms = features['rms']
+        
+        # Normalize RMS
+        rms_normalized = rms / (rms.max() + 1e-8)
+        
+        # Detect laughter: high pitch variation + high energy
+        window_size = 20  # ~0.5 seconds
+        laughter_segments = []
+        
+        for i in range(0, len(times) - window_size, window_size // 2):
+            window_pitch = pitch[i:i+window_size]
+            window_rms = rms_normalized[i:i+window_size]
+            
+            # Filter out zero pitches
+            valid_pitch = window_pitch[window_pitch > 0]
+            if len(valid_pitch) < window_size // 2:
+                continue
+            
+            pitch_std = np.std(valid_pitch)
+            mean_energy = np.mean(window_rms)
+            
+            # Check thresholds
+            if pitch_std > pitch_std_threshold and mean_energy > energy_threshold:
+                confidence = min(1.0, (pitch_std / pitch_std_threshold + mean_energy / energy_threshold) / 2)
+                
+                if confidence >= confidence_threshold:
+                    start_time = times[i]
+                    end_time = times[min(i + window_size, len(times) - 1)]
+                    duration = end_time - start_time
+                    
+                    # Choose text based on duration
+                    if duration < 1.0:
+                        text = laughter_config.get('text_short', 'w')
+                    elif duration < 2.0:
+                        text = laughter_config.get('text_medium', 'www')
+                    else:
+                        text = laughter_config.get('text_long', 'wwww')
+                    
+                    laughter_segments.append({
+                        'text': text,
+                        'start_time': start_time,
+                        'end_time': end_time,
+                        'start_frame': int(start_time * self.fps),
+                        'end_frame': int(end_time * self.fps),
+                        'type': 'emotion',
+                        'emotion_type': 'laughter',
+                        'confidence': float(confidence)
+                    })
+        
+        return laughter_segments
+    
+    def _detect_surprise(self, features: dict, config: dict) -> list:
+        """
+        Detect surprise segments
+        
+        Args:
+            features: Audio features
+            config: Emotion configuration
+        
+        Returns:
+            List of surprise segments
+        """
+        surprise_config = config.get('surprise', {})
+        pitch_delta_threshold = surprise_config.get('pitch_delta_threshold', 100.0)
+        max_duration = surprise_config.get('max_duration', 1.0)
+        confidence_threshold = config.get('confidence_threshold', 0.6)
+        
+        times = features['times']
+        pitch = features['pitch']
+        
+        # Detect surprise: sudden pitch increase
+        surprise_segments = []
+        
+        for i in range(1, len(pitch)):
+            if pitch[i] > 0 and pitch[i-1] > 0:
+                pitch_delta = pitch[i] - pitch[i-1]
+                
+                if pitch_delta > pitch_delta_threshold:
+                    confidence = min(1.0, pitch_delta / pitch_delta_threshold)
+                    
+                    if confidence >= confidence_threshold:
+                        start_time = times[i-1]
+                        end_time = min(times[i] + max_duration, times[-1])
+                        
+                        text = surprise_config.get('text', '！')
+                        
+                        surprise_segments.append({
+                            'text': text,
+                            'start_time': start_time,
+                            'end_time': end_time,
+                            'start_frame': int(start_time * self.fps),
+                            'end_frame': int(end_time * self.fps),
+                            'type': 'emotion',
+                            'emotion_type': 'surprise',
+                            'confidence': float(confidence)
+                        })
+        
+        return surprise_segments
+    
+    def _detect_sadness(self, features: dict, config: dict) -> list:
+        """
+        Detect sadness segments
+        
+        Args:
+            features: Audio features
+            config: Emotion configuration
+        
+        Returns:
+            List of sadness segments
+        """
+        sadness_config = config.get('sadness', {})
+        pitch_mean_threshold = sadness_config.get('pitch_mean_threshold', 150.0)
+        energy_threshold = sadness_config.get('energy_threshold', 0.1)
+        confidence_threshold = config.get('confidence_threshold', 0.6)
+        
+        times = features['times']
+        pitch = features['pitch']
+        rms = features['rms']
+        
+        # Normalize RMS
+        rms_normalized = rms / (rms.max() + 1e-8)
+        
+        # Detect sadness: low pitch + low energy
+        window_size = 40  # ~1 second
+        sadness_segments = []
+        
+        for i in range(0, len(times) - window_size, window_size // 2):
+            window_pitch = pitch[i:i+window_size]
+            window_rms = rms_normalized[i:i+window_size]
+            
+            # Filter out zero pitches
+            valid_pitch = window_pitch[window_pitch > 0]
+            if len(valid_pitch) < window_size // 2:
+                continue
+            
+            pitch_mean = np.mean(valid_pitch)
+            mean_energy = np.mean(window_rms)
+            
+            # Check thresholds (inverted for sadness)
+            if pitch_mean < pitch_mean_threshold and mean_energy < energy_threshold:
+                confidence = min(1.0, (1 - pitch_mean / pitch_mean_threshold + 1 - mean_energy / energy_threshold) / 2)
+                
+                if confidence >= confidence_threshold:
+                    start_time = times[i]
+                    end_time = times[min(i + window_size, len(times) - 1)]
+                    
+                    text = sadness_config.get('text', '...')
+                    
+                    sadness_segments.append({
+                        'text': text,
+                        'start_time': start_time,
+                        'end_time': end_time,
+                        'start_frame': int(start_time * self.fps),
+                        'end_frame': int(end_time * self.fps),
+                        'type': 'emotion',
+                        'emotion_type': 'sadness',
+                        'confidence': float(confidence)
+                    })
+        
+        return sadness_segments
+    
     def _create_xml(
         self,
         predictions: Dict[str, np.ndarray],
@@ -482,63 +1069,68 @@ class InferencePipeline:
         import scipy.special
         active_probs = scipy.special.softmax(predictions['active'], axis=-1)[:, :, 1]  # (seq_len, num_tracks)
         
-        # トラックごとのパラメータを抽出
-        tracks_data = []
+        # 各フレームで最もアクティブなトラックを選択（重複を防ぐ）
+        # 閾値0.29を超えるトラックの中から、最も確率が高いものを選択
+        best_track_per_frame = np.full(seq_len, -1, dtype=int)  # -1 = どのトラックもアクティブでない
         
-        for track_idx in range(self.num_tracks):
-            # 各タイムステップでのパラメータ
-            track_params = {
-                'active': active_probs[:, track_idx],  # (seq_len,) - now probabilities!
-                'asset_id': predictions['asset'][:, track_idx].argmax(axis=-1) if 'asset' in predictions else np.zeros(seq_len, dtype=int),  # (seq_len,)
-                'scale': predictions['scale'][:, track_idx],  # (seq_len,)
-                'position_x': predictions['pos_x'][:, track_idx] if 'pos_x' in predictions else predictions.get('position', np.zeros((seq_len, self.num_tracks, 2)))[:, track_idx, 0],  # (seq_len,)
-                'position_y': predictions['pos_y'][:, track_idx] if 'pos_y' in predictions else predictions.get('position', np.zeros((seq_len, self.num_tracks, 2)))[:, track_idx, 1],  # (seq_len,)
-                'crop': np.stack([
-                    predictions['crop_l'][:, track_idx],
-                    predictions['crop_r'][:, track_idx],
-                    predictions['crop_t'][:, track_idx],
-                    predictions['crop_b'][:, track_idx]
-                ], axis=1) if 'crop_l' in predictions else predictions.get('crop', np.zeros((seq_len, self.num_tracks, 4)))[:, track_idx, :],  # (seq_len, 4)
-            }
+        for t in range(seq_len):
+            # このフレームで閾値を超えるトラックを探す
+            active_tracks = np.where(active_probs[t, :] > 0.29)[0]
+            if len(active_tracks) > 0:
+                # 最も確率が高いトラックを選択
+                best_track = active_tracks[np.argmax(active_probs[t, active_tracks])]
+                best_track_per_frame[t] = best_track
+        
+        # 連続する同じトラックの区間をグループ化
+        tracks_data = []
+        if np.any(best_track_per_frame >= 0):
+            current_track = best_track_per_frame[0]
+            start_frame = 0
             
-            # アクティブなフレームのみを抽出（閾値0.29 - カット数を100程度に調整）
-            active_frames = track_params['active'] > 0.29
+            for t in range(1, seq_len):
+                if best_track_per_frame[t] != current_track:
+                    # トラックが変わった、または非アクティブになった
+                    if current_track >= 0:
+                        # 前のトラックのセグメントを保存
+                        end_frame = t - 1
+                        
+                        # このセグメントのパラメータを計算
+                        track_data = {
+                            'track_id': current_track,
+                            'start_frame': start_frame,
+                            'end_frame': end_frame,
+                            'asset_id': int(np.median(predictions['asset'][start_frame:end_frame+1, current_track].argmax(axis=-1))) if 'asset' in predictions else 0,
+                            'scale': float(np.mean(predictions['scale'][start_frame:end_frame+1, current_track])),
+                            'position_x': float(np.mean(predictions['pos_x'][start_frame:end_frame+1, current_track])) if 'pos_x' in predictions else 0.0,
+                            'position_y': float(np.mean(predictions['pos_y'][start_frame:end_frame+1, current_track])) if 'pos_y' in predictions else 0.0,
+                            'crop_left': float(np.mean(predictions['crop_l'][start_frame:end_frame+1, current_track])) if 'crop_l' in predictions else 0.0,
+                            'crop_right': float(np.mean(predictions['crop_r'][start_frame:end_frame+1, current_track])) if 'crop_r' in predictions else 0.0,
+                            'crop_top': float(np.mean(predictions['crop_t'][start_frame:end_frame+1, current_track])) if 'crop_t' in predictions else 0.0,
+                            'crop_bottom': float(np.mean(predictions['crop_b'][start_frame:end_frame+1, current_track])) if 'crop_b' in predictions else 0.0,
+                        }
+                        tracks_data.append(track_data)
+                    
+                    # 新しいセグメントを開始
+                    current_track = best_track_per_frame[t]
+                    start_frame = t
             
-            if np.any(active_frames):
-                # アクティブな区間を検出
-                active_indices = np.where(active_frames)[0]
-                
-                # 連続する区間をグループ化
-                segments = []
-                start_idx = active_indices[0]
-                
-                for i in range(1, len(active_indices)):
-                    if active_indices[i] != active_indices[i-1] + 1:
-                        # 区間の終わり
-                        end_idx = active_indices[i-1]
-                        segments.append((start_idx, end_idx))
-                        start_idx = active_indices[i]
-                
-                # 最後の区間
-                segments.append((start_idx, active_indices[-1]))
-                
-                # 各区間をトラックデータとして追加
-                for seg_start, seg_end in segments:
-                    # 区間の平均パラメータを使用
-                    track_data = {
-                        'track_id': track_idx,
-                        'start_frame': seg_start,
-                        'end_frame': seg_end,
-                        'asset_id': int(np.median(track_params['asset_id'][seg_start:seg_end+1])),
-                        'scale': float(np.mean(track_params['scale'][seg_start:seg_end+1])),
-                        'position_x': float(np.mean(track_params['position_x'][seg_start:seg_end+1])),
-                        'position_y': float(np.mean(track_params['position_y'][seg_start:seg_end+1])),
-                        'crop_left': float(np.mean(track_params['crop'][seg_start:seg_end+1, 0])),
-                        'crop_right': float(np.mean(track_params['crop'][seg_start:seg_end+1, 1])),
-                        'crop_top': float(np.mean(track_params['crop'][seg_start:seg_end+1, 2])),
-                        'crop_bottom': float(np.mean(track_params['crop'][seg_start:seg_end+1, 3])),
-                    }
-                    tracks_data.append(track_data)
+            # 最後のセグメントを保存
+            if current_track >= 0:
+                end_frame = seq_len - 1
+                track_data = {
+                    'track_id': current_track,
+                    'start_frame': start_frame,
+                    'end_frame': end_frame,
+                    'asset_id': int(np.median(predictions['asset'][start_frame:end_frame+1, current_track].argmax(axis=-1))) if 'asset' in predictions else 0,
+                    'scale': float(np.mean(predictions['scale'][start_frame:end_frame+1, current_track])),
+                    'position_x': float(np.mean(predictions['pos_x'][start_frame:end_frame+1, current_track])) if 'pos_x' in predictions else 0.0,
+                    'position_y': float(np.mean(predictions['pos_y'][start_frame:end_frame+1, current_track])) if 'pos_y' in predictions else 0.0,
+                    'crop_left': float(np.mean(predictions['crop_l'][start_frame:end_frame+1, current_track])) if 'crop_l' in predictions else 0.0,
+                    'crop_right': float(np.mean(predictions['crop_r'][start_frame:end_frame+1, current_track])) if 'crop_r' in predictions else 0.0,
+                    'crop_top': float(np.mean(predictions['crop_t'][start_frame:end_frame+1, current_track])) if 'crop_t' in predictions else 0.0,
+                    'crop_bottom': float(np.mean(predictions['crop_b'][start_frame:end_frame+1, current_track])) if 'crop_b' in predictions else 0.0,
+                }
+                tracks_data.append(track_data)
         
         # デバッグ: active予測の統計を表示
         active_logits = predictions['active']  # (seq_len, num_tracks, 2)
@@ -560,8 +1152,28 @@ class InferencePipeline:
         
         logger.info(f"  Detected {len(tracks_data)} active track segments")
         
-        # テロップ情報を抽出
+        # テロップ情報を抽出（OCR）
         telops = self._extract_telop_info(video_name)
+        
+        # AI字幕を生成
+        logger.info("Step 4.1: Generating AI telops...")
+        ai_telops = []
+        
+        # 音声認識による字幕
+        if self.telop_config.is_speech_enabled():
+            logger.info("  Extracting speech telops...")
+            speech_telops = self._extract_speech_telops(self.video_path, video_name)
+            ai_telops.extend(speech_telops)
+            logger.info(f"  Added {len(speech_telops)} speech telops")
+        
+        # 感情検出による字幕
+        if self.telop_config.is_emotion_enabled():
+            logger.info("  Detecting emotion telops...")
+            emotion_telops = self._detect_emotion_telops(self.video_path, video_name)
+            ai_telops.extend(emotion_telops)
+            logger.info(f"  Added {len(emotion_telops)} emotion telops")
+        
+        logger.info(f"  Total AI telops: {len(ai_telops)}")
         
         # OTIOを使ってXMLを生成（音声クリップはXMLレベルで修正）
         from src.inference.otio_xml_generator import create_premiere_xml_with_otio
@@ -573,6 +1185,7 @@ class InferencePipeline:
             fps=self.fps,
             tracks_data=tracks_data,
             telops=telops,
+            ai_telops=ai_telops,
             output_path=output_path
         )
         
@@ -781,6 +1394,12 @@ def main():
                        help='フレームレート')
     parser.add_argument('--num_tracks', type=int, default=20,
                        help='トラック数')
+    parser.add_argument('--telop_config', type=str, default=None,
+                       help='テロップ生成設定ファイルのパス（デフォルト: configs/config_telop_generation.yaml）')
+    parser.add_argument('--no-speech', action='store_true',
+                       help='音声認識を無効化')
+    parser.add_argument('--no-emotion', action='store_true',
+                       help='感情検出を無効化')
     
     args = parser.parse_args()
     
@@ -794,8 +1413,17 @@ def main():
         model_path=args.model,
         device=args.device,
         fps=args.fps,
-        num_tracks=args.num_tracks
+        num_tracks=args.num_tracks,
+        telop_config_path=args.telop_config
     )
+    
+    # コマンドライン引数で機能を無効化
+    if args.no_speech:
+        pipeline.telop_config.config['telop_generation']['speech']['enabled'] = False
+        logger.info("Speech recognition disabled by command-line argument")
+    if args.no_emotion:
+        pipeline.telop_config.config['telop_generation']['emotion']['enabled'] = False
+        logger.info("Emotion detection disabled by command-line argument")
     
     output_xml = pipeline.predict(
         video_path=args.video_path,

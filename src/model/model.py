@@ -77,10 +77,10 @@ class MultiTrackTransformer(nn.Module):
     """
     Multi-Track Transformer for video editing prediction
     
-    Predicts 9 parameters for each of 20 tracks:
+    Predicts 12 parameters for each of 20 tracks:
     - active (binary classification)
     - asset_id (classification)
-    - scale, x, y, crop_l, crop_r, crop_t, crop_b (regression)
+    - scale, x, y, anchor_x, anchor_y, rotation, crop_l, crop_r, crop_t, crop_b (regression)
     """
     
     def __init__(
@@ -124,7 +124,7 @@ class MultiTrackTransformer(nn.Module):
         )
         
         # Output heads for each parameter type
-        # Each track has 9 parameters, so we need 9 output heads
+        # Each track has 12 parameters, so we need 12 output heads
         
         # Per-track output projection
         self.track_projection = nn.Linear(d_model, d_model)
@@ -137,6 +137,9 @@ class MultiTrackTransformer(nn.Module):
         self.scale_head = nn.Linear(d_model, 1)
         self.pos_x_head = nn.Linear(d_model, 1)
         self.pos_y_head = nn.Linear(d_model, 1)
+        self.anchor_x_head = nn.Linear(d_model, 1)
+        self.anchor_y_head = nn.Linear(d_model, 1)
+        self.rotation_head = nn.Linear(d_model, 1)
         self.crop_l_head = nn.Linear(d_model, 1)
         self.crop_r_head = nn.Linear(d_model, 1)
         self.crop_t_head = nn.Linear(d_model, 1)
@@ -176,6 +179,9 @@ class MultiTrackTransformer(nn.Module):
             - 'scale': (batch, seq_len, num_tracks, 1) - regression values
             - 'pos_x': (batch, seq_len, num_tracks, 1)
             - 'pos_y': (batch, seq_len, num_tracks, 1)
+            - 'anchor_x': (batch, seq_len, num_tracks, 1)
+            - 'anchor_y': (batch, seq_len, num_tracks, 1)
+            - 'rotation': (batch, seq_len, num_tracks, 1)
             - 'crop_l': (batch, seq_len, num_tracks, 1)
             - 'crop_r': (batch, seq_len, num_tracks, 1)
             - 'crop_t': (batch, seq_len, num_tracks, 1)
@@ -222,6 +228,9 @@ class MultiTrackTransformer(nn.Module):
             'scale': self.scale_head(track_features),    # (batch, seq_len, num_tracks, 1)
             'pos_x': self.pos_x_head(track_features),
             'pos_y': self.pos_y_head(track_features),
+            'anchor_x': self.anchor_x_head(track_features),
+            'anchor_y': self.anchor_y_head(track_features),
+            'rotation': self.rotation_head(track_features),
             'crop_l': self.crop_l_head(track_features),
             'crop_r': self.crop_r_head(track_features),
             'crop_t': self.crop_t_head(track_features),
@@ -244,10 +253,14 @@ def create_model(
     dim_feedforward: int = 1024,
     dropout: float = 0.1,
     num_tracks: int = 20,
-    max_asset_classes: int = 10
-) -> MultiTrackTransformer:
+    max_asset_classes: int = 10,
+    enable_multimodal: bool = False,
+    audio_features: int = 17,
+    visual_features: int = 522,
+    fusion_type: str = 'gated'
+):
     """
-    Create a Multi-Track Transformer model
+    Create a Multi-Track Transformer model (unimodal or multimodal)
     
     Args:
         input_features: Number of input features (default: 180 = 20 tracks × 9 params)
@@ -258,20 +271,39 @@ def create_model(
         dropout: Dropout rate
         num_tracks: Number of video tracks
         max_asset_classes: Maximum number of asset classes
+        enable_multimodal: Whether to use multimodal model
+        audio_features: Number of audio features (for multimodal)
+        visual_features: Number of visual features (for multimodal)
+        fusion_type: Fusion strategy ('gated', 'concat', 'add')
     
     Returns:
-        MultiTrackTransformer model
+        MultiTrackTransformer or MultimodalTransformer model
     """
-    model = MultiTrackTransformer(
-        input_features=input_features,
-        d_model=d_model,
-        nhead=nhead,
-        num_encoder_layers=num_encoder_layers,
-        dim_feedforward=dim_feedforward,
-        dropout=dropout,
-        num_tracks=num_tracks,
-        max_asset_classes=max_asset_classes
-    )
+    if enable_multimodal:
+        model = MultimodalTransformer(
+            audio_features=audio_features,
+            visual_features=visual_features,
+            track_features=input_features,
+            d_model=d_model,
+            nhead=nhead,
+            num_encoder_layers=num_encoder_layers,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout,
+            num_tracks=num_tracks,
+            max_asset_classes=max_asset_classes,
+            fusion_type=fusion_type
+        )
+    else:
+        model = MultiTrackTransformer(
+            input_features=input_features,
+            d_model=d_model,
+            nhead=nhead,
+            num_encoder_layers=num_encoder_layers,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout,
+            num_tracks=num_tracks,
+            max_asset_classes=max_asset_classes
+        )
     
     num_params = model.count_parameters()
     logger.info(f"Model created with {num_params:,} trainable parameters")
@@ -365,10 +397,10 @@ class MultimodalTransformer(nn.Module):
     Extends the base MultiTrackTransformer to accept audio, visual, and track inputs,
     fusing them before processing through the transformer encoder.
     
-    Predicts 9 parameters for each of 20 tracks:
+    Predicts 12 parameters for each of 20 tracks:
     - active (binary classification)
     - asset_id (classification)
-    - scale, x, y, crop_l, crop_r, crop_t, crop_b (regression)
+    - scale, x, y, anchor_x, anchor_y, rotation, crop_l, crop_r, crop_t, crop_b (regression)
     """
     
     def __init__(
@@ -409,13 +441,15 @@ class MultimodalTransformer(nn.Module):
         self.visual_features = visual_features
         self.track_features = track_features
         self.d_model = d_model
+        self.nhead = nhead
+        self.num_layers = num_encoder_layers
         self.num_tracks = num_tracks
         self.max_asset_classes = max_asset_classes
         self.enable_multimodal = enable_multimodal
         self.fusion_type = fusion_type
         
         # Import here to avoid circular dependency
-        from multimodal_modules import ModalityEmbedding, ModalityFusion
+        from src.model.multimodal_modules import ModalityEmbedding, ModalityFusion
         
         # Modality embeddings
         self.audio_embedding = ModalityEmbedding(audio_features, d_model, dropout)
@@ -461,6 +495,9 @@ class MultimodalTransformer(nn.Module):
         self.scale_head = nn.Linear(d_model, 1)
         self.pos_x_head = nn.Linear(d_model, 1)
         self.pos_y_head = nn.Linear(d_model, 1)
+        self.anchor_x_head = nn.Linear(d_model, 1)
+        self.anchor_y_head = nn.Linear(d_model, 1)
+        self.rotation_head = nn.Linear(d_model, 1)
         self.crop_l_head = nn.Linear(d_model, 1)
         self.crop_r_head = nn.Linear(d_model, 1)
         self.crop_t_head = nn.Linear(d_model, 1)
@@ -556,6 +593,9 @@ class MultimodalTransformer(nn.Module):
             'scale': self.scale_head(track_features),
             'pos_x': self.pos_x_head(track_features),
             'pos_y': self.pos_y_head(track_features),
+            'anchor_x': self.anchor_x_head(track_features),
+            'anchor_y': self.anchor_y_head(track_features),
+            'rotation': self.rotation_head(track_features),
             'crop_l': self.crop_l_head(track_features),
             'crop_r': self.crop_r_head(track_features),
             'crop_t': self.crop_t_head(track_features),

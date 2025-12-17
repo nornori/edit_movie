@@ -4,8 +4,14 @@ Add telop information to existing feature CSV files
 import pandas as pd
 import numpy as np
 from pathlib import Path
-from telop_extractor import TelopExtractor
-from text_embedding import SimpleTextEmbedder
+import sys
+import os
+
+# Add project root to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+
+from src.data_preparation.telop_extractor import TelopExtractor
+from src.data_preparation.text_embedding import SimpleTextEmbedder
 import logging
 from tqdm import tqdm
 

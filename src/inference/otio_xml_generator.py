@@ -607,10 +607,11 @@ def create_premiere_xml_with_otio(
     fps: float,
     tracks_data: list,
     telops: list,
-    output_path: str
+    output_path: str,
+    ai_telops: list = None
 ) -> str:
     """
-    OTIOを使用してPremiere Pro互換のXMLを生成
+    Premiere Pro互換のXMLを生成（直接生成方式）
     
     Args:
         video_path: 元動画のパス
@@ -618,12 +619,26 @@ def create_premiere_xml_with_otio(
         total_frames: 総フレーム数（推論FPS基準）
         fps: 推論時のフレームレート（10fps）
         tracks_data: ビデオトラックデータのリスト
-        telops: テロップ情報のリスト
+        telops: テロップ情報のリスト（OCR）
         output_path: 出力XMLパス
+        ai_telops: AI生成テロップ情報のリスト（音声認識+感情検出）
     
     Returns:
         出力XMLファイルのパス
     """
+    # 直接XML生成方式を使用（OTIOを使わない）
+    from src.inference.direct_xml_generator import create_premiere_xml_direct
+    
+    return create_premiere_xml_direct(
+        video_path=video_path,
+        video_name=video_name,
+        total_frames=total_frames,
+        fps=fps,
+        tracks_data=tracks_data,
+        telops=telops,
+        output_path=output_path,
+        ai_telops=ai_telops
+    )
     # 元動画のFPSを取得
     import cv2
     cap = cv2.VideoCapture(video_path)
@@ -745,20 +760,21 @@ def create_premiere_xml_with_otio(
         audio_track.append(audio_clip)
     
     # テロップトラックを追加（グラフィックとして）
-    # 注: OTIOではテキストエフェクトの詳細制御が難しいため、
-    # 後でXMLを直接編集してグラフィック/テキストレイヤーに変換する
+    # 時間が重ならないテロップを同じトラックにまとめる
     if telops:
         logger.info(f"  Adding {len(telops)} telop clips as graphics")
-        for telop_idx, telop in enumerate(telops):
+        
+        # テロップを開始時間でソート
+        sorted_telops = sorted(telops, key=lambda t: t['start_frame'])
+        
+        # トラックのリスト（各トラックの最後のend_frameを記録）
+        telop_tracks = []
+        track_end_times = []
+        
+        for telop_idx, telop in enumerate(sorted_telops):
             # フレーム数を変換
             telop_start_video = int(telop['start_frame'] * fps_ratio)
             telop_end_video = int(telop['end_frame'] * fps_ratio)
-            
-            # テロップ用のトラックを作成
-            telop_track = otio.schema.Track(
-                name=f"Telop {telop_idx + 1}",
-                kind=otio.schema.TrackKind.Video
-            )
             
             # テロップクリップを作成
             telop_range = otio.opentime.TimeRange(
@@ -768,16 +784,6 @@ def create_premiere_xml_with_otio(
                     rate
                 )
             )
-            
-            # ギャップを追加（開始位置まで）
-            if telop_start_video > 0:
-                gap = otio.schema.Gap(
-                    source_range=otio.opentime.TimeRange(
-                        start_time=otio.opentime.RationalTime(0, rate),
-                        duration=otio.opentime.RationalTime(telop_start_video, rate)
-                    )
-                )
-                telop_track.append(gap)
             
             # テロップクリップ（グラフィックとして）
             telop_clip = otio.schema.Clip(
@@ -792,8 +798,150 @@ def create_premiere_xml_with_otio(
                 'is_text_layer': True
             }
             
-            telop_track.append(telop_clip)
-            timeline.tracks.append(telop_track)
+            # 既存のトラックで時間が重ならないものを探す
+            placed = False
+            for track_idx, (track, last_end) in enumerate(zip(telop_tracks, track_end_times)):
+                if telop_start_video >= last_end:
+                    # このトラックに配置可能
+                    # ギャップを追加（前のクリップとの間）
+                    if telop_start_video > last_end:
+                        gap = otio.schema.Gap(
+                            source_range=otio.opentime.TimeRange(
+                                start_time=otio.opentime.RationalTime(last_end, rate),
+                                duration=otio.opentime.RationalTime(telop_start_video - last_end, rate)
+                            )
+                        )
+                        track.append(gap)
+                    
+                    track.append(telop_clip)
+                    track_end_times[track_idx] = telop_end_video
+                    placed = True
+                    break
+            
+            if not placed:
+                # 新しいトラックを作成
+                telop_track = otio.schema.Track(
+                    name=f"Telops {len(telop_tracks) + 1}",
+                    kind=otio.schema.TrackKind.Video
+                )
+                
+                # ギャップを追加（開始位置まで）
+                if telop_start_video > 0:
+                    gap = otio.schema.Gap(
+                        source_range=otio.opentime.TimeRange(
+                            start_time=otio.opentime.RationalTime(0, rate),
+                            duration=otio.opentime.RationalTime(telop_start_video, rate)
+                        )
+                    )
+                    telop_track.append(gap)
+                
+                telop_track.append(telop_clip)
+                telop_tracks.append(telop_track)
+                track_end_times.append(telop_end_video)
+        
+        # 全てのテロップトラックをタイムラインに追加
+        for track in telop_tracks:
+            timeline.tracks.append(track)
+        
+        logger.info(f"  Organized {len(telops)} telops into {len(telop_tracks)} tracks")
+    
+    # AI字幕トラックを追加（時間が重ならないものを同じトラックにまとめる）
+    if ai_telops:
+        logger.info(f"  Adding {len(ai_telops)} AI telop clips")
+        
+        # AI字幕を開始時間でソート
+        sorted_ai_telops = sorted(ai_telops, key=lambda t: t['start_frame'])
+        
+        # トラックのリスト（各トラックの最後のend_frameを記録）
+        ai_telop_tracks = []
+        ai_track_end_times = []
+        
+        for ai_telop_idx, ai_telop in enumerate(sorted_ai_telops):
+            # フレーム数を変換
+            ai_telop_start_video = int(ai_telop['start_frame'] * fps_ratio)
+            ai_telop_end_video = int(ai_telop['end_frame'] * fps_ratio)
+            
+            # AI字幕クリップを作成
+            telop_type = ai_telop.get('type', 'speech')
+            emotion_type = ai_telop.get('emotion_type', '')
+            
+            if telop_type == 'speech':
+                marker = "[AI-Speech]"
+            elif telop_type == 'emotion':
+                marker = f"[AI-Emotion-{emotion_type}]"
+            else:
+                marker = "[AI-Telop]"
+            
+            ai_telop_range = otio.opentime.TimeRange(
+                start_time=otio.opentime.RationalTime(ai_telop_start_video, rate),
+                duration=otio.opentime.RationalTime(
+                    ai_telop_end_video - ai_telop_start_video,
+                    rate
+                )
+            )
+            
+            # AI字幕クリップ（グラフィックとして）
+            ai_telop_clip = otio.schema.Clip(
+                name=f"{marker} {ai_telop['text'][:30]}",
+                source_range=ai_telop_range
+            )
+            
+            # メタデータにAI字幕情報を保存
+            ai_telop_clip.metadata['telop'] = {
+                'text': ai_telop['text'],
+                'type': 'graphic',
+                'is_text_layer': True,
+                'ai_generated': True,
+                'telop_type': telop_type,
+                'emotion_type': emotion_type
+            }
+            
+            # 既存のトラックで時間が重ならないものを探す
+            placed = False
+            for track_idx, (track, last_end) in enumerate(zip(ai_telop_tracks, ai_track_end_times)):
+                if ai_telop_start_video >= last_end:
+                    # このトラックに配置可能
+                    # ギャップを追加（前のクリップとの間）
+                    if ai_telop_start_video > last_end:
+                        gap = otio.schema.Gap(
+                            source_range=otio.opentime.TimeRange(
+                                start_time=otio.opentime.RationalTime(last_end, rate),
+                                duration=otio.opentime.RationalTime(ai_telop_start_video - last_end, rate)
+                            )
+                        )
+                        track.append(gap)
+                    
+                    track.append(ai_telop_clip)
+                    ai_track_end_times[track_idx] = ai_telop_end_video
+                    placed = True
+                    break
+            
+            if not placed:
+                # 新しいトラックを作成
+                ai_telop_track = otio.schema.Track(
+                    name=f"AI-Telops {len(ai_telop_tracks) + 1}",
+                    kind=otio.schema.TrackKind.Video
+                )
+                
+                # ギャップを追加（開始位置まで）
+                if ai_telop_start_video > 0:
+                    gap = otio.schema.Gap(
+                        source_range=otio.opentime.TimeRange(
+                            start_time=otio.opentime.RationalTime(0, rate),
+                            duration=otio.opentime.RationalTime(ai_telop_start_video, rate)
+                        )
+                    )
+                    ai_telop_track.append(gap)
+                
+                ai_telop_track.append(ai_telop_clip)
+                ai_telop_tracks.append(ai_telop_track)
+                ai_track_end_times.append(ai_telop_end_video)
+        
+        # 全てのAI字幕トラックをタイムラインに追加
+        for track in ai_telop_tracks:
+            timeline.tracks.append(track)
+        
+        logger.info(f"  Organized {len(ai_telops)} AI telops into {len(ai_telop_tracks)} tracks")
     
     # 音声トラックを追加（既にクリップは追加済み）
     timeline.tracks.append(audio_track)
@@ -807,9 +955,21 @@ def create_premiere_xml_with_otio(
     
     logger.info(f"  OTIO timeline exported to {output_path}")
     
-    # 後処理: テロップをグラフィックに変換
-    # if telops:
-    #     logger.info(f"  Post-processing: Converting {len(telops)} telops to graphics...")
-    #     _post_process_telop_to_graphics_simple(str(output_path))
+    # 後処理: テロップをグラフィックに変換（完全なPremiere Pro互換形式）
+    if telops or ai_telops:
+        logger.info(f"  Post-processing: Converting telops to Premiere Pro graphics...")
+        from src.inference.fix_telop_complete import fix_telops_complete
+        
+        # 一時ファイルとして保存
+        temp_output = str(output_path).replace('.xml', '_temp.xml')
+        import shutil
+        shutil.move(str(output_path), temp_output)
+        
+        # テロップをグラフィックに変換
+        fix_telops_complete(temp_output, str(output_path))
+        
+        # 一時ファイルを削除
+        import os
+        os.remove(temp_output)
     
     return str(output_path)

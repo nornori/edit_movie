@@ -51,6 +51,7 @@ data/temp/
 models/checkpoints/
 models/checkpoints_50epochs/
 models/test_checkpoints/
+checkpoints/
 *.pth
 *.pkl
 
@@ -68,6 +69,16 @@ Thumbs.db
 # Archive
 archive/
 
+# Backups
+backups/
+
 # Temporary files
 *.tmp
 *.bak
+temp_features/
+
+# Test files (temporary)
+test_*.py
+
+# Preprocessed data
+preprocessed_data/

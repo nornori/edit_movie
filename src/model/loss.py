@@ -26,6 +26,7 @@ class MultiTrackLoss(nn.Module):
         asset_weight: float = 1.0,
         scale_weight: float = 1.0,
         position_weight: float = 1.0,
+        rotation_weight: float = 1.0,
         crop_weight: float = 1.0,
         ignore_inactive: bool = True
     ):
@@ -36,7 +37,8 @@ class MultiTrackLoss(nn.Module):
             active_weight: Weight for active classification loss
             asset_weight: Weight for asset classification loss
             scale_weight: Weight for scale regression loss
-            position_weight: Weight for position (x, y) regression loss
+            position_weight: Weight for position (x, y, anchor_x, anchor_y) regression loss
+            rotation_weight: Weight for rotation regression loss
             crop_weight: Weight for crop regression loss
             ignore_inactive: If True, only compute regression loss for active tracks
         """
@@ -46,6 +48,7 @@ class MultiTrackLoss(nn.Module):
         self.asset_weight = asset_weight
         self.scale_weight = scale_weight
         self.position_weight = position_weight
+        self.rotation_weight = rotation_weight
         self.crop_weight = crop_weight
         self.ignore_inactive = ignore_inactive
         
@@ -58,6 +61,7 @@ class MultiTrackLoss(nn.Module):
         logger.info(f"  asset_weight: {asset_weight}")
         logger.info(f"  scale_weight: {scale_weight}")
         logger.info(f"  position_weight: {position_weight}")
+        logger.info(f"  rotation_weight: {rotation_weight}")
         logger.info(f"  crop_weight: {crop_weight}")
         logger.info(f"  ignore_inactive: {ignore_inactive}")
     
@@ -74,7 +78,7 @@ class MultiTrackLoss(nn.Module):
             predictions: Dict with model predictions
                 - 'active': (batch, seq_len, num_tracks, 2)
                 - 'asset': (batch, seq_len, num_tracks, num_classes)
-                - 'scale', 'pos_x', 'pos_y', 'crop_*': (batch, seq_len, num_tracks, 1)
+                - 'scale', 'pos_x', 'pos_y', 'anchor_x', 'anchor_y', 'rotation', 'crop_*': (batch, seq_len, num_tracks, 1)
             targets: Dict with ground truth values (same structure as predictions)
             mask: Optional boolean mask (batch, seq_len) where True = valid data
         
@@ -142,7 +146,7 @@ class MultiTrackLoss(nn.Module):
         scale_loss = self.mse_loss(scale_pred, scale_target)
         scale_loss = (scale_loss * active_mask).sum() / active_count
         
-        # Position loss (x and y)
+        # Position loss (x, y, anchor_x, anchor_y)
         pos_x_pred = predictions['pos_x'].squeeze(-1)
         pos_x_target = targets['pos_x'].squeeze(-1)
         pos_x_loss = self.mse_loss(pos_x_pred, pos_x_target)
@@ -151,7 +155,21 @@ class MultiTrackLoss(nn.Module):
         pos_y_target = targets['pos_y'].squeeze(-1)
         pos_y_loss = self.mse_loss(pos_y_pred, pos_y_target)
         
-        position_loss = ((pos_x_loss + pos_y_loss) * active_mask).sum() / active_count
+        anchor_x_pred = predictions['anchor_x'].squeeze(-1)
+        anchor_x_target = targets['anchor_x'].squeeze(-1)
+        anchor_x_loss = self.mse_loss(anchor_x_pred, anchor_x_target)
+        
+        anchor_y_pred = predictions['anchor_y'].squeeze(-1)
+        anchor_y_target = targets['anchor_y'].squeeze(-1)
+        anchor_y_loss = self.mse_loss(anchor_y_pred, anchor_y_target)
+        
+        position_loss = ((pos_x_loss + pos_y_loss + anchor_x_loss + anchor_y_loss) * active_mask).sum() / active_count
+        
+        # Rotation loss
+        rotation_pred = predictions['rotation'].squeeze(-1)
+        rotation_target = targets['rotation'].squeeze(-1)
+        rotation_loss = self.mse_loss(rotation_pred, rotation_target)
+        rotation_loss = (rotation_loss * active_mask).sum() / active_count
         
         # Crop loss (l, r, t, b)
         crop_losses = []
@@ -169,6 +187,7 @@ class MultiTrackLoss(nn.Module):
             self.asset_weight * asset_loss +
             self.scale_weight * scale_loss +
             self.position_weight * position_loss +
+            self.rotation_weight * rotation_loss +
             self.crop_weight * crop_loss
         )
         
@@ -178,6 +197,7 @@ class MultiTrackLoss(nn.Module):
             'asset': asset_loss,
             'scale': scale_loss,
             'position': position_loss,
+            'rotation': rotation_loss,
             'crop': crop_loss
         }
 
@@ -317,7 +337,7 @@ def prepare_targets_from_input(
     
     Args:
         input_sequences: Input tensor of shape (batch, seq_len, features)
-            where features = num_tracks * 9 (active, asset, scale, x, y, crop_l, crop_r, crop_t, crop_b)
+            where features = num_tracks * 12 (active, asset, scale, x, y, anchor_x, anchor_y, rotation, crop_l, crop_r, crop_t, crop_b)
         num_tracks: Number of tracks
     
     Returns:
@@ -326,8 +346,8 @@ def prepare_targets_from_input(
     batch_size, seq_len, features = input_sequences.shape
     device = input_sequences.device
     
-    # Reshape to (batch, seq_len, num_tracks, 9)
-    reshaped = input_sequences.reshape(batch_size, seq_len, num_tracks, 9)
+    # Reshape to (batch, seq_len, num_tracks, 12)
+    reshaped = input_sequences.reshape(batch_size, seq_len, num_tracks, 12)
     
     # Extract each parameter
     targets = {
@@ -336,10 +356,13 @@ def prepare_targets_from_input(
         'scale': reshaped[:, :, :, 2:3],  # (batch, seq_len, num_tracks, 1)
         'pos_x': reshaped[:, :, :, 3:4],
         'pos_y': reshaped[:, :, :, 4:5],
-        'crop_l': reshaped[:, :, :, 5:6],
-        'crop_r': reshaped[:, :, :, 6:7],
-        'crop_t': reshaped[:, :, :, 7:8],
-        'crop_b': reshaped[:, :, :, 8:9]
+        'anchor_x': reshaped[:, :, :, 5:6],
+        'anchor_y': reshaped[:, :, :, 6:7],
+        'rotation': reshaped[:, :, :, 7:8],
+        'crop_l': reshaped[:, :, :, 8:9],
+        'crop_r': reshaped[:, :, :, 9:10],
+        'crop_t': reshaped[:, :, :, 10:11],
+        'crop_b': reshaped[:, :, :, 11:12]
     }
     
     return targets

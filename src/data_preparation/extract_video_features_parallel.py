@@ -237,7 +237,7 @@ def _align_text_features(whisper_results: List[Dict], total_duration: float) -> 
 
 def _extract_telop_features(video_path: str, total_duration: float, xml_dir: str = 'editxml') -> pd.DataFrame:
     """XMLからテロップ情報を抽出して時系列データに変換"""
-    from telop_extractor import TelopExtractor
+    from src.data_preparation.telop_extractor import TelopExtractor
     from pathlib import Path
     
     # 対応するXMLファイルを探す

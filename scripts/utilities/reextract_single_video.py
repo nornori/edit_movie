@@ -5,10 +5,10 @@ import sys
 import os
 from pathlib import Path
 
-# Add current directory to path
-sys.path.insert(0, '.')
+# Add project root to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from extract_video_features_parallel import extract_features_worker
+from src.data_preparation.extract_video_features_parallel import extract_features_worker
 import pandas as pd
 import logging
 

@@ -1,0 +1,1974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence id="sequence-1">
+		<name>bandicam 2025-06-22 02-16-39-762</name>
+		<duration>24549</duration>
+		<rate>
+			<timebase>59</timebase>
+			<ntsc>TRUE</ntsc>
+		</rate>
+		<media>
+			<video>
+				<format/>
+				<track>
+					<clipitem frameBlend="FALSE" id="clipitem-1">
+						<file id="file-1">
+							<pathurl>file://localhost/D:/%E5%88%87%E3%82%8A%E6%8A%9C%E3%81%8D/2025-6/2025-6-22/bandicam%202025-06-22%2002-16-39-762.mp4</pathurl>
+							<name>bandicam 2025-06-22 02-16-39-762.mp4</name>
+							<rate>
+								<timebase>59</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<duration>24549</duration>
+							<timecode>
+								<rate>
+									<timebase>59</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video/>
+								<audio/>
+							</media>
+						</file>
+						<name>bandicam 2025-06-22 02-16-39-762</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>24543</duration>
+						<start>0</start>
+						<end>24543</end>
+						<in>0</in>
+						<out>24543</out>
+					</clipitem>
+				</track>
+				<track>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-1">
+						<file id="file-2">
+							<name>グラフィック</name>
+							<mediaSource>GraphicAndType</mediaSource>
+							<rate>
+								<timebase>59</timebase>
+								<ntsc>TRUE</ntsc>
+							</rate>
+							<timecode>
+								<rate>
+									<timebase>59</timebase>
+									<ntsc>TRUE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video>
+									<samplecharacteristics>
+										<rate>
+											<timebase>58</timebase>
+											<ntsc>TRUE</ntsc>
+										</rate>
+										<width>1080</width>
+										<height>1920</height>
+										<anamorphic>FALSE</anamorphic>
+										<pixelaspectratio>square</pixelaspectratio>
+										<fielddominance>none</fielddominance>
+									</samplecharacteristics>
+								</video>
+							</media>
+						</file>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>431</duration>
+						<start>0</start>
+						<end>431</end>
+						<in>0</in>
+						<out>431</out>
+						<filter>
+							<effect>
+								<name>心配でございますミルクお嬢様でも全然大丈夫だよ 見る子女様睡眠というのはとても大事なものです</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-2">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>288</duration>
+						<start>431</start>
+						<end>719</end>
+						<in>0</in>
+						<out>288</out>
+						<filter>
+							<effect>
+								<name>1日12時間寝てください 見る子も寝たいんだけど</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-3">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>282</duration>
+						<start>719</start>
+						<end>1001</end>
+						<in>0</in>
+						<out>282</out>
+						<filter>
+							<effect>
+								<name>なんか全然寝れなくて 何かお困りごとでもん</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-4">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>486</duration>
+						<start>1001</start>
+						<end>1487</end>
+						<in>0</in>
+						<out>486</out>
+						<filter>
+							<effect>
+								<name>なんかちょっと職場でなんか全然うまくいかなくて わかりますな気持ち</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-5">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>660</duration>
+						<start>1487</start>
+						<end>2147</end>
+						<in>0</in>
+						<out>660</out>
+						<filter>
+							<effect>
+								<name>人もたくさん人がいる何をしたらいいね ちょっとちょっとねここの席ちょっと後ろがうるさすぎて全然波の声が聞こえないんだけど</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-6">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>354</duration>
+						<start>2147</start>
+						<end>2501</end>
+						<in>0</in>
+						<out>354</out>
+						<filter>
+							<effect>
+								<name>お嬢様ん ちょっと違う席でいいかな</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-7">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>252</duration>
+						<start>2501</start>
+						<end>2753</end>
+						<in>0</in>
+						<out>252</out>
+						<filter>
+							<effect>
+								<name>うひよのチェキのお医者 大丈夫大丈夫大丈夫大丈夫</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-8">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>432</duration>
+						<start>2753</start>
+						<end>3185</end>
+						<in>0</in>
+						<out>432</out>
+						<filter>
+							<effect>
+								<name>お嬢様悪いすぎてちょっととんでもないですよね なんか出場ある口言ってませんあそこで</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-9">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>342</duration>
+						<start>3185</start>
+						<end>3527</end>
+						<in>0</in>
+						<out>342</out>
+						<filter>
+							<effect>
+								<name>聞かないでください知れながらはみな子女様のことではございません われがち</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-10">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>342</duration>
+						<start>3527</start>
+						<end>3869</end>
+						<in>0</in>
+						<out>342</out>
+						<filter>
+							<effect>
+								<name>どうされましたかミルクお嬢様なんか a ちょっとエコエコのオーナーさんですよね</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-11">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>576</duration>
+						<start>3869</start>
+						<end>4445</end>
+						<in>0</in>
+						<out>576</out>
+						<filter>
+							<effect>
+								<name>あはいこちゃんのオーナーなんかそこにいるなんか弁とかいう出場めっちゃ失礼で 何をされますかミルクめっちゃないたんだけど</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-12">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>378</duration>
+						<start>4445</start>
+						<end>4823</end>
+						<in>0</in>
+						<out>378</out>
+						<filter>
+							<effect>
+								<name>ミルクお嬢様大変な人がいるとこう見らーとか言う人もなんか話つまんなかったし お嬢様</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-13">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>408</duration>
+						<start>4823</start>
+						<end>5231</end>
+						<in>0</in>
+						<out>408</out>
+						<filter>
+							<effect>
+								<name>お嬢様夜はのまれにしていただいてよなんかファミマのなんかファミチキ頼むとしたらなんか7月だったみたいなの</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-14">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>354</duration>
+						<start>5231</start>
+						<end>5585</end>
+						<in>0</in>
+						<out>354</out>
+						<filter>
+							<effect>
+								<name>話されてマジにもはないし ごめんごくかいな思いをさせてしまい大変申し訳ございませんでしたどの</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-15">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>396</duration>
+						<start>5585</start>
+						<end>5981</end>
+						<in>0</in>
+						<out>396</out>
+						<filter>
+							<effect>
+								<name>キャストが一番よろしかったでしょうかでもなんか波がこれから接客してくれるって あっかいかまりました私もでは</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-16">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>324</duration>
+						<start>5981</start>
+						<end>6305</end>
+						<in>0</in>
+						<out>324</out>
+						<filter>
+							<effect>
+								<name>くださいませんラビッシュはとっては高中席客の方をよりもまれに落としてもらってよろしいでしょうか 何</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-17">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>468</duration>
+						<start>6305</start>
+						<end>6773</end>
+						<in>0</in>
+						<out>468</out>
+						<filter>
+							<effect>
+								<name>他のお客様のボイスに乗ってしまいますののまれになんかミランがなんかファミチキの話を</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-18">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>504</duration>
+						<start>6773</start>
+						<end>7277</end>
+						<in>0</in>
+						<out>504</out>
+						<filter>
+							<effect>
+								<name>リーちゃんは違いますリーちゃんはこういうものないですよね ありがとうございましたかお嬢様ございませんおさめていただいてよろしいでしょうか</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-19">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>324</duration>
+						<start>7277</start>
+						<end>7601</end>
+						<in>0</in>
+						<out>324</out>
+						<filter>
+							<effect>
+								<name>それかあの出勤していない出場はどこかに知ってください はい</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-20">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>390</duration>
+						<start>7661</start>
+						<end>8051</end>
+						<in>0</in>
+						<out>390</out>
+						<filter>
+							<effect>
+								<name>高中さん大変申し訳ございません声がでかいですよ 上がったつびるく静かにさめるねじゃあ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-21">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>173</duration>
+						<start>8051</start>
+						<end>8224</end>
+						<in>0</in>
+						<out>173</out>
+						<filter>
+							<effect>
+								<name>すいません こんなに</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-22">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>8224</start>
+						<end>8404</end>
+						<in>0</in>
+						<out>180</out>
+						<filter>
+							<effect>
+								<name>優しいお嬢様だな</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-23">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>408</duration>
+						<start>8440</start>
+						<end>8848</end>
+						<in>0</in>
+						<out>408</out>
+						<filter>
+							<effect>
+								<name>早くお座りに乗られては あこりさっていいのもちろん中にさる</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-24">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>348</duration>
+						<start>8848</start>
+						<end>9196</end>
+						<in>0</in>
+						<out>348</out>
+						<filter>
+							<effect>
+								<name>先ほどのお話に戻ります 何かお困り事でもあるのでしょうかがちゃがちゃがちゃがちゃ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-25">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>228</duration>
+						<start>9256</start>
+						<end>9484</end>
+						<in>0</in>
+						<out>228</out>
+						<filter>
+							<effect>
+								<name>ちょここでやらないでくださいね 入っ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-26">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>516</duration>
+						<start>9484</start>
+						<end>10000</end>
+						<in>0</in>
+						<out>516</out>
+						<filter>
+							<effect>
+								<name>ミルクお嬢様何職場でのお話聞かせてください いやの職場はまあミルクの話はどういうの見るけど</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-27">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>426</duration>
+						<start>10000</start>
+						<end>10426</end>
+						<in>0</in>
+						<out>426</out>
+						<filter>
+							<effect>
+								<name>で波の話聞かせてほしいなぁ 私の話ですかねえそうもございません</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-28">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>438</duration>
+						<start>10426</start>
+						<end>10864</end>
+						<in>0</in>
+						<out>438</out>
+						<filter>
+							<effect>
+								<name>今日はミルクお嬢様の疲れを癒やせたら私もとも幸せでかっ えでもミルク</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-29">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>222</duration>
+						<start>10864</start>
+						<end>11086</end>
+						<in>0</in>
+						<out>222</out>
+						<filter>
+							<effect>
+								<name>なんか ミルクに</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-30">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>384</duration>
+						<start>11086</start>
+						<end>11470</end>
+						<in>0</in>
+						<out>384</out>
+						<filter>
+							<effect>
+								<name>なんか俺色の首ははめてくれる人が欲しいなと思ってて</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-31">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>11470</start>
+						<end>11710</end>
+						<in>0</in>
+						<out>240</out>
+						<filter>
+							<effect>
+								<name>なるほど うーんなんか探してるんだよね</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-32">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>546</duration>
+						<start>11710</start>
+						<end>12256</end>
+						<in>0</in>
+						<out>546</out>
+						<filter>
+							<effect>
+								<name>それは何かを参考に出されたんですか 何か職場の人もなんか着信よんでなんか俺色に染めてやるとか</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-33">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>504</duration>
+						<start>12256</start>
+						<end>12760</end>
+						<in>0</in>
+						<out>504</out>
+						<filter>
+							<effect>
+								<name>なんか俺から逃げられないよみたいなこと言ってて なんでお前3名って言ってなんかいいなぁって恨ましいなぁと思ったの</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-34">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>492</duration>
+						<start>12760</start>
+						<end>13252</end>
+						<in>0</in>
+						<out>492</out>
+						<filter>
+							<effect>
+								<name>いやいやボイスもしかしてミルクお嬢様はそういう感じの男性が好きなのですか 何かでもいいなぁと思って</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-35">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>324</duration>
+						<start>13252</start>
+						<end>13576</end>
+						<in>0</in>
+						<out>324</out>
+						<filter>
+							<effect>
+								<name>なるほど 私結構私は私も</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-36">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>13576</start>
+						<end>13816</end>
+						<in>0</in>
+						<out>240</out>
+						<filter>
+							<effect>
+								<name>そのような対応することも可能でございますよ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-37">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>420</duration>
+						<start>13876</start>
+						<end>14296</end>
+						<in>0</in>
+						<out>420</out>
+						<filter>
+							<effect>
+								<name>もしくはあなたが望むボイスをお取りすることも可能です</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-38">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>234</duration>
+						<start>14296</start>
+						<end>14530</end>
+						<in>0</in>
+						<out>234</out>
+						<filter>
+							<effect>
+								<name>なんか同様してる本当やん いいいい</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-39">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>336</duration>
+						<start>14530</start>
+						<end>14866</end>
+						<in>0</in>
+						<out>336</out>
+						<filter>
+							<effect>
+								<name>出場は同様なんて全くしませんしたいよねそうだね</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-40">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>516</duration>
+						<start>14944</start>
+						<end>15460</end>
+						<in>0</in>
+						<out>516</out>
+						<filter>
+							<effect>
+								<name>ミルクお嬢様がお幸せに今日寝れるように 地域などボイスなどいかがですか</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-41">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>354</duration>
+						<start>15460</start>
+						<end>15814</end>
+						<in>0</in>
+						<out>354</out>
+						<filter>
+							<effect>
+								<name>幸せに寝れるようにチェキって何 それはもちろんどういう意味それ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-42">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>444</duration>
+						<start>15814</start>
+						<end>16258</end>
+						<in>0</in>
+						<out>444</out>
+						<filter>
+							<effect>
+								<name>ミルクお嬢様のやっぱさぁここのさあ七時ってさあなんかみんななぁ 魅力のことさあ必ずしか思ってないよね</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-43">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>401</duration>
+						<start>16258</start>
+						<end>16659</end>
+						<in>0</in>
+						<out>401</out>
+						<filter>
+							<effect>
+								<name>そうもございません なんかミルクのことを客だって客って金としか思ってないような</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-44">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>360</duration>
+						<start>16659</start>
+						<end>17019</end>
+						<in>0</in>
+						<out>360</out>
+						<filter>
+							<effect>
+								<name>もちろん私もお嬢様の幸せを寝ていることでございます なんかなぁ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-45">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>492</duration>
+						<start>17019</start>
+						<end>17511</end>
+						<in>0</in>
+						<out>492</out>
+						<filter>
+							<effect>
+								<name>それであれば全然今日お話だけでもまた会いに来てくれたら嬉しいななんて 波も持っておりますよ今お母さん</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-46">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>228</duration>
+						<start>17511</start>
+						<end>17739</end>
+						<in>0</in>
+						<out>228</out>
+						<filter>
+							<effect>
+								<name>から今お忘れ出しました あっ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-47">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>17739</start>
+						<end>17919</end>
+						<in>0</in>
+						<out>180</out>
+						<filter>
+							<effect>
+								<name>あったまーす</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-48">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>336</duration>
+						<start>17919</start>
+						<end>18255</end>
+						<in>0</in>
+						<out>336</out>
+						<filter>
+							<effect>
+								<name>ちょっと待ってねー ちょっとちょっとしました</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-49">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>348</duration>
+						<start>18327</start>
+						<end>18675</end>
+						<in>0</in>
+						<out>348</out>
+						<filter>
+							<effect>
+								<name>ミルク様のミルクお嬢様のご指示とあれば</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-50">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>306</duration>
+						<start>18687</start>
+						<end>18993</end>
+						<in>0</in>
+						<out>306</out>
+						<filter>
+							<effect>
+								<name>さっきのようなことを 可能ですよ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-51">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>198</duration>
+						<start>18993</start>
+						<end>19191</end>
+						<in>0</in>
+						<out>198</out>
+						<filter>
+							<effect>
+								<name>お嬢様 何か</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-52">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>618</duration>
+						<start>19191</start>
+						<end>19809</end>
+						<in>0</in>
+						<out>618</out>
+						<filter>
+							<effect>
+								<name>お嬢様首をつけていますねえそうだからそのだから首をはめてほしいなと思ってなんかそれをイメージしてなんかチョーカーつけてきたんだよね</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-53">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>396</duration>
+						<start>19809</start>
+						<end>20205</end>
+						<in>0</in>
+						<out>396</out>
+						<filter>
+							<effect>
+								<name>素敵ですねお嬢様はまったくのだよねこうまったお嬢様だ 両方</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-54">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>288</duration>
+						<start>20205</start>
+						<end>20493</end>
+						<in>0</in>
+						<out>288</out>
+						<filter>
+							<effect>
+								<name>その首は私は前がしてもよろしい</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-55">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>198</duration>
+						<start>20493</start>
+						<end>20691</end>
+						<in>0</in>
+						<out>198</out>
+						<filter>
+							<effect>
+								<name>お前こちらの上手くできるのか</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-56">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>252</duration>
+						<start>20691</start>
+						<end>20943</end>
+						<in>0</in>
+						<out>252</out>
+						<filter>
+							<effect>
+								<name>おー 涙さんしばしめが入りましたよ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-57">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>240</duration>
+						<start>20943</start>
+						<end>21183</end>
+						<in>0</in>
+						<out>240</out>
+						<filter>
+							<effect>
+								<name>ちょっとだけちょっとだけ待ちなさい</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-58">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>444</duration>
+						<start>21183</start>
+						<end>21627</end>
+						<in>0</in>
+						<out>444</out>
+						<filter>
+							<effect>
+								<name>ちょっとだけ待ちなさい まあ全然言っても言ってもいいよ全然もちろん私はミルクお嬢様のおそばに</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-59">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>306</duration>
+						<start>21627</start>
+						<end>21933</end>
+						<in>0</in>
+						<out>306</out>
+						<filter>
+							<effect>
+								<name>いやミルクお嬢様の首を手話しません</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-60">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>396</duration>
+						<start>21939</start>
+						<end>22335</end>
+						<in>0</in>
+						<out>396</out>
+						<filter>
+							<effect>
+								<name>当たり前じゃないしと言いました まあでも他の人呼んでるんだったらミルク待ってるから行ってきていいよ</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-61">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>180</duration>
+						<start>22335</start>
+						<end>22515</end>
+						<in>0</in>
+						<out>180</out>
+						<filter>
+							<effect>
+								<name>お嬢様待てができるんです</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-62">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>204</duration>
+						<start>22515</start>
+						<end>22719</end>
+						<in>0</in>
+						<out>204</out>
+						<filter>
+							<effect>
+								<name>好き好き好き もう好き好きこれで待ちてくれそう</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-63">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>198</duration>
+						<start>22719</start>
+						<end>22917</end>
+						<in>0</in>
+						<out>198</out>
+						<filter>
+							<effect>
+								<name>ありがとう ラーミンが帰った車で</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-64">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>348</duration>
+						<start>22917</start>
+						<end>23265</end>
+						<in>0</in>
+						<out>348</out>
+						<filter>
+							<effect>
+								<name>お嬢様しばしめが入ってしまうか あれお客様方お兄様方</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-65">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>288</duration>
+						<start>23283</start>
+						<end>23571</end>
+						<in>0</in>
+						<out>288</out>
+						<filter>
+							<effect>
+								<name>あげしちゃうし待ってるね 待ってる泣いてらっしゃい</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-66">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>336</duration>
+						<start>23571</start>
+						<end>23907</end>
+						<in>0</in>
+						<out>336</out>
+						<filter>
+							<effect>
+								<name>こいつ強い 勝てない</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-67">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>174</duration>
+						<start>23907</start>
+						<end>24081</end>
+						<in>0</in>
+						<out>174</out>
+						<filter>
+							<effect>
+								<name>ミルクお嬢様どうされました 何かお困りください</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-68">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>162</duration>
+						<start>24081</start>
+						<end>24243</end>
+						<in>0</in>
+						<out>162</out>
+						<filter>
+							<effect>
+								<name>いやなんかもう帰ろうか</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+					<clipitem frameBlend="FALSE" id="clipitem-telop-69">
+						<file id="file-2"/>
+						<name>グラフィック</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>264</duration>
+						<start>24243</start>
+						<end>24507</end>
+						<in>0</in>
+						<out>264</out>
+						<filter>
+							<effect>
+								<name>承知いたしました もう最後生産すみません</name>
+								<effectid>GraphicAndType</effectid>
+								<effectcategory>graphic</effectcategory>
+								<effecttype>filter</effecttype>
+								<mediatype>video</mediatype>
+								<pproBypass>false</pproBypass>
+							</effect>
+						</filter>
+					</clipitem>
+				</track>
+			</video>
+			<audio>
+				<track>
+					<clipitem frameBlend="FALSE" id="audioclip-1">
+						<file id="file-1"/>
+						<name>bandicam 2025-06-22 02-16-39-762 - Audio</name>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<rate>
+							<timebase>59</timebase>
+							<ntsc>TRUE</ntsc>
+						</rate>
+						<duration>24543</duration>
+						<start>0</start>
+						<end>24543</end>
+						<in>0</in>
+						<out>24543</out>
+					</clipitem>
+				</track>
+			</audio>
+		</media>
+	</sequence>
+</xmeml>

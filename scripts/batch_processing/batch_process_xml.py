@@ -6,11 +6,15 @@ This script processes all XML files in the editxml directory and generates:
 - CSV files with detailed track information (for inspection)
 """
 import os
+import sys
 import argparse
 import logging
 from pathlib import Path
 from tqdm import tqdm
-from premiere_xml_parser import PremiereXMLParser
+
+# Add project root to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+from src.data_preparation.premiere_xml_parser import PremiereXMLParser
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)

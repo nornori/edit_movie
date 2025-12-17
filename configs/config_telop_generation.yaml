@@ -1,0 +1,51 @@
+# AI Telop Generation Configuration
+
+telop_generation:
+  enabled: true
+  
+  # Speech Recognition Settings
+  speech:
+    enabled: true
+    model: "whisper"  # ASR model type: "whisper" or "vosk"
+    model_size: "small"  # Whisper model size: "tiny", "small", "medium", "large"
+    language: "ja"  # Language code: "ja" (Japanese), "en" (English)
+    min_segment_duration: 0.5  # Minimum segment duration in seconds (merge shorter segments)
+    max_segment_duration: 5.0  # Maximum segment duration in seconds (split longer segments)
+    cache_results: true  # Cache ASR results to avoid re-processing
+  
+  # Emotion Detection Settings
+  emotion:
+    enabled: false  # 感情検出を無効化
+    confidence_threshold: 0.6  # Minimum confidence to generate emotion telop (0.0 to 1.0)
+    
+    # Laughter Detection
+    laughter:
+      enabled: true
+      text_short: "w"  # Text for short laughter (< 1 second)
+      text_medium: "www"  # Text for medium laughter (1-2 seconds)
+      text_long: "wwww"  # Text for long laughter (> 2 seconds)
+      pitch_std_threshold: 50.0  # Pitch variation threshold (Hz)
+      energy_threshold: 0.3  # Energy threshold (0.0 to 1.0)
+    
+    # Surprise Detection
+    surprise:
+      enabled: true
+      text: "！"  # Text for surprise
+      text_alt: "えっ"  # Alternative text for surprise
+      pitch_delta_threshold: 100.0  # Sudden pitch increase threshold (Hz)
+      max_duration: 1.0  # Maximum duration for surprise (seconds)
+    
+    # Sadness Detection
+    sadness:
+      enabled: true
+      text: "..."  # Text for sadness
+      text_alt: "悲"  # Alternative text for sadness
+      pitch_mean_threshold: 150.0  # Low pitch threshold (Hz)
+      energy_threshold: 0.1  # Low energy threshold (0.0 to 1.0)
+  
+  # Output Settings
+  output:
+    separate_tracks: true  # Create separate tracks for different telop types
+    ocr_track_prefix: "OCR"  # Prefix for OCR telop tracks
+    speech_track_prefix: "Speech"  # Prefix for speech telop tracks
+    emotion_track_prefix: "Emotion"  # Prefix for emotion telop tracks
