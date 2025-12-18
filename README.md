@@ -71,7 +71,7 @@ python -m src.inference.inference_pipeline "your_video.mp4" outputs/inference_re
 # Premiere Proで output.xml を開く
 ```
 
-詳しくは [QUICK_START.md](QUICK_START.md) を参照してください。
+詳しくは [QUICK_START.md](docs/QUICK_START.md) を参照してください。
 
 ## 📚 ドキュメント
 
