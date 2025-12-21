@@ -1,7 +1,11 @@
-# 動画編集AI - プロジェクト全体の流れ
+# 動画編集AI - プロジェクト全体の流れ（カット選択版）
 
 ## 🎯 プロジェクトの目的
-動画から自動的に編集パラメータ（カット位置、ズーム、クロップ、テロップ）を予測し、Premiere Pro用のXMLを生成する
+動画から自動的に**最適なカット位置**を予測し、Premiere Pro用のXMLを生成する
+
+**現在の開発フォーカス**: カット選択（Cut Selection）に特化
+- ✅ カット選択モデル: 高精度で動作中（F1スコア: 0.5630）
+- ⚠️ グラフィック配置・テロップ生成: 精度が低いため今後の課題
 
 ---
 
@@ -9,46 +13,55 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        1. データ準備フェーズ                        │
+│                    1. データ準備フェーズ                          │
 └─────────────────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
     │ 1-1. 編集済み動画 + Premiere Pro XMLを用意           │
-    │      (editxml/フォルダ内)                            │
+    │      (data/raw/editxml/)                             │
     └──────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
-    │ 1-2. XMLから編集パラメータを抽出                      │
-    │      python premiere_xml_parser.py                   │
-    │      → output_labels/*.csv                           │
-    └──────────────────────────────────────────────────────┘
-                                  ↓
-    ┌──────────────────────────────────────────────────────┐
-    │ 1-3. 動画から特徴量を抽出                            │
+    │ 1-2. 動画から特徴量を抽出                            │
     │      python extract_video_features_parallel.py       │
-    │      → input_features/*.csv                          │
-    │      (音声、映像、テロップの特徴量)                   │
+    │      → data/processed/source_features/*.csv          │
+    │      (音声 + 映像特徴量)                             │
     └──────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
-    │ 1-4. 特徴量とラベルを統合                            │
-    │      python data_preprocessing.py                    │
-    │      → master_training_data.csv                      │
+    │ 1-3. XMLからアクティブラベルを抽出                   │
+    │      python scripts/extract_active_labels.py         │
+    │      → data/processed/active_labels/*.csv            │
+    │      (採用/不採用の判定)                             │
+    └──────────────────────────────────────────────────────┘
+                                  ↓
+    ┌──────────────────────────────────────────────────────┐
+    │ 1-4. カット選択用データを作成                        │
+    │      python scripts/create_cut_selection_data.py     │
+    │      → preprocessed_data/train_sequences.npz         │
+    │      → preprocessed_data/val_sequences.npz           │
+    │      (動画単位で分割、データリーク防止)               │
     └──────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
-│                        2. 学習フェーズ                            │
+│                    2. 学習フェーズ                                │
 └─────────────────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
-    │ 2-1. マルチモーダルモデルの学習                       │
-    │      python training.py --config config_multimodal.yaml│
-    │      → checkpoints/best_model.pth                    │
-    │      (音声 + 映像 + トラック特徴量を統合)              │
+    │ 2-1. カット選択モデルの学習                          │
+    │      train_cut_selection.bat                         │
+    │      → checkpoints_cut_selection/best_model.pth      │
+    │      (Transformer + Gated Fusion + Focal Loss)       │
+    └──────────────────────────────────────────────────────┘
+                                  ↓
+    ┌──────────────────────────────────────────────────────┐
+    │ 2-2. 学習状況をリアルタイム確認                      │
+    │      ブラウザで view_training.html を開く            │
+    │      (2秒ごとに自動更新される6つのグラフ)            │
     └──────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
-│                        3. 推論フェーズ                            │
+│                    3. 推論フェーズ                                │
 └─────────────────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
@@ -57,20 +70,15 @@
     └──────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
-    │ 3-2. モデルで編集パラメータを予測                     │
-    │      python inference_pipeline.py                    │
-    │      → temp.xml (OTIO生成、音声カット済み)           │
+    │ 3-2. モデルでカット位置を予測                        │
+    │      run_inference.bat "video.mp4"                   │
+    │      → outputs/inference_results/result.xml          │
+    │      (クリップフィルタリング、ギャップ結合)           │
     └──────────────────────────────────────────────────────┘
                                   ↓
     ┌──────────────────────────────────────────────────────┐
-    │ 3-3. テロップをグラフィックに変換                     │
-    │      python fix_telop_simple.py temp.xml final.xml   │
-    │      → final.xml (Premiere Pro互換)                  │
-    └──────────────────────────────────────────────────────┘
-                                  ↓
-    ┌──────────────────────────────────────────────────────┐
-    │ 3-4. Premiere Proで開く                              │
-    │      final.xmlをインポート                           │
+    │ 3-3. Premiere Proで開く                              │
+    │      result.xmlをインポート                          │
     └──────────────────────────────────────────────────────┘
 ```
 
@@ -82,262 +90,237 @@
 
 #### ステップ1-1: 編集済み動画とXMLを用意
 ```
-editxml/
+data/raw/editxml/
 ├── video1.mp4
 ├── video1.xml  (Premiere ProからエクスポートしたXML)
 ├── video2.mp4
 └── video2.xml
 ```
 
-#### ステップ1-2: XMLから編集パラメータを抽出
+#### ステップ1-2: 動画から特徴量を抽出
 ```bash
-python premiere_xml_parser.py
+python -m src.data_preparation.extract_video_features_parallel
 ```
-**出力**: `output_labels/video1_labels.csv`
-- カット位置（start_frame, end_frame）
-- スケール（scale）
-- 位置（position_x, position_y）
-- クロップ（crop_left, crop_right, crop_top, crop_bottom）
 
-#### ステップ1-3: 動画から特徴量を抽出
-```bash
-python extract_video_features_parallel.py
-```
-**出力**: `input_features/video1_features.csv`
+**出力**: `data/processed/source_features/video1_features.csv`
 
 **抽出される特徴量**:
-- **音声特徴量** (17次元):
-  - audio_energy_rms: 音声エネルギー
-  - audio_is_speaking: 発話検出
-  - silence_duration_ms: 無音時間
-  - text_is_active: 音声認識テキスト有無
-  - telop_active: テロップ有無
-  - speech_emb_0~5: 音声認識テキストの埋め込み
-  - telop_emb_0~5: テロップテキストの埋め込み
+- **音声特徴量（215次元）**:
+  - 基本音声: RMS energy, 発話検出, 無音区間, speaker_id
+  - 話者埋め込み: 192次元（pyannote.audio）
+  - 感情表現: pitch, spectral_centroid, MFCC等
+  - テキスト・テロップフラグ
+  
+- **映像特徴量（522次元）**:
+  - 基本映像: シーン変化, モーション, 顕著性マップ
+  - 顔特徴量: 位置, サイズ, 表情（MediaPipe）
+  - CLIP特徴量: 512次元の視覚的意味表現
 
-- **映像特徴量** (522次元):
-  - scene_change: シーン変化検出
-  - visual_motion: 動き検出
-  - saliency_x, saliency_y: 注目領域
-  - face_count: 顔の数
-  - face_center_x, face_center_y: 顔の中心位置
-  - face_size: 顔のサイズ
-  - face_mouth_open: 口の開き具合
-  - face_eyebrow_raise: 眉の上がり具合
-  - clip_0~511: CLIP視覚埋め込み
-
-#### ステップ1-4: 特徴量とラベルを統合
+#### ステップ1-3: XMLからアクティブラベルを抽出
 ```bash
-python data_preprocessing.py
+python scripts/extract_active_labels.py
 ```
-**出力**: `master_training_data.csv`
-- 特徴量とラベルを時間軸で整列
-- 学習用データセットとして保存
+
+**出力**: `data/processed/active_labels/video1_active.csv`
+
+**抽出される情報**:
+- time: タイムスタンプ
+- active: 採用（1）/ 不採用（0）
+
+#### ステップ1-4: カット選択用データを作成
+```bash
+python scripts/create_cut_selection_data.py
+```
+
+**処理内容**:
+1. 特徴量とアクティブラベルを時間ベースでマージ
+2. シーケンス分割（長さ1000フレーム、オーバーラップ500）
+3. **動画単位で学習/検証に分割**（データリーク防止）
+   - 68本の動画 → 学習54本、検証14本
+   - 同じ動画のシーケンスは必ず同じセットに配置
+4. 特徴量の正規化（StandardScaler）
+
+**出力**:
+- `preprocessed_data/train_sequences_cut_selection.npz` (210シーケンス)
+- `preprocessed_data/val_sequences_cut_selection.npz` (91シーケンス)
+- `preprocessed_data/audio_scaler_cut_selection.pkl`
+- `preprocessed_data/visual_scaler_cut_selection.pkl`
 
 ---
 
 ### フェーズ2: 学習
 
-#### モデルの学習
+#### ステップ2-1: カット選択モデルの学習
 ```bash
-python training.py --config config_multimodal.yaml
+train_cut_selection.bat
 ```
 
-**モデル構造**:
-```
-┌─────────────────────────────────────────────────────────┐
-│                  マルチモーダルモデル                      │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
-│  │ 音声特徴量    │  │ 映像特徴量    │  │トラック特徴量 │ │
-│  │  (17次元)    │  │  (522次元)   │  │  (240次元)   │ │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘ │
-│         │                 │                 │         │
-│         ↓                 ↓                 ↓         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
-│  │ Audio Encoder│  │Visual Encoder│  │Track Encoder │ │
-│  │  (128次元)   │  │  (256次元)   │  │  (256次元)   │ │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘ │
-│         │                 │                 │         │
-│         └─────────┬───────┴─────────────────┘         │
-│                   ↓                                   │
-│         ┌──────────────────────┐                      │
-│         │  Fusion Transformer  │                      │
-│         │   (640次元 → 512次元) │                      │
-│         └──────────┬───────────┘                      │
-│                    ↓                                  │
-│         ┌──────────────────────┐                      │
-│         │   予測ヘッド           │                      │
-│         │  - Active (2クラス)   │                      │
-│         │  - Scale (1次元)      │                      │
-│         │  - Position (2次元)   │                      │
-│         │  - Crop (4次元)       │                      │
-│         └──────────────────────┘                      │
-└─────────────────────────────────────────────────────────┘
-```
+**モデルアーキテクチャ**:
+- **入力**: 音声特徴量（215次元）+ 映像特徴量（522次元）
+- **エンコーダ**: Transformer Encoder（6層、8ヘッド、256次元）
+- **融合**: Gated Fusion（動的な重み付け）
+- **出力**: Active判定（2クラス分類）
 
-**出力**: `checkpoints_50epochs/best_model.pth`
+**学習設定**:
+- エポック数: 50
+- バッチサイズ: 16
+- 学習率: 0.0001
+- 損失関数: Focal Loss（alpha=0.70、gamma=2.0）
+  - 採用見逃し（False Negative）に2.3倍のペナルティ
+- Total Variation Loss: 0.05（時間的な滑らかさ）
+- Early Stopping: 20エポック
+
+**学習時間**: 約1-2時間（GPU使用時）
+
+#### ステップ2-2: 学習状況をリアルタイム確認
+
+ブラウザで `checkpoints_cut_selection/view_training.html` を開く
+
+**可視化される情報**（2秒ごとに自動更新）:
+1. 損失関数（Train/Val Loss）
+2. 損失の内訳（CE Loss vs TV Loss）
+3. 分類性能（Accuracy & F1 Score）
+4. Precision, Recall, Specificity
+5. 最適閾値の推移
+6. 予測の採用/不採用割合
+
+**保存されるファイル**:
+- `best_model.pth`: 最良モデル（F1スコア最大）
+- `inference_params.yaml`: 推論パラメータ（最適閾値等）
+- `training_progress.png`: リアルタイムグラフ
+- `training_final.png`: 最終グラフ（高解像度）
+- `training_history.csv`: 学習履歴
 
 ---
 
-### フェーズ3: 推論（新しい動画の自動編集）
+### フェーズ3: 推論
 
-#### ステップ3-1 & 3-2: 推論実行
+#### ステップ3-1: 新しい動画でカット位置を予測
 ```bash
-python inference_pipeline.py \
-    "D:\videos\new_video.mp4" \
-    --model checkpoints_50epochs/best_model.pth \
-    --output temp.xml
+run_inference.bat "path\to\your_video.mp4"
 ```
 
-**処理内容**:
-1. 動画から特徴量を自動抽出
-2. モデルで編集パラメータを予測
-3. OTIOを使用してXMLを生成
-   - 映像と音声を同じ位置でカット
-   - テロップに`[Telop]`マーカーを付与
+**処理フロー**:
+1. 動画から特徴量を抽出
+2. 特徴量を正規化
+3. モデルで予測
+4. **クリップフィルタリング**:
+   - 最適閾値でActive判定
+   - 最小継続時間: 3.0秒
+   - ギャップ結合: 2.0秒以内
+   - 優先順位付け: Active確率順
+   - 合計時間制限: 目標90秒、最大150秒
+5. Premiere Pro XML生成
 
-**出力**: `temp.xml` (音声カット済み、テロップはマーカー付き)
+**出力**: `outputs/inference_results/result.xml`
 
-#### ステップ3-3: テロップをグラフィックに変換
-```bash
-python fix_telop_simple.py temp.xml final.xml
-```
+#### ステップ3-2: Premiere Proで開く
 
-**処理内容**:
-- `[Telop]`マーカーを削除
-- 最初のテロップ: 完全なグラフィックfile要素を生成
-- 2番目以降: 最初のfile要素を参照
-
-**出力**: `final.xml` (Premiere Pro互換)
-
-#### ステップ3-4: Premiere Proで開く
-1. Premiere Proを起動
-2. ファイル → 読み込み → `final.xml`
-3. 自動編集されたタイムラインが表示される！
+生成されたXMLをPremiere Proで開くと、自動的にカット編集されたタイムラインが表示されます。
 
 ---
 
-## 🔧 主要なファイル
+## 🔧 設定ファイル
 
-### データ準備
-- `premiere_xml_parser.py` - XMLからラベル抽出
-- `extract_video_features_parallel.py` - 動画から特徴量抽出
-- `data_preprocessing.py` - データ統合
+### `configs/config_cut_selection.yaml`
+カット選択モデルの学習設定
 
-### モデル
-- `model.py` - モデル定義
-- `multimodal_modules.py` - マルチモーダルエンコーダー
-- `multimodal_preprocessing.py` - 特徴量の正規化
-- `feature_alignment.py` - 特徴量のアライメント
+```yaml
+# モデル設定
+d_model: 256
+nhead: 8
+num_encoder_layers: 6
+dropout: 0.15
 
-### 学習
-- `training.py` - 学習スクリプト
-- `multimodal_dataset.py` - データセット
-- `loss.py` - 損失関数
-- `config_multimodal.yaml` - 学習設定
+# 学習設定
+batch_size: 16
+num_epochs: 50
+learning_rate: 0.0001
+weight_decay: 0.0001
 
-### 推論
-- `inference_pipeline.py` - 推論パイプライン
-- `otio_xml_generator.py` - OTIO XML生成
-- `fix_telop_simple.py` - テロップ変換
-
----
-
-## 📊 データの流れ
-
+# 損失関数
+use_focal_loss: true
+focal_alpha: 0.70  # 採用見逃しに2.3倍のペナルティ
+focal_gamma: 2.0
+tv_weight: 0.05    # 時間的な滑らかさ
 ```
-編集済み動画 (MP4)
-    ↓
-[特徴量抽出]
-    ↓
-音声特徴量 (17次元) + 映像特徴量 (522次元)
-    ↓
-[モデル]
-    ↓
-編集パラメータ予測
-    ↓
-[XML生成]
-    ↓
-Premiere Pro XML
+
+### `checkpoints_cut_selection/inference_params.yaml`
+推論パラメータ（学習時に自動生成）
+
+```yaml
+confidence_threshold: -0.200  # 最適閾値
+target_duration: 90.0         # 目標合計時間（秒）
+max_duration: 150.0           # 最大合計時間（秒）
 ```
 
 ---
 
-## 🎓 重要なポイント
+## 📊 データフロー詳細
 
-### 1. マルチモーダル学習
-- 音声、映像、トラックの3つのモダリティを統合
-- Transformerで時系列パターンを学習
-- 各モダリティの重要度を自動調整
+### 特徴量の次元数
+- **音声**: 215次元
+  - 基本音声: 4次元
+  - 話者埋め込み: 192次元
+  - 感情表現: 16次元
+  - テキスト・テロップ: 3次元
 
-### 2. 音声カット
-- OTIOの`source_range`を使用
-- 映像と音声を同じ時間範囲で追加
-- 自動的に同じ位置でカット
+- **映像**: 522次元
+  - 基本映像: 10次元
+  - CLIP: 512次元
 
-### 3. テロップ処理
-- 動画からOCRでテロップを抽出
-- テキスト埋め込みで意味を学習
-- Premiere Proのグラフィックとして出力
+### シーケンスデータ
+- **シーケンス長**: 1000フレーム（約100秒 @ 10FPS）
+- **オーバーラップ**: 500フレーム
+- **学習データ**: 210シーケンス（54動画）
+- **検証データ**: 91シーケンス（14動画）
 
-### 4. 予測の閾値調整
-- active閾値: 0.29
-- カット数を約500個程度に調整
-- 閾値を変更することでカット数を調整可能
-
----
-
-## 🚀 クイックスタート
-
-### 新しい動画を編集する場合
-```bash
-# 1行で実行（推論 + テロップ変換）
-python inference_pipeline.py "your_video.mp4" \
-    --model checkpoints_50epochs/best_model.pth \
-    --output temp.xml && \
-python fix_telop_simple.py temp.xml final.xml
-
-# Premiere Proで final.xml を開く
-```
-
-### 新しいデータで学習する場合
-```bash
-# 1. XMLからラベル抽出
-python premiere_xml_parser.py
-
-# 2. 動画から特徴量抽出
-python extract_video_features_parallel.py
-
-# 3. データ統合
-python data_preprocessing.py
-
-# 4. 学習
-python training.py --config config_multimodal.yaml
-```
+### モデル出力
+- **Active判定**: (batch, seq_len, 2)
+  - クラス0: 不採用
+  - クラス1: 採用
 
 ---
 
-## 📈 性能
+## 💡 ヒント
 
-- **学習データ**: 約10本の編集済み動画
-- **学習時間**: 50エポック（約2-3時間、GPU使用時）
-- **推論時間**: 約30秒/動画（特徴量抽出含む）
-- **カット数**: 約500個/動画（閾値0.29の場合）
+### カット数を調整したい
+`checkpoints_cut_selection/inference_params.yaml` を編集：
+- `confidence_threshold` を下げる → カット数が増える
+- `confidence_threshold` を上げる → カット数が減る
+
+### 学習データを増やしたい
+1. 新しい動画とXMLを `data/raw/editxml/` に追加
+2. ステップ1-2から再実行
+
+### 学習が進まない場合
+- データ数を確認（最低50本以上推奨）
+- GPU使用を確認（`nvidia-smi`）
+- 設定を確認（`configs/config_cut_selection.yaml`）
 
 ---
 
-## 🔍 トラブルシューティング
+## 🎯 性能指標
 
-### XMLが読み込めない
-→ `fix_telop_simple.py`を実行したか確認
+### 学習結果
+- **Best F1スコア**: 0.5630（Epoch 33）
+- **最適閾値**: -0.200
+- **学習時間**: 約1-2時間（50エポック、GPU使用時）
 
-### カット数が多すぎる/少なすぎる
-→ `inference_pipeline.py`の閾値を調整（現在0.29）
+### 推論結果
+- **推論時間**: 5~10分/動画（特徴量抽出含む）
+- **カット数**: 約8〜12個のクリップ
+- **出力動画長**: 約2分（90秒〜150秒）
 
-### 特徴量抽出が遅い
-→ GPUを使用しているか確認（CUDA対応）
+---
 
-### モデルの精度が低い
-→ 学習データを増やす、エポック数を増やす
+## 📖 関連ドキュメント
+
+- [README](../../README.md) - プロジェクト概要
+- [QUICK_START](../QUICK_START.md) - クイックスタートガイド
+- [PROJECT_SPECIFICATION](../PROJECT_SPECIFICATION.md) - 詳細仕様
+
+---
+
+**最終更新**: 2025-12-22
+**バージョン**: 2.0.0（カット選択特化版）

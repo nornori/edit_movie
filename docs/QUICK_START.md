@@ -1,10 +1,12 @@
-# 🚀 クイックスタートガイド
+# 🚀 クイックスタートガイド - カット選択モデル
 
 ## 📋 前提条件
 
 - Python 3.8以上がインストールされている
 - 必要なライブラリがインストールされている（`pip install -r requirements.txt`）
 - 学習済みモデルがある（または学習を実行する）
+
+**注意**: 本プロジェクトは現在**カット選択（Cut Selection）に特化**しています。グラフィック配置やテロップ生成は精度が低いため、今後の課題となっています。
 
 ---
 
@@ -21,73 +23,55 @@ run_inference.bat "path\to\your_video.mp4"
 ### 方法2: 手動で実行
 
 ```bash
-# Pythonパスを設定
-set PYTHONPATH=%PYTHONPATH%;%CD%\src
-
-# 1. 推論実行
-python src/inference/inference_pipeline.py "path\to\your_video.mp4" ^
-    --model models/checkpoints_50epochs/best_model.pth ^
-    --output outputs/inference_results/temp.xml
-
-# 2. テロップをグラフィックに変換
-python src/inference/fix_telop_simple.py ^
-    outputs/inference_results/temp.xml ^
-    outputs/inference_results/final.xml
+# 推論実行
+python -m src.inference.inference_pipeline "path\to\your_video.mp4" ^
+    --output outputs/inference_results/result.xml
 ```
 
 ### 3. Premiere Proで開く
 
-生成された `final.xml` をPremiere Proで開いてください。
+生成された `result.xml` をPremiere Proで開いてください。
 
 ---
 
-## 📚 学習用データを準備する
+## 📚 カット選択用データを準備する
 
-### 方法1: バッチファイルを使う（簡単！）
-
-```bash
-run_data_preparation.bat
-```
-
-### 方法2: 手動で実行
+### データ準備
 
 ```bash
-# Pythonパスを設定
-set PYTHONPATH=%PYTHONPATH%;%CD%\src
-
-# 1. XMLからラベル抽出
-python src/data_preparation/premiere_xml_parser.py
-
-# 2. 動画から特徴量抽出
-python src/data_preparation/extract_video_features_parallel.py
-
-# 3. データ統合
-python src/data_preparation/data_preprocessing.py
+# カット選択用データの作成
+python scripts/create_cut_selection_data.py
 ```
 
-**注意**: 編集済み動画とXMLを `data/raw/editxml/` に配置してください。
+**注意**: 
+- 編集済み動画とXMLを `data/raw/editxml/` に配置してください
+- 動画から特徴量を抽出済みであることが前提です（`data/processed/source_features/`）
+- アクティブラベルを抽出済みであることが前提です（`data/processed/active_labels/`）
 
 ---
 
-## 🎓 モデルを学習する
+## 🎓 カット選択モデルを学習する
 
-### 方法1: バッチファイルを使う（簡単！）
-
-```bash
-run_training.bat
-```
-
-### 方法2: 手動で実行
+### 学習実行
 
 ```bash
-# Pythonパスを設定
-set PYTHONPATH=%PYTHONPATH%;%CD%\src
-
-# 学習実行
-python src/training/training.py --config configs/config_multimodal.yaml
+# バッチファイルで実行（推奨）
+train_cut_selection.bat
 ```
 
-学習済みモデルは `models/checkpoints_50epochs/` に保存されます。
+### 学習状況の確認
+
+ブラウザで `checkpoints_cut_selection/view_training.html` を開くと、2秒ごとに自動更新されるグラフで学習の様子をリアルタイム確認できます。
+
+**可視化される情報**:
+- 損失関数（Train/Val Loss）
+- 損失の内訳（CE Loss vs TV Loss）
+- 分類性能（Accuracy & F1 Score）
+- Precision, Recall, Specificity
+- 最適閾値の推移
+- 予測の採用/不採用割合
+
+学習済みモデルは `checkpoints_cut_selection/` に保存されます。
 
 ---
 
@@ -95,22 +79,26 @@ python src/training/training.py --config configs/config_multimodal.yaml
 
 ### 推論前に必要なもの
 ```
-models/
-└── checkpoints_50epochs/
-    ├── best_model.pth
-    ├── audio_preprocessor.pkl
-    └── visual_preprocessor.pkl
+checkpoints_cut_selection/
+├── best_model.pth
+├── inference_params.yaml
+└── (その他のチェックポイント)
+
+preprocessed_data/
+├── audio_scaler_cut_selection.pkl
+└── visual_scaler_cut_selection.pkl
 ```
 
 ### データ準備前に必要なもの
 ```
 data/
-└── raw/
-    └── editxml/
-        ├── video1.mp4
-        ├── video1.xml
-        ├── video2.mp4
-        └── video2.xml
+├── processed/
+│   ├── source_features/
+│   │   ├── video1_features.csv
+│   │   └── video2_features.csv
+│   └── active_labels/
+│       ├── video1_active.csv
+│       └── video2_active.csv
 ```
 
 ---
@@ -123,37 +111,35 @@ data/
 
 **解決策**:
 ```bash
-set PYTHONPATH=%PYTHONPATH%;%CD%\src
+set PYTHONPATH=%PYTHONPATH%;%CD%
 ```
 
-または、バッチファイル（`run_inference.bat`など）を使用してください。
+または、バッチファイル（`train_cut_selection.bat`など）を使用してください。
 
-### エラー: FileNotFoundError: checkpoints_50epochs/best_model.pth
+### エラー: FileNotFoundError: best_model.pth
 
 **原因**: 学習済みモデルがない
 
 **解決策**:
-1. データ準備を実行: `run_data_preparation.bat`
-2. 学習を実行: `run_training.bat`
+1. データ準備を実行: `python scripts/create_cut_selection_data.py`
+2. 学習を実行: `train_cut_selection.bat`
 
-### XMLが読み込めない
+### 学習が進まない
 
-**原因**: テロップ変換が実行されていない
+**原因**: データが不足している、または設定が不適切
 
 **解決策**:
-```bash
-python src/inference/fix_telop_simple.py temp.xml final.xml
-```
-
-または、`run_inference.bat`を使用してください（自動で実行されます）。
+- データ数を確認: 最低でも50本以上の動画が推奨
+- 設定を確認: `configs/config_cut_selection.yaml`
+- ログを確認: 学習中のメッセージをチェック
 
 ---
 
 ## 📊 実行時間の目安
 
-- **データ準備**: 約30分〜1時間（動画の数と長さによる）
-- **学習**: 約2〜3時間（50エポック、GPU使用時）
-- **推論**: 約30秒/動画（特徴量抽出含む）
+- **データ準備**: 約5-10分（動画の数と長さによる）
+- **学習**: 約1-2時間（50エポック、GPU使用時）
+- **推論**: 約5-10分/動画（特徴量抽出含む）
 
 ---
 
@@ -161,52 +147,49 @@ python src/inference/fix_telop_simple.py temp.xml final.xml
 
 ### カット数を調整したい
 
-`src/inference/inference_pipeline.py` の閾値を変更してください：
+学習時に最適閾値が自動計算されますが、手動で調整することも可能です：
 
-```python
-# 現在の設定（約500カット）
-active_frames = track_params['active'] > 0.29
+`checkpoints_cut_selection/inference_params.yaml` を編集：
 
-# カット数を増やす場合（閾値を下げる）
-active_frames = track_params['active'] > 0.20
-
-# カット数を減らす場合（閾値を上げる）
-active_frames = track_params['active'] > 0.40
+```yaml
+confidence_threshold: -0.200  # デフォルト値
+target_duration: 90.0         # 目標合計時間（秒）
+max_duration: 150.0           # 最大合計時間（秒）
 ```
+
+閾値を下げる → カット数が増える  
+閾値を上げる → カット数が減る
 
 ### GPUを使用したい
 
 学習時に自動的にGPUが使用されます（CUDA対応GPUがある場合）。
 
-推論時にGPUを使用する場合:
-```bash
-python src/inference/inference_pipeline.py "video.mp4" ^
-    --model models/checkpoints_50epochs/best_model.pth ^
-    --device cuda ^
-    --output result.xml
-```
-
 ---
 
 ## 📖 詳細なドキュメント
 
-- [プロジェクト全体の流れ](docs/guides/PROJECT_WORKFLOW_GUIDE.md)
-- [必要なファイル一覧](docs/guides/REQUIRED_FILES_BY_PHASE.md)
-- [音声カット & テロップ変換](docs/summaries/AUDIO_CUT_AND_TELOP_GRAPHICS_SUMMARY.md)
+- [README](../README.md) - プロジェクト概要
+- [PROJECT_SPECIFICATION](PROJECT_SPECIFICATION.md) - 詳細仕様
 
 ---
 
 ## 🎉 成功例
 
-推論が成功すると、以下のようなメッセージが表示されます：
+学習が成功すると、以下のようなメッセージが表示されます：
+
+```
+✅ Training complete!
+Best Val F1: 0.5630
+📊 Training visualization saved: checkpoints_cut_selection/training_final.png
+```
+
+推論が成功すると：
 
 ```
 ================================================================================
 ✅ Inference complete!
-Output XML: outputs/inference_results/final.xml
+Output XML: outputs/inference_results/result.xml
 ================================================================================
-
-Premiere Proで上記のXMLファイルを開いてください。
 ```
 
-Premiere Proで開くと、自動的に編集されたタイムラインが表示されます！
+Premiere Proで開くと、自動的にカット編集されたタイムラインが表示されます！

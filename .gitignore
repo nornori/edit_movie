@@ -65,6 +65,7 @@ models/checkpoints/
 models/checkpoints_50epochs/
 models/test_checkpoints/
 checkpoints/
+checkpoints_cut_selection/
 *.pth
 *.pkl
 
@@ -72,6 +73,10 @@ checkpoints/
 outputs/
 outputs/inference_results/*.xml
 outputs/test_outputs/
+test_output/
+
+# Adobe Premiere Pro Auto-Save
+Adobe Premiere Pro Auto-Save/
 
 # Logs
 *.log
