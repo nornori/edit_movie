@@ -132,7 +132,9 @@ class CombinedCutSelectionLoss(nn.Module):
         label_smoothing: float = 0.0,
         use_focal: bool = False,
         focal_alpha: float = 0.25,
-        focal_gamma: float = 2.0
+        focal_gamma: float = 2.0,
+        target_adoption_rate: float = 0.23,
+        adoption_penalty_weight: float = 0.5
     ):
         """
         Initialize combined loss
@@ -144,10 +146,14 @@ class CombinedCutSelectionLoss(nn.Module):
             use_focal: Use Focal Loss instead of CrossEntropy
             focal_alpha: Focal loss alpha parameter
             focal_gamma: Focal loss gamma parameter
+            target_adoption_rate: Target adoption rate (e.g., 0.23 for 23%)
+            adoption_penalty_weight: Weight for adoption rate penalty
         """
         super().__init__()
         
         self.use_focal = use_focal
+        self.target_adoption_rate = target_adoption_rate
+        self.adoption_penalty_weight = adoption_penalty_weight
         
         if use_focal:
             self.ce_loss = FocalLoss(alpha=focal_alpha, gamma=focal_gamma)
@@ -185,13 +191,42 @@ class CombinedCutSelectionLoss(nn.Module):
         # Temporal smoothness loss
         tv_loss = self.tv_loss(predictions)
         
-        # Total loss (adoption rate penalty removed - was causing negative loss)
-        total_loss = ce_loss + tv_loss
+        # Adoption rate penalty with progressive scaling
+        # Calculate predicted adoption rate
+        probs = F.softmax(predictions, dim=-1)
+        pred_active_prob = probs[..., 1]  # (batch, seq_len)
+        pred_adoption_rate = pred_active_prob.mean()
+        
+        # Progressive penalty based on adoption rate
+        # 0-23%: No penalty
+        # 23-50%: Linear penalty
+        # 50-80%: Quadratic penalty (stronger)
+        # 80-100%: Exponential penalty (very strong)
+        
+        if pred_adoption_rate <= self.target_adoption_rate:
+            adoption_penalty = torch.tensor(0.0, device=predictions.device)
+        elif pred_adoption_rate <= 0.5:
+            # Linear penalty for 23-50%
+            excess = pred_adoption_rate - self.target_adoption_rate
+            adoption_penalty = self.adoption_penalty_weight * excess
+        elif pred_adoption_rate <= 0.8:
+            # Quadratic penalty for 50-80%
+            excess = pred_adoption_rate - self.target_adoption_rate
+            adoption_penalty = self.adoption_penalty_weight * (excess ** 2) * 5.0
+        else:
+            # Exponential penalty for 80-100% (very strong)
+            excess = pred_adoption_rate - self.target_adoption_rate
+            adoption_penalty = self.adoption_penalty_weight * (excess ** 3) * 20.0
+        
+        # Total loss
+        total_loss = ce_loss + tv_loss + adoption_penalty
         
         # Return loss components for logging
         loss_dict = {
             'ce_loss': ce_loss.item(),
             'tv_loss': tv_loss.item(),
+            'adoption_penalty': adoption_penalty.item(),
+            'pred_adoption_rate': pred_adoption_rate.item(),
             'total_loss': total_loss.item()
         }
         

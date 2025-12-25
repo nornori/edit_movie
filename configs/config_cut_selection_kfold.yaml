@@ -1,45 +1,28 @@
-# K-Fold Cross Validation Configuration for Cut Selection Model
-# Based on config_cut_selection.yaml
-
-# K-Fold settings
-n_folds: 5  # Number of folds (5 is standard)
-random_state: 42  # For reproducible splits
-
-# Data path (combined train + val data)
-data_path: preprocessed_data/combined_sequences_cut_selection.npz
-
-# Feature dimensions
+adoption_penalty_weight: 6.8
 audio_features: 215
-visual_features: 522
-
-# Model architecture
+batch_size: 8
+checkpoint_dir: checkpoints_cut_selection_kfold
+cpu: false
 d_model: 256
-nhead: 8
-num_encoder_layers: 6
+data_path: preprocessed_data/combined_sequences_cut_selection.npz
 dim_feedforward: 1024
 dropout: 0.15
+early_stopping_patience: 15
+focal_alpha: 0.67
+focal_gamma: 1.61
 fusion_type: gated
-
-# Training hyperparameters
-batch_size: 16
+label_smoothing: 0.13
+learning_rate: 0.000245
+max_grad_norm: 1.0
+n_folds: 5
+nhead: 8
+num_encoder_layers: 6
 num_epochs: 50
-learning_rate: 0.0001
-weight_decay: 0.0001
-
-# Loss settings
-use_focal_loss: true  # Focal Lossを有効化（不均衡データに特化）
-focal_alpha: 0.75  # 採用クラスの重み（0.75 = 採用を重視）
-focal_gamma: 3.0  # 難しいサンプルへの集中度（大きいほど難しいサンプルに集中）
-tv_weight: 0.05
-label_smoothing: 0.0
-
-# Checkpointing
-checkpoint_dir: checkpoints_cut_selection_kfold
-early_stopping_patience: 10  # Reduced for K-Fold (each fold trains faster)
-
-# Data loading
 num_workers: 0
-
-# Device
-cpu: false
+random_state: 42
+target_adoption_rate: 0.23
+tv_weight: 0.009
 use_amp: true
+use_focal_loss: true
+visual_features: 522
+weight_decay: 0.000442

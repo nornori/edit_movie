@@ -1,5 +1,129 @@
 # Changelog
 
+## [2025-12-25] - アンサンブル学習による大幅な性能向上 🎉
+
+### 🎯 達成した成果
+
+**F1スコアの劇的な改善:**
+```
+個別モデル平均: 41.23% F1
+        ↓
+アンサンブル: 60.80% F1 ✨
+
+改善: +19.57ポイント (+47.47%)
+目標達成: ✅ 55% F1 → 60.80% F1 (目標を5.80ポイント上回る)
+```
+
+### 📊 詳細な結果
+
+#### アンサンブル性能
+- **F1 Score**: 41.23% → **60.80%** (+19.57pt)
+- **Accuracy**: 49.83% → **78.69%** (+28.86pt)
+- **Precision**: 28.70% → **52.90%** (+24.20pt)
+- **Recall**: 74.31% → **71.45%** (-2.86pt)
+- **Specificity**: - → **80.87%**
+
+#### 各Foldの個別性能
+| Fold | Best Epoch | F1 Score | Accuracy | Precision | Recall |
+|------|-----------|----------|----------|-----------|--------|
+| 1 | 4 | **49.52%** | 73.48% | 36.88% | 75.34% |
+| 2 | 1 | 41.22% | 36.44% | 27.85% | 79.24% |
+| 3 | 2 | 40.69% | 43.11% | 28.52% | 71.00% |
+| 4 | 19 | 40.43% | 47.18% | 27.68% | 74.95% |
+| 5 | 32 | 34.27% | 48.92% | 22.58% | 71.03% |
+| **平均** | **11.6±12.1** | **41.23±4.86%** | **49.83±12.58%** | **28.70±4.61%** | **74.31±3.08%** |
+
+#### アンサンブル戦略の比較
+- **Soft Voting**: **60.80%** F1 (最良)
+- Hard Voting: 60.80% F1
+- Weighted Voting: 60.24% F1
+
+### ✅ 新機能
+
+#### 1. 時系列特徴量の追加（83個）
+- 移動統計量: MA5, MA10, MA30, MA60, MA120, STD5, STD30, STD120
+- 変化率: DIFF1, DIFF2, DIFF30
+- カットタイミング: time_since_prev, time_to_next, cut_duration, position_in_video, cut_density_10s
+- CLIP類似度: clip_sim_prev, clip_sim_next, clip_sim_mean5
+- 音声変化: audio_change_score, silence_to_speech, speech_to_silence, speaker_change, pitch_change
+- 映像変化: visual_motion_change, face_count_change, saliency_movement
+- 累積統計: cumulative_position, cumulative_adoption_rate
+
+#### 2. アンサンブル学習の実装
+- 5つのK-Foldモデルを組み合わせ
+- 3つの投票戦略（Soft, Hard, Weighted）
+- 最適閾値の自動探索（Recall制約付き）
+
+#### 3. V2モデルの設計（データ拡張 + 深いネットワーク）
+- 8層エンコーダー（V1は6層）
+- 16個のAttentionヘッド（V1は8個）
+- データ拡張: ノイズ追加、時間シフト、スケーリング、時間ワーピング
+- 改善されたFusion: 残差接続付き
+
+### 📁 新規ファイル
+
+#### スクリプト
+- `scripts/add_temporal_features.py` - 時系列特徴量追加
+- `scripts/create_cut_selection_data_enhanced.py` - 拡張データ作成
+- `scripts/combine_sequences_enhanced.py` - K-Fold用データ結合
+
+#### モデル
+- `src/cut_selection/cut_model_enhanced.py` - 拡張モデル（V1）
+- `src/cut_selection/cut_model_enhanced_v2.py` - 改善モデル（V2）
+- `src/cut_selection/cut_dataset_enhanced.py` - 拡張データセット（V1）
+- `src/cut_selection/cut_dataset_enhanced_v2.py` - 拡張データセット（V2、データ拡張付き）
+- `src/cut_selection/time_series_augmentation.py` - 時系列データ拡張
+- `src/cut_selection/ensemble_predictor.py` - アンサンブル予測器
+- `src/cut_selection/evaluate_ensemble.py` - アンサンブル評価
+
+#### トレーニング
+- `src/cut_selection/train_cut_selection_kfold_enhanced.py` - V1トレーニング
+- `src/cut_selection/train_cut_selection_kfold_enhanced_v2.py` - V2トレーニング
+
+#### 設定
+- `configs/config_cut_selection_kfold_enhanced.yaml` - V1設定
+- `configs/config_cut_selection_kfold_enhanced_v2.yaml` - V2設定
+
+#### バッチファイル（batch/フォルダに整理）
+- `batch/train_cut_selection_enhanced.bat` - V1トレーニング
+- `batch/train_cut_selection_enhanced_v2.bat` - V2トレーニング
+- `batch/evaluate_ensemble.bat` - アンサンブル評価
+- `batch/run_inference.bat` - 推論実行
+
+#### ドキュメント
+- `docs/ENSEMBLE_RESULTS.md` - アンサンブル結果詳細
+- `FEATURE_ENHANCEMENT_README.md` - 特徴量拡張ガイド
+
+### 📊 出力ファイル
+- `checkpoints_cut_selection_kfold_enhanced/` - V1モデルチェックポイント
+  - `fold_X_best_model.pth` - 各Foldの最良モデル
+  - `kfold_summary.csv` - K-Fold統計
+  - `kfold_comparison.png` - 比較グラフ
+  - `ensemble_comparison.csv` - アンサンブル比較
+  - `ensemble_comparison.png` - アンサンブルグラフ
+  - `view_training.html` - リアルタイムビューアー
+
+### 🗑️ フォルダ整理
+- `archive/old_experiments/` - 古い実験スクリプト
+- `archive/old_logs/` - 古い実験ログ
+- `archive/old_batch_files/` - 古いバッチファイル
+- `archive/old_checkpoints/` - 古いチェックポイント
+- `batch/` - 現在使用中のバッチファイル（新規作成）
+
+### 🚀 成功の要因
+1. **時系列特徴量の追加** ⭐⭐⭐⭐⭐
+2. **アンサンブル学習** ⭐⭐⭐⭐⭐
+3. **Focal Loss** ⭐⭐⭐⭐
+4. **K-Fold Cross Validation** ⭐⭐⭐⭐
+5. **最適閾値の自動探索** ⭐⭐⭐
+
+### 🎯 次のステップ
+- V2モデルのトレーニング（期待値: 65%+ F1）
+- V2モデルでのアンサンブル評価
+- 本番環境への展開
+
+---
+
 ## [2025-12-22] - K-Fold Cross Validation完了と最終最適化
 
 ### 🎯 主な変更

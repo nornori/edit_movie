@@ -1,7 +1,7 @@
 """
-K-Fold Cross Validation training script for cut selection model
+K-Fold Cross Validation training script for ENHANCED cut selection model
 
-Trains the model using K-Fold CV to get more reliable performance estimates
+Trains the model using K-Fold CV with ENHANCED FEATURES (audio + visual + temporal)
 Uses GroupKFold to prevent data leakage (same video clips stay in same fold)
 """
 import argparse
@@ -19,8 +19,8 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import GroupKFold
 import random
 
-from src.cut_selection.cut_dataset import CutSelectionDataset
-from src.cut_selection.cut_model import CutSelectionModel
+from src.cut_selection.cut_dataset_enhanced_v2 import EnhancedCutSelectionDatasetV2
+from src.cut_selection.cut_model_enhanced_v2 import EnhancedCutSelectionModelV2
 from src.cut_selection.losses import CombinedCutSelectionLoss
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -629,7 +629,7 @@ class KFoldVisualizer:
 
 
 def train_epoch(model, dataloader, optimizer, criterion, device, scaler=None, max_grad_norm=1.0):
-    """Train for one epoch"""
+    """Train for one epoch with 3 modalities (audio, visual, temporal)"""
     model.train()
     total_loss = 0
     total_ce_loss = 0
@@ -638,11 +638,12 @@ def train_epoch(model, dataloader, optimizer, criterion, device, scaler=None, ma
     for batch in tqdm(dataloader, desc="Training", leave=False):
         audio = batch['audio'].to(device)
         visual = batch['visual'].to(device)
+        temporal = batch.get('temporal', torch.zeros_like(audio[:, :, :7])).to(device)  # Fallback if no temporal
         active_labels = batch['active'].to(device)
         
         if scaler is not None:
-            with torch.cuda.amp.autocast():
-                outputs = model(audio, visual)
+            with torch.amp.autocast('cuda'):
+                outputs = model(audio, visual, temporal)
                 active_logits = outputs['active']
                 loss, loss_dict = criterion(active_logits, active_labels)
             
@@ -653,7 +654,7 @@ def train_epoch(model, dataloader, optimizer, criterion, device, scaler=None, ma
             scaler.step(optimizer)
             scaler.update()
         else:
-            outputs = model(audio, visual)
+            outputs = model(audio, visual, temporal)
             active_logits = outputs['active']
             loss, loss_dict = criterion(active_logits, active_labels)
             
@@ -675,7 +676,7 @@ def train_epoch(model, dataloader, optimizer, criterion, device, scaler=None, ma
 
 
 def validate(model, dataloader, criterion, device):
-    """Validate the model"""
+    """Validate the model with 3 modalities (audio, visual, temporal)"""
     model.eval()
     total_loss = 0
     total_ce_loss = 0
@@ -689,9 +690,10 @@ def validate(model, dataloader, criterion, device):
         for batch in tqdm(dataloader, desc="Validation", leave=False):
             audio = batch['audio'].to(device)
             visual = batch['visual'].to(device)
+            temporal = batch.get('temporal', torch.zeros_like(audio[:, :, :7])).to(device)  # Fallback if no temporal
             active_labels = batch['active'].to(device)
             
-            outputs = model(audio, visual)
+            outputs = model(audio, visual, temporal)
             active_logits = outputs['active']
             
             loss, loss_dict = criterion(active_logits, active_labels)
@@ -718,7 +720,7 @@ def validate(model, dataloader, criterion, device):
     avg_tv_loss = total_tv_loss / num_batches
     
     # Temperature Scaling (optional calibration)
-    temperature = 2.46  # >1 makes predictions less confident, <1 makes them more confident
+    temperature = 1.02  # >1 makes predictions less confident, <1 makes them more confident
     all_confidence_scores_calibrated = all_confidence_scores / temperature
     
     # Find optimal threshold using F1 + Specificity composite score with Recall constraint
@@ -728,7 +730,7 @@ def validate(model, dataloader, criterion, device):
     precisions, recalls, thresholds = precision_recall_curve(all_labels, all_confidence_scores_calibrated)
     
     # Constraints
-    min_recall = 0.7  # Recall must be >= 70% (緩和してF1を優先)
+    min_recall = 0.71  # Recall must be >= 71% (緩和してF1を優先)
     
     # Find threshold that maximizes F1 + Specificity while maintaining Recall >= 80%
     best_threshold = thresholds[0] if len(thresholds) > 0 else 0.0
@@ -753,8 +755,8 @@ def validate(model, dataloader, criterion, device):
         fp = np.sum((candidate_predictions == 1) & (all_labels == 0))
         specificity = tn / (tn + fp) if (tn + fp) > 0 else 0.0
         
-        # Composite score: F1 (64%) + Specificity (44%)
-        composite_score = 0.64 * f1 + 0.44 * specificity
+        # Composite score: F1 (85%) + Specificity (21%)
+        composite_score = 0.85 * f1 + 0.21 * specificity
         
         if composite_score > best_composite_score:
             best_composite_score = composite_score
@@ -896,8 +898,8 @@ def train_single_fold(fold, train_indices, val_indices, full_dataset, config, de
     base_weight_inactive = total_train_samples / (2 * train_inactive_count) if train_inactive_count > 0 else 1.0
     
     # Inactive classに極めて強いペナルティを適用してFalse Positiveを徹底削減
-    weight_active = base_weight_active * 3.3
-    weight_inactive = base_weight_inactive * 26.7
+    weight_active = base_weight_active * 4.0
+    weight_inactive = base_weight_inactive * 17.4
 
     class_weights = torch.tensor([weight_inactive, weight_active], device=device)
 
@@ -909,16 +911,16 @@ def train_single_fold(fold, train_indices, val_indices, full_dataset, config, de
     logger.info(f"  Focal Loss: alpha={config.get('focal_alpha', 0.75)}, gamma={config.get('focal_gamma', 3.0)}")
     logger.info(f"  Adoption Penalty: weight={config.get('adoption_penalty_weight', 5.0)} (STRONG suppression)")
     
-    # Create model
-    model = CutSelectionModel(
+    # Create model V2 with 3 modalities (deeper architecture)
+    model = EnhancedCutSelectionModelV2(
         audio_features=config['audio_features'],
         visual_features=config['visual_features'],
+        temporal_features=config.get('temporal_features', 6),  # Default 6 temporal features
         d_model=config['d_model'],
         nhead=config['nhead'],
         num_encoder_layers=config['num_encoder_layers'],
         dim_feedforward=config['dim_feedforward'],
-        dropout=config['dropout'],
-        fusion_type=config.get('fusion_type', 'gated')
+        dropout=config['dropout']
     ).to(device)
     
     # Loss and optimizer (class_weightsを設定)
@@ -956,7 +958,7 @@ def train_single_fold(fold, train_indices, val_indices, full_dataset, config, de
     use_amp = config.get('use_amp', False) and device == 'cuda'
     
     # GradScalerをループの外で作成（AMPの安定性向上）
-    scaler = torch.cuda.amp.GradScaler() if use_amp else None
+    scaler = torch.amp.GradScaler('cuda') if use_amp else None
     if scaler:
         logger.info("📊 Mixed Precision Training enabled with GradScaler")
     
@@ -1081,9 +1083,16 @@ def main():
     checkpoint_dir = Path(config['checkpoint_dir'])
     checkpoint_dir.mkdir(exist_ok=True, parents=True)
     
-    # Load full dataset
-    logger.info(f"\nLoading dataset from {config['data_path']}")
-    full_dataset = CutSelectionDataset(config['data_path'])
+    # Load full dataset with augmentation
+    logger.info(f"\nLoading enhanced dataset V2 from {config['data_path']}")
+    full_dataset = EnhancedCutSelectionDatasetV2(
+        config['data_path'],
+        augment=config.get('use_augmentation', False),
+        augment_prob=config.get('augment_prob', 0.5),
+        noise_std=config.get('noise_std', 0.01),
+        shift_range=config.get('shift_range', 5),
+        scale_range=tuple(config.get('scale_range', [0.9, 1.1]))
+    )
     
     # Get video groups for GroupKFold (データリーク防止)
     video_groups = full_dataset.get_video_groups()
