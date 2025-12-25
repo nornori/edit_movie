@@ -718,7 +718,7 @@ def validate(model, dataloader, criterion, device):
     avg_tv_loss = total_tv_loss / num_batches
     
     # Temperature Scaling (optional calibration)
-    temperature = 2.46  # >1 makes predictions less confident, <1 makes them more confident
+    temperature = 0.92  # >1 makes predictions less confident, <1 makes them more confident
     all_confidence_scores_calibrated = all_confidence_scores / temperature
     
     # Find optimal threshold using F1 + Specificity composite score with Recall constraint
@@ -728,7 +728,7 @@ def validate(model, dataloader, criterion, device):
     precisions, recalls, thresholds = precision_recall_curve(all_labels, all_confidence_scores_calibrated)
     
     # Constraints
-    min_recall = 0.7  # Recall must be >= 70% (緩和してF1を優先)
+    min_recall = 0.61  # Recall must be >= 61% (緩和してF1を優先)
     
     # Find threshold that maximizes F1 + Specificity while maintaining Recall >= 80%
     best_threshold = thresholds[0] if len(thresholds) > 0 else 0.0
@@ -753,8 +753,8 @@ def validate(model, dataloader, criterion, device):
         fp = np.sum((candidate_predictions == 1) & (all_labels == 0))
         specificity = tn / (tn + fp) if (tn + fp) > 0 else 0.0
         
-        # Composite score: F1 (64%) + Specificity (44%)
-        composite_score = 0.64 * f1 + 0.44 * specificity
+        # Composite score: F1 (59%) + Specificity (37%)
+        composite_score = 0.59 * f1 + 0.37 * specificity
         
         if composite_score > best_composite_score:
             best_composite_score = composite_score
@@ -896,8 +896,8 @@ def train_single_fold(fold, train_indices, val_indices, full_dataset, config, de
     base_weight_inactive = total_train_samples / (2 * train_inactive_count) if train_inactive_count > 0 else 1.0
     
     # Inactive classに極めて強いペナルティを適用してFalse Positiveを徹底削減
-    weight_active = base_weight_active * 3.3
-    weight_inactive = base_weight_inactive * 26.7
+    weight_active = base_weight_active * 1.0
+    weight_inactive = base_weight_inactive * 18.0
 
     class_weights = torch.tensor([weight_inactive, weight_active], device=device)
 

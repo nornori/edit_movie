@@ -1,4 +1,4 @@
-adoption_penalty_weight: 6.8
+adoption_penalty_weight: 4.9
 audio_features: 215
 batch_size: 8
 checkpoint_dir: checkpoints_cut_selection_kfold
@@ -6,13 +6,13 @@ cpu: false
 d_model: 256
 data_path: preprocessed_data/combined_sequences_cut_selection.npz
 dim_feedforward: 1024
-dropout: 0.15
+dropout: 0.07
 early_stopping_patience: 15
-focal_alpha: 0.67
-focal_gamma: 1.61
+focal_alpha: 0.64
+focal_gamma: 2.02
 fusion_type: gated
-label_smoothing: 0.13
-learning_rate: 0.000245
+label_smoothing: 0.0
+learning_rate: 0.000271
 max_grad_norm: 1.0
 n_folds: 5
 nhead: 8
@@ -21,8 +21,8 @@ num_epochs: 50
 num_workers: 0
 random_state: 42
 target_adoption_rate: 0.23
-tv_weight: 0.009
+tv_weight: 0.068
 use_amp: true
 use_focal_loss: true
 visual_features: 522
-weight_decay: 0.000442
+weight_decay: 0.000818

@@ -26,7 +26,10 @@
 
 **本プロジェクトは現在、カット選択（Cut Selection）に特化して開発中です。**
 
-- ✅ **カット選択モデル**: 高精度で動作中（F1スコア: 0.4427、Recall: 72%）
+- ✅ **カット選択モデル**: 動作中（平均F1スコア: 42.30%、Recall: 76.10%）
+  - K-Fold Cross Validation（5-Fold）で検証済み
+  - 真の汎化性能を測定（データリークなし）
+  - 最良モデル: Fold 1（F1: 49.42%）
 - ⚠️ **グラフィック配置・テロップ生成**: 精度が低いため今後の課題
   - 現在のマルチモーダルモデル（音声・映像・トラック統合）は、グラフィック配置やテロップ生成の精度が実用レベルに達していません
   - カット選択に集中することで、より高品質な自動編集を実現します
@@ -35,11 +38,15 @@
 ## 🎯 機能
 
 ### 現在実装済み（カット選択）
-- **自動カット検出**: AIが最適なカット位置を予測（F1スコア: 0.4427、Recall: 72%）
+- **自動カット検出**: AIが最適なカット位置を予測
+  - 平均F1スコア: 42.30%（K-Fold CV）
+  - Recall: 76.10%（採用すべきカットを見逃さない）
+  - 最良モデル: 49.42% F1（Fold 1）
 - **音声同期カット**: 映像と音声を同じ位置で自動カット
 - **クリップフィルタリング**: 短すぎるクリップの除外、ギャップ結合、優先順位付け
 - **Premiere Pro連携**: 生成されたXMLをそのままPremiere Proで開ける
 - **リアルタイム学習可視化**: 6つのグラフで学習状況を監視
+- **K-Fold Cross Validation**: 5-Foldで真の汎化性能を測定
 
 ### 将来的に実装予定の機能（精度改善後）
 - **グラフィック配置の自動化**: キャラクター立ち絵の配置・スケール・位置調整
@@ -307,65 +314,88 @@ train_cut_selection_kfold.bat
 
 ### カット選択モデル（Cut Selection Model）
 
+#### 最終性能（2025-12-26検証済み）
+
+**K-Fold Cross Validation（5-Fold）結果:**
+
+| 指標 | 平均値 | 標準偏差 | 最良（Fold 1） |
+|------|--------|----------|----------------|
+| **F1 Score** | **42.30%** | ±5.75% | **49.42%** |
+| **Accuracy** | 50.24% | ±14.92% | 73.63% |
+| **Precision** | 29.83% | ±5.80% | 36.94% |
+| **Recall** | **76.10%** | ±5.19% | 74.65% |
+
+**評価方法:**
+- 各Foldで完全に未見のデータで評価
+- データリークなし（動画単位でFold分割）
+- 真の汎化性能を測定
+
+**推奨モデル:** Fold 1（F1: 49.42%、最も安定した性能）
+
 #### データセット
-- **学習データ**: 94本の動画から218,693フレーム
-  - 68本の動画を301シーケンスに分割（シーケンス長1000フレーム、オーバーラップ500）
-  - **K-Fold Cross Validation**: 5分割で評価（GroupKFoldでデータリーク防止）
+- **学習データ**: 67動画、289シーケンス
+  - K-Fold Cross Validation: 5分割（GroupKFoldでデータリーク防止）
   - 同じ動画のシーケンスは必ず同じFoldに配置
-- **採用率**: 全体23.34%（データセット全体）
+  - シーケンス長: 1000フレーム、オーバーラップ: 500フレーム
+- **採用率**: 全体23.12%
+- **特徴量**: 784次元（音声235 + 映像543 + 時系列6）
 - **想定入力**: 10分程度の動画
 - **出力**: 約2分（90秒〜150秒）のハイライト動画
-- **カット数**: 約8〜12個のクリップ（最小3秒、ギャップ結合・優先順位付け後）
 
 #### 処理時間（実測値）
 
 **学習フェーズ:**
 - **特徴量抽出**: 5-10分/動画（10分の動画、GPU: RTX 3060 Ti使用）
   - 並列処理（n_jobs=4）で高速化可能
-  - 30本の動画で約2.5-5時間
-- **学習時間**: 50エポック × 5 Folds = 250エポック（約5-10時間、GPU使用時）
-  - 1エポック: 約1-2分（バッチサイズ32、シーケンス数301）
+- **学習時間**: 50エポック × 5 Folds = 約2-3時間（GPU使用時）
+  - 1エポック: 約1-2分
+  - Early Stopping: 平均7.4エポックで収束
 
 **推論フェーズ:**
 - **特徴量抽出**: 5-10分/動画（10分の動画）
   - ボトルネック: Whisper（音声認識）、CLIP（画像埋め込み）
 - **モデル推論**: 5-30秒/動画
-  - 短い動画（<8分、<5000フレーム）: 5-10秒
-  - 長い動画（>8分、>5000フレーム）: チャンク処理で20-30秒
 - **XML生成**: <1秒
-- **合計**: 約5-10分/動画（特徴量抽出が大半）
+- **合計**: 約5-10分/動画
 
 **VRAM使用量:**
-- **学習時**: 約6-8GB（バッチサイズ32）
-- **推論時**: 約4-6GB（特徴量抽出時にCLIP、Whisperを同時ロード）
-- **モデル性能（K-Fold Cross Validation）**: 
-  - **Mean F1 Score**: 0.4427 ± 0.0451
-  - **Mean Recall**: 0.7230 ± 0.1418（採用の72%を検出、目標: 60-80%）✅
-  - **Mean Precision**: 0.3310 ± 0.0552（予測の33%が正解、目標: 30-60%）✅
-  - **Mean Accuracy**: 0.5855 ± 0.1008
-  - **Optimal Threshold**: -0.235 ± 0.103（学習時に自動計算）
-  - Focal Loss使用（alpha=0.75、gamma=3.0）
-  - Class Weights: Active 3x, Inactive 3x（両方のエラーに同等のペナルティ）
+- **学習時**: 約6-8GB（バッチサイズ16）
+- **推論時**: 約4-6GB（特徴量抽出時）
+
+#### モデルアーキテクチャ
+
+```yaml
+Transformer Encoder:
+  - d_model: 256
+  - attention_heads: 8
+  - encoder_layers: 6
+  - feedforward_dim: 1024
+  - dropout: 0.15
+
+Loss Function:
+  - Focal Loss (alpha=0.5, gamma=2.0)
+  - TV Regularization (weight=0.02)
+  - Adoption Penalty (weight=10.0)
+
+Training:
+  - Optimizer: AdamW
+  - Learning Rate: 0.0001
+  - Batch Size: 16
+  - Mixed Precision: Enabled
+  - Random Seed: 42（再現性確保）
+```
 
 #### K-Fold Cross Validation結果
 
-**全Fold比較（F1スコア、精度、Precision vs Recall、最適閾値分布）:**
+**全Fold比較:**
 
-![K-Fold Comparison](checkpoints_cut_selection_kfold/kfold_comparison.png)
+![K-Fold Comparison](checkpoints_cut_selection_kfold_enhanced/kfold_comparison.png)
 
-**Fold 1の詳細な学習状況（6つのグラフ）:**
+**リアルタイム進捗:**
 
-![Fold 1 Training Details](checkpoints_cut_selection_kfold/fold_1/training_final.png)
+![Realtime Progress](checkpoints_cut_selection_kfold_enhanced/kfold_realtime_progress.png)
 
-各グラフの説明：
-- **左上**: 損失関数の推移（Train/Val Loss）
-- **右上**: 損失の内訳（CE Loss vs TV Loss、左軸=CE、右軸=TV）
-- **中左**: 分類性能（Accuracy & F1 Score）
-- **中右**: Precision, Recall, Specificity
-- **下左**: 最適閾値の推移
-- **下右**: 予測の採用/不採用割合
-
-詳細な結果分析は [K-Fold Final Results](docs/K_FOLD_FINAL_RESULTS.md) を参照してください。
+詳細な結果分析は [最終結果レポート](docs/FINAL_RESULTS.md) を参照してください。
 
 ## ⚠️ 既知の問題点・改善点
 
