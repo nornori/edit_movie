@@ -4,7 +4,7 @@ An AI system that automatically predicts **optimal cut positions** from videos a
 
 **Intended Use**: Automatically edit 10-minute videos into approximately 2-minute (90-150 seconds) highlight videos
 
-![Cut Selection Overview](docs/whatcut.png)
+![Cut Selection Overview](docs/whatcuten.png)
 
 ---
 
