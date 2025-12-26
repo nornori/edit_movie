@@ -970,9 +970,10 @@
 - **学習時間**: 50エポック × 5 Folds = 約2-3時間（GPU使用時）
   - Early Stopping: 平均7.4エポックで収束
   - 実際の学習: 37エポック（85%削減）
-- **推論時間**: 5~10分/動画（特徴量抽出含む）
+- **推論時間**: 3~5分/動画（特徴量抽出含む）
 - **カット数**: 約8〜12個のクリップ（最小3秒、ギャップ結合後）
-- **出力動画長**: 約2分（90秒〜150秒）
+- **出力動画長**: デフォルト約3分（目標180秒、範囲90～200秒）
+  - `--target` オプションで調整可能
 
 ### 損失関数
 
@@ -1035,17 +1036,17 @@ python -m src.training.train --config configs/config_multimodal_experiment.yaml
 ### 3. 推論
 
 ```bash
-# バッチファイルで実行（推奨）
-run_inference.bat "path\to\your_video.mp4"
+# ワンコマンド実行（推奨）
+python scripts/video_to_xml.py "path\to\your_video.mp4"
 
-# または手動で実行
-python -m src.inference.inference_pipeline "your_video.mp4" --output output.xml
+# 目標秒数を指定
+python scripts/video_to_xml.py "path\to\your_video.mp4" --target 60
 
-# AI字幕生成を有効化
-python -m src.inference.inference_pipeline "your_video.mp4" --output output.xml --telop_config configs/config_telop_generation.yaml
+# 既存の特徴量を使用する場合
+python scripts/generate_xml_from_inference.py "path\to\your_video.mp4"
 
-# AI字幕生成を無効化
-python -m src.inference.inference_pipeline "your_video.mp4" --output output.xml --no-speech --no-emotion
+# 出力先を指定
+python scripts/video_to_xml.py "path\to\your_video.mp4" --output custom_output.xml
 ```
 
 ### 4. テスト

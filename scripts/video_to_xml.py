@@ -1,5 +1,5 @@
 """
-Generate Premiere Pro XML from inference results
+動画から直接XMLを生成（特徴量抽出→推論→XML生成を一括実行）
 """
 import torch
 import numpy as np
@@ -17,13 +17,38 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 
-def load_features(video_name):
-    """Load features from CSV"""
-    csv_path = Path(f"temp_features/{video_name}_features_enhanced.csv")
+def extract_features(video_path, output_dir="temp_features"):
+    """Extract features from video"""
+    from src.data_preparation.extract_video_features_parallel import extract_features_worker
+    
+    logger.info("="*80)
+    logger.info("STEP 1: Extract Features")
+    logger.info("="*80)
+    
+    result = extract_features_worker(video_path, output_dir)
+    
+    if result['status'] != 'Success':
+        logger.error(f"❌ Feature extraction failed: {result}")
+        return None
+    
+    logger.info(f"✅ Features extracted: {result['timesteps']} timesteps, {result['features']} features")
+    
+    # Find the generated CSV file
+    video_name = Path(video_path).stem
+    csv_path = Path(output_dir) / f"{video_name}_features.csv"
     
     if not csv_path.exists():
         logger.error(f"❌ Feature file not found: {csv_path}")
         return None
+    
+    return csv_path
+
+
+def load_features(csv_path):
+    """Load features from CSV"""
+    logger.info("\n" + "="*80)
+    logger.info("STEP 2: Load Features")
+    logger.info("="*80)
     
     df = pd.read_csv(csv_path)
     logger.info(f"✅ Loaded CSV: {len(df)} frames")
@@ -88,6 +113,10 @@ def load_features(video_name):
 
 def load_model():
     """Load the trained fullvideo model"""
+    logger.info("\n" + "="*80)
+    logger.info("STEP 3: Load Model")
+    logger.info("="*80)
+    
     model_path = Path("checkpoints_cut_selection_fullvideo/best_model.pth")
     
     if not model_path.exists():
@@ -102,6 +131,10 @@ def load_model():
 
 def run_inference(features, checkpoint):
     """Run model inference"""
+    logger.info("\n" + "="*80)
+    logger.info("STEP 4: Run Inference")
+    logger.info("="*80)
+    
     from src.cut_selection.models.cut_model_enhanced import EnhancedCutSelectionModel
     
     config = checkpoint['config']
@@ -203,6 +236,10 @@ def optimize_threshold(predictions, target_duration=180.0):
         predictions: Model predictions
         target_duration: Target duration in seconds (min = target/2, max = target+20)
     """
+    logger.info("\n" + "="*80)
+    logger.info("STEP 5: Optimize Threshold")
+    logger.info("="*80)
+    
     confidence_scores = predictions['confidence_scores']
     df = predictions['df']
     
@@ -285,6 +322,10 @@ def extract_clips(active_binary, min_clip_duration=3.0, max_gap=1.0):
         min_clip_duration: Minimum clip duration in seconds (default: 3.0)
         max_gap: Maximum gap between clips to merge in seconds (default: 1.0)
     """
+    logger.info("\n" + "="*80)
+    logger.info("STEP 6: Extract Clips")
+    logger.info("="*80)
+    
     fps = 10.0
     
     # First pass: extract all clips without filtering
@@ -344,6 +385,10 @@ def extract_clips(active_binary, min_clip_duration=3.0, max_gap=1.0):
 
 def generate_xml(clips, video_path, output_path):
     """Generate Premiere Pro XML"""
+    logger.info("\n" + "="*80)
+    logger.info("STEP 7: Generate XML")
+    logger.info("="*80)
+    
     from src.inference.direct_xml_generator import create_premiere_xml_direct
     
     fps = 10.0
@@ -376,7 +421,7 @@ def generate_xml(clips, video_path, output_path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate XML from inference')
+    parser = argparse.ArgumentParser(description='Video to XML (Extract features → Inference → Generate XML)')
     parser.add_argument('video_path', type=str, help='Path to video file')
     parser.add_argument('--output', type=str, default=None, help='Output XML path')
     parser.add_argument('--target', type=float, default=180.0, help='Target duration in seconds (default: 180)')
@@ -389,56 +434,43 @@ def main():
     output_xml = args.output if args.output else f"outputs/{video_name}_output.xml"
     target_duration = args.target
     
-    logger.info("🚀 Generating XML from Full Video Model")
+    logger.info("🚀 Video to XML Pipeline")
     logger.info(f"   Video: {video_path}")
     logger.info(f"   Output: {output_xml}")
     logger.info(f"   Target duration: {target_duration}s")
     
+    # Extract features
+    csv_path = extract_features(video_path)
+    if csv_path is None:
+        sys.exit(1)
+    
     # Load features
-    logger.info("\n" + "="*80)
-    logger.info("STEP 1: Load Features")
-    logger.info("="*80)
-    features = load_features(video_name)
+    features = load_features(csv_path)
     if features is None:
         sys.exit(1)
     
     # Load model
-    logger.info("\n" + "="*80)
-    logger.info("STEP 2: Load Model")
-    logger.info("="*80)
     checkpoint = load_model()
     if checkpoint is None:
         sys.exit(1)
     
     # Run inference
-    logger.info("\n" + "="*80)
-    logger.info("STEP 3: Run Inference")
-    logger.info("="*80)
     predictions = run_inference(features, checkpoint)
     if predictions is None:
         sys.exit(1)
     
     # Optimize threshold
-    logger.info("\n" + "="*80)
-    logger.info("STEP 4: Optimize Threshold")
-    logger.info("="*80)
     result = optimize_threshold(predictions, target_duration=target_duration)
     if result is None:
         sys.exit(1)
     
     # Extract clips
-    logger.info("\n" + "="*80)
-    logger.info("STEP 5: Extract Clips")
-    logger.info("="*80)
     clips = extract_clips(result['active_binary'], min_clip_duration=3.0, max_gap=1.0)
     if not clips:
         logger.error("❌ No clips extracted")
         sys.exit(1)
     
     # Generate XML
-    logger.info("\n" + "="*80)
-    logger.info("STEP 6: Generate XML")
-    logger.info("="*80)
     xml_path = generate_xml(clips, video_path, output_xml)
     
     logger.info("\n" + "="*80)

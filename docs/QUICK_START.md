@@ -13,58 +13,40 @@
 
 ## 🎯 新しい動画を自動編集する（推論）
 
-### 方法1: Full Video Model（推奨）
+### ワンコマンド実行（推奨）✅
 
-**per-video制約（90-200秒）を満たす最適閾値を自動探索**
+動画パスを指定するだけで、特徴量抽出→推論→XML生成まで自動実行：
 
 ```bash
-# XML生成（推論 + クリップ抽出 + XML生成）
-python generate_xml_from_inference.py "D:\path\to\video.mp4"
+python scripts/video_to_xml.py "D:\path\to\video.mp4"
 ```
 
 **出力**: `outputs/video_name_output.xml`
 
-**性能**:
-- モデル: `checkpoints_cut_selection_fullvideo/best_model.pth` (Epoch 9, F1=0.5290)
-- 制約: 90-200秒（目標180秒）
-- 最適化: F1最大化
-- テスト結果: 181.9秒（目標180秒に完璧）、10クリップ抽出
-
-### 方法1: Full Video Model（推奨）✅
-
-**最新モデル**: Epoch 9, F1=52.90%（学習時）
-
+**目標秒数の指定**:
 ```bash
-# 推論テスト
-python tests/test_inference_fullvideo.py "video_name"
+# 60秒目標（範囲: 30～80秒）
+python scripts/video_to_xml.py "動画パス" --target 60
 
-# XML生成
-python scripts/generate_xml_from_inference.py "path/to/video.mp4"
+# デフォルトは180秒（範囲: 90～200秒）
+python scripts/video_to_xml.py "動画パス" --target 180
 ```
 
-**詳細**: [推論テスト結果レポート](INFERENCE_TEST_RESULTS.md)
+**処理時間**: 約3～5分/動画（10分の動画、特徴量抽出含む）
 
-### 方法2: 旧モデル（改善中）
+### 既存の特徴量を使用する場合
 
-```bash
-run_inference.bat "path\to\your_video.mp4"
-```
-
-これだけで完了！Premiere Pro用のXMLが `outputs/inference_results/result.xml` に生成されます。
-
-### 方法3: 手動で実行
+特徴量が既に抽出されている場合は、こちらを使用：
 
 ```bash
-# 推論実行
-python -m src.inference.inference_pipeline "path\to\your_video.mp4" ^
-    --output outputs/inference_results/result.xml
+python scripts/generate_xml_from_inference.py "D:\path\to\video.mp4"
 ```
 
-### 3. Premiere Proで開く
+**注意**: 特徴量ファイル（`temp_features/{動画名}_features_enhanced.csv`）が必要です。
 
-生成された `result.xml` をPremiere Proで開いてください。自動的にカット編集されたタイムラインが表示されます。
+### Premiere Proで開く
 
-**推論時間**: 約5-10分/動画（10分の動画、特徴量抽出含む）
+生成された XML をPremiere Proで開いてください。自動的にカット編集されたタイムラインが表示されます。
 
 ---
 
@@ -282,11 +264,11 @@ python extract_video_features_parallel.py --n_jobs 2
 
 ## 📊 実行時間の目安
 
-- **特徴量抽出**: 5-10分/動画（10分の動画、GPU使用時）
-  - 30本の動画: 約2.5-5時間（4並列処理）
+- **特徴量抽出**: 3-5分/動画（10分の動画、GPU使用時）
+  - 30本の動画: 約1.5-2.5時間（4並列処理）
 - **学習**: 約2-3時間（250エポック、5 Folds、GPU使用時）
   - Early Stoppingで実際は37エポック（約30-45分）
-- **推論**: 約5-10分/動画（特徴量抽出含む）
+- **推論**: 約3-5分/動画（特徴量抽出含む）
 
 ---
 
@@ -294,20 +276,26 @@ python extract_video_features_parallel.py --n_jobs 2
 
 ### カット数を調整したい
 
-学習時に最適閾値が自動計算されますが、手動で調整することも可能です：
+推論時に `--target` オプションで目標秒数を指定できます：
 
-`checkpoints_cut_selection_fullvideo/inference_params.yaml` を編集：
+```bash
+# 60秒目標（範囲: 30～80秒）
+python scripts/video_to_xml.py "動画パス" --target 60
 
-```yaml
-confidence_threshold: -0.558  # Fold 1の最適閾値
-min_clip_duration: 3.0        # 最小クリップ継続時間（秒）
-max_gap_duration: 2.0         # ギャップ結合の最大長（秒）
-target_duration: 90.0         # 目標合計時間（秒）
-max_duration: 150.0           # 最大合計時間（秒）
+# 120秒目標（範囲: 60～140秒）
+python scripts/video_to_xml.py "動画パス" --target 120
+
+# デフォルトは180秒（範囲: 90～200秒）
+python scripts/video_to_xml.py "動画パス" --target 180
 ```
 
-閾値を下げる（例: -0.7） → カット数が増える  
-閾値を上げる（例: -0.4） → カット数が減る
+**範囲の計算**:
+- 最小値 = 目標 ÷ 2
+- 最大値 = 目標 + 20
+
+**クリップの結合・フィルタリング**:
+- クリップ間の隙間が1秒未満 → 隙間を含めて結合
+- 結合後に3秒未満のクリップ → 除外
 
 ### GPUを使用したい
 

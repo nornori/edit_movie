@@ -22,30 +22,38 @@ pip install -r requirements.txt
 ffmpeg -version
 ```
 
-### 🎬 推論: 動画→XML（10分/動画）
+### 🎬 推論: 動画→XML（3～5分/動画）
 
 **学習済みモデルを使って、新しい動画を自動編集:**
 
 ```bash
-# バッチファイルで実行（推奨）
-batch\run_inference.bat "path\to\your_video.mp4"
+# ワンコマンド実行（推奨）
+python scripts/video_to_xml.py "動画ファイルのパス"
 
-# または手動で実行
-python -m src.inference.inference_pipeline "your_video.mp4" --output outputs/output.xml
+# 目標秒数を指定（デフォルト: 180秒）
+python scripts/video_to_xml.py "動画パス" --target 60   # 60秒目標（30～80秒）
+python scripts/video_to_xml.py "動画パス" --target 120  # 120秒目標（60～140秒）
+
+# 出力先を指定
+python scripts/video_to_xml.py "動画パス" --output "custom.xml"
 ```
 
-**出力**: `outputs/output.xml` をPremiere Proで開く → 約2分のハイライト動画が完成！
+**出力**: `outputs/{動画名}_output.xml` をPremiere Proで開く → ハイライト動画が完成！
 
 **処理の流れ**:
-1. 動画から特徴量を自動抽出（5-10分）
+1. 動画から特徴量を自動抽出（3-5分）
 2. Full Video Modelで重要シーンを予測（数秒）
-3. 90-200秒制約を満たす最適閾値を自動探索
-4. Premiere Pro用XMLを生成
+3. 目標秒数に合わせて最適閾値を自動探索
+4. クリップを結合・フィルタリング（隙間1秒未満→結合、3秒未満→除外）
+5. Premiere Pro用XMLを生成
 
 **現在の性能**: 
-- **Full Video Model**: 推論テスト成功、90-200秒制約を満たす最適閾値を自動探索
+- **Full Video Model**: 推論テスト成功、目標範囲内に収まる最適閾値を自動探索
 - **予測精度**: F1=52.90%、Recall=80.65%（学習時）
-- **制約満足**: 目標180秒に対して181.9秒（+1.9秒、誤差1.1%）
+- **制約満足**: 目標180秒に対して188.8秒（範囲: 90～200秒）
+- **クリップ処理**: 隙間1秒未満を結合、3秒未満を除外
+
+**詳細**: [推論ガイド](docs/INFERENCE_GUIDE.md)
 
 ---
 
@@ -283,20 +291,21 @@ ffmpeg -version
 
 ### 新しい動画を自動編集
 
-**方法1: バッチファイルを使う（推奨）**
+**ワンコマンド実行（推奨）**
 ```bash
-run_inference.bat "path\to\your_video.mp4"
+# 動画から特徴量抽出→推論→XML生成まで自動実行
+python scripts/video_to_xml.py "path\to\your_video.mp4"
+
+# 目標秒数を指定（デフォルト: 180秒）
+python scripts/video_to_xml.py "path\to\your_video.mp4" --target 60
+
+# 既存の特徴量を使用する場合
+python scripts/generate_xml_from_inference.py "path\to\your_video.mp4"
 ```
 
-**方法2: 手動で実行**
-```bash
-# 推論実行
-python -m src.inference.inference_pipeline "your_video.mp4" outputs/inference_results/output.xml
+**出力**: `outputs/{動画名}_output.xml` をPremiere Proで開く
 
-# Premiere Proで output.xml を開く
-```
-
-詳しくは [QUICK_START.md](docs/QUICK_START.md) を参照してください。
+詳しくは [推論ガイド](docs/INFERENCE_GUIDE.md) と [QUICK_START.md](docs/QUICK_START.md) を参照してください。
 
 ## 🎓 教師データの作り方（最重要）
 
@@ -343,8 +352,8 @@ python -m src.data_preparation.extract_video_features_parallel \
 ```
 
 **処理時間の目安:**
-- 10分の動画1本: 約5-10分（GPU使用時）
-- 30本の動画: 約2.5-5時間
+- 10分の動画1本: 約3-5分（GPU使用時）
+- 30本の動画: 約1.5-2.5時間（4並列処理）
 
 **抽出される特徴量:**
 - **音声（215次元）**:
@@ -484,14 +493,22 @@ python tests/test_inference_fullvideo.py "video_name"
 
 **XML生成**:
 ```bash
-# 動画からXMLを生成
+# ワンコマンド実行（特徴量抽出→推論→XML生成）
+python scripts/video_to_xml.py "path/to/video.mp4"
+
+# 目標秒数を指定（デフォルト: 180秒）
+python scripts/video_to_xml.py "path/to/video.mp4" --target 60
+
+# 既存の特徴量を使用する場合
 python scripts/generate_xml_from_inference.py "path/to/video.mp4"
 ```
 
 **出力**:
 - `outputs/video_name_output.xml` - Premiere Pro用XML
-- 自動的に90-200秒制約を満たす最適閾値を探索
-- 目標180秒に近い長さのハイライト動画を生成
+- 自動的に目標秒数に合わせた最適閾値を探索
+- 範囲: 目標÷2 ～ 目標+20秒
+- クリップ結合: 隙間1秒未満を結合
+- クリップフィルタ: 3秒未満を除外
 
 ## 📊 性能
 
@@ -547,7 +564,7 @@ python scripts/generate_xml_from_inference.py "path/to/video.mp4"
 #### 処理時間（実測値）
 
 **学習フェーズ:**
-- **特徴量抽出**: 5-10分/動画（10分の動画、GPU: RTX 3060 Ti使用）
+- **特徴量抽出**: 3-5分/動画（10分の動画、GPU: RTX 3060 Ti使用）
   - 並列処理（n_jobs=4）で高速化可能
 - **学習時間**: 約1-2時間（GPU使用時）
   - 1エポック: 約1-2分
@@ -555,11 +572,11 @@ python scripts/generate_xml_from_inference.py "path/to/video.mp4"
   - 最良モデル: Epoch 9で達成
 
 **推論フェーズ:**
-- **特徴量抽出**: 5-10分/動画（10分の動画）
+- **特徴量抽出**: 3-5分/動画（10分の動画）
   - ボトルネック: Whisper（音声認識）、CLIP（画像埋め込み）
 - **モデル推論**: 5-30秒/動画
 - **XML生成**: <1秒
-- **合計**: 約5-10分/動画
+- **合計**: 約3-5分/動画
 
 **VRAM使用量:**
 - **学習時**: 約6-8GB（バッチサイズ16）

@@ -740,6 +740,7 @@ def _extract_visual_features(video_path: str, clip_model, clip_processor, face_m
     records = []
     temp_csv_path = video_path + ".temp_visual.csv"
     is_first_chunk = True
+    column_order = None  # 列の順序を保存
     
     current_frame_idx = 0
     prev_gray = None
@@ -805,6 +806,12 @@ def _extract_visual_features(video_path: str, clip_model, clip_processor, face_m
             # チャンクサイズに達したらCSVに書き出してメモリを解放
             if len(records) >= CHUNK_SIZE:
                 df_chunk = pd.DataFrame(records)
+                # 最初のチャンクで列の順序を保存
+                if is_first_chunk:
+                    column_order = df_chunk.columns.tolist()
+                else:
+                    # 2番目以降は列の順序を揃える
+                    df_chunk = df_chunk[column_order]
                 df_chunk.to_csv(temp_csv_path, mode='a', header=is_first_chunk, index=False, float_format='%.6f')
                 is_first_chunk = False
                 records = []  # メモリ解放
@@ -816,6 +823,9 @@ def _extract_visual_features(video_path: str, clip_model, clip_processor, face_m
     # 残りのレコードを書き出し
     if records:
         df_chunk = pd.DataFrame(records)
+        if not is_first_chunk:
+            # 列の順序を揃える
+            df_chunk = df_chunk[column_order]
         df_chunk.to_csv(temp_csv_path, mode='a', header=is_first_chunk, index=False, float_format='%.6f')
     
     # 一時ファイルから読み込んで返す
