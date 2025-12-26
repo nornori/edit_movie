@@ -1,8 +1,28 @@
 # Complete Metrics Summary - 2025-12-26
 
+⚠️ **注意**: このドキュメントには旧K-Foldモデルの詳細な性能指標が含まれています。現在は**Full Video Model**の使用を推奨しています。K-Foldモデルはシーケンス分割の問題により改善中です。
+
 ## 📊 All Performance Metrics (Updated)
 
-### 1. K-Fold Cross Validation (Training Performance)
+### 1. Full Video Model (Training Performance) ✅ 推奨
+
+**Dataset**: 67 videos  
+**Method**: 1 video = 1 sample, per-video optimization  
+**Date**: 2025-12-26
+
+#### Training Results (Best: Epoch 9)
+
+| Metric | Value |
+|--------|-------|
+| **F1 Score** | **52.90%** |
+| **Recall** | **80.65%** |
+| **Precision** | 38.94% |
+| **Accuracy** | 62.89% |
+| **Threshold** | 0.0 |
+
+---
+
+### 2. K-Fold Cross Validation (Training Performance) - 改善中
 
 **Dataset**: 67 videos, 289 sequences  
 **Method**: 5-Fold GroupKFold (video-level split)  
@@ -33,42 +53,7 @@
 
 ---
 
-### 2. Full Video Model (Training Performance)
-
-**Dataset**: Same as K-Fold (67 videos)  
-**Method**: 1 video = 1 sample, per-video 90-200s constraint  
-**Date**: 2025-12-26
-
-#### Training Results (76 Epochs)
-
-**Best Model: Epoch 9**
-
-| Metric | Value |
-|--------|-------|
-| **F1 Score** | **52.90%** |
-| **Recall** | **80.65%** |
-| **Precision** | 38.94% |
-| **Accuracy** | 62.89% |
-| **Threshold** | 0.0 |
-| **Avg Duration** | 99.73s |
-| **Active Ratio** | 68.90% |
-| **Inactive Ratio** | 31.10% |
-
-**Loss Values**:
-- Train Loss: 2.5608
-- Train CE Loss: 0.3133
-- Val Loss: 7.9367
-- Val CE Loss: 0.6035
-
-**Final Epoch (76)**:
-- F1: 48.83%
-- Recall: 77.60%
-- Precision: 35.63%
-- Duration: 117.76s
-
----
-
-### 3. Full Video Model (Inference Performance)
+### 3. Full Video Model (Inference Performance) ✅ 推奨
 
 **Test Video**: bandicam 2025-05-11 19-25-14-768.mp4  
 **Date**: 2025-12-26
@@ -143,16 +128,16 @@
 
 ## 📈 Performance Comparison
 
-### K-Fold CV vs Full Video Model (Training)
+### Full Video Model vs K-Fold (Training)
 
-| Metric | K-Fold (Avg) | Full Video (Epoch 9) | Diff |
-|--------|--------------|----------------------|------|
-| F1 Score | 42.30% | **52.90%** | **+10.60%** |
-| Recall | 76.10% | **80.65%** | **+4.55%** |
-| Precision | 29.83% | **38.94%** | **+9.11%** |
-| Accuracy | 50.24% | **62.89%** | **+12.65%** |
+| Metric | Full Video (Epoch 9) ✅ | K-Fold (Avg) | Diff |
+|--------|----------------------|--------------|------|
+| F1 Score | **52.90%** | 42.30% | **+10.60%** |
+| Recall | **80.65%** | 76.10% | **+4.55%** |
+| Precision | **38.94%** | 29.83% | **+9.11%** |
+| Accuracy | **62.89%** | 50.24% | **+12.65%** |
 
-**Winner**: Full Video Model (better on all metrics)
+**推奨**: Full Video Model（全指標で優位）
 
 ### Training vs Inference (Full Video Model)
 
@@ -350,12 +335,13 @@
 
 ## 📝 Recommendations
 
-### For Production
+### For Production ✅
 
-1. **Use Full Video Model (Epoch 9)**
+1. **Use Full Video Model (Epoch 9) - 推奨**
    - Best F1: 52.90%
    - Best Recall: 80.65%
    - Per-video optimization: Yes
+   - Inference test: 181.9s (target 180s)
 
 2. **Post-Processing**
    - Filter clips < 3s
@@ -389,15 +375,14 @@
 ## 📚 Related Documents
 
 - [README.md](../README.md) - Project overview
-- [FINAL_RESULTS.md](FINAL_RESULTS.md) - Detailed training results
+- [FINAL_RESULTS.md](FINAL_RESULTS.md) - Full Video Model results (推奨)
 - [INFERENCE_TEST_RESULTS.md](INFERENCE_TEST_RESULTS.md) - Inference test report
-- [K_FOLD_FINAL_RESULTS.md](K_FOLD_FINAL_RESULTS.md) - K-Fold CV results
+- [K_FOLD_FINAL_RESULTS.md](K_FOLD_FINAL_RESULTS.md) - K-Fold CV results (改善中)
 - [QUICK_START.md](QUICK_START.md) - Quick start guide
-- [TRAINING_GRAPHS_UPDATE.md](TRAINING_GRAPHS_UPDATE.md) - Graph updates
 
 ---
 
 **Last Updated**: 2025-12-26  
-**Version**: 1.0.0  
-**Status**: ✅ All metrics verified and updated
+**Version**: 2.0.0  
+**Status**: ✅ Full Video Model推奨、K-Foldモデルは改善中
 

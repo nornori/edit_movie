@@ -156,7 +156,6 @@
 - Show target duration: 180s
 
 ### 4. Comparison Graph
-- Compare K-Fold CV vs Full Video Model
 - Compare Training vs Inference performance
 - Show per-video optimization benefit
 

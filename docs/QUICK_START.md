@@ -30,9 +30,21 @@ python generate_xml_from_inference.py "D:\path\to\video.mp4"
 - 最適化: F1最大化
 - テスト結果: 181.9秒（目標180秒に完璧）、10クリップ抽出
 
+### 方法1: Full Video Model（推奨）✅
+
+**最新モデル**: Epoch 9, F1=52.90%（学習時）
+
+```bash
+# 推論テスト
+python tests/test_inference_fullvideo.py "video_name"
+
+# XML生成
+python scripts/generate_xml_from_inference.py "path/to/video.mp4"
+```
+
 **詳細**: [推論テスト結果レポート](INFERENCE_TEST_RESULTS.md)
 
-### 方法2: K-Fold Model（バッチファイル）
+### 方法2: 旧モデル（改善中）
 
 ```bash
 run_inference.bat "path\to\your_video.mp4"
@@ -109,17 +121,11 @@ python scripts/add_temporal_features.py
 - CLIP類似度: clip_sim_prev, clip_sim_next, clip_sim_mean5
 - 音声・映像変化: audio_change_score, visual_motion_change等
 
-### ステップ5: K-Fold用データを作成
+### ステップ5: Full Video用データを作成
 
 ```bash
-python scripts/create_combined_data_for_kfold.py
+python scripts/create_cut_selection_data_enhanced_fullvideo.py
 ```
-
-**処理内容**:
-- 特徴量とアクティブラベルをマージ
-- シーケンス分割（長さ1000フレーム、オーバーラップ500）
-- 動画単位でグループ化（GroupKFold用、データリーク防止）
-- 特徴量の正規化（StandardScaler）
 
 **出力**:
 - `preprocessed_data/combined_sequences_cut_selection_enhanced.npz` (289シーケンス、67動画)
@@ -131,16 +137,16 @@ python scripts/create_combined_data_for_kfold.py
 
 ## 🎓 カット選択モデルを学習する
 
-### K-Fold Cross Validationで学習（推奨）
+### Full Video学習（推奨）✅
 
 ```bash
 # バッチファイルで実行（推奨）
-train_cut_selection_kfold_enhanced.bat
+batch/train_fullvideo.bat
 ```
 
 **学習設定**:
-- K-Fold: 5分割（GroupKFold）
-- エポック数: 50/Fold
+- 1動画=1サンプル（per-video最適化）
+- エポック数: 50
 - バッチサイズ: 16
 - 学習率: 0.0001
 - Early Stopping: 15エポック
@@ -155,11 +161,11 @@ train_cut_selection_kfold_enhanced.bat
 
 ### 学習状況の確認
 
-ブラウザで `checkpoints_cut_selection_kfold_enhanced/view_training.html` を開くと、2秒ごとに自動更新されるグラフで学習の様子をリアルタイム確認できます。
+ブラウザで `checkpoints_cut_selection_fullvideo/view_training.html` を開くと、2秒ごとに自動更新されるグラフで学習の様子をリアルタイム確認できます。
 
-**全体進捗（kfold_realtime_progress.png）**:
-1. F1スコアの推移（各Fold）
-2. Validation Lossの推移（各Fold）
+**学習グラフ**:
+1. F1スコアの推移
+2. Validation Lossの推移
 3. 現在のF1スコア（棒グラフ）
 4. 進捗状況（テキスト）
 5. 最良F1の推移（各Fold）
@@ -173,7 +179,7 @@ train_cut_selection_kfold_enhanced.bat
 5. 最適閾値の推移
 6. 予測の採用/不採用割合
 
-学習済みモデルは `checkpoints_cut_selection_kfold_enhanced/` に保存されます。
+学習済みモデルは `checkpoints_cut_selection_fullvideo/` に保存されます。
 
 ---
 
@@ -181,9 +187,10 @@ train_cut_selection_kfold_enhanced.bat
 
 ### 推論前に必要なもの
 ```
-checkpoints_cut_selection_kfold_enhanced/
-├── fold_1_best_model.pth          # 最良モデル (F1: 49.42%)
-├── fold_2_best_model.pth
+checkpoints_cut_selection_fullvideo/
+├── best_model.pth                 # 学習済みモデル
+└── inference_params.yaml          # 推論パラメータ
+```
 ├── fold_3_best_model.pth
 ├── fold_4_best_model.pth
 ├── fold_5_best_model.pth
@@ -226,15 +233,15 @@ data/processed/
 set PYTHONPATH=%PYTHONPATH%;%CD%
 ```
 
-または、バッチファイル（`train_cut_selection_kfold_enhanced.bat`など）を使用してください。
+または、バッチファイル（`batch/train_fullvideo.bat`など）を使用してください。
 
-### エラー: FileNotFoundError: fold_1_best_model.pth
+### エラー: FileNotFoundError: best_model.pth
 
 **原因**: 学習済みモデルがない
 
 **解決策**:
 1. データ準備を実行: ステップ1-5を完了
-2. 学習を実行: `train_cut_selection_kfold_enhanced.bat`
+2. 学習を実行: `batch/train_fullvideo.bat`
 
 ### エラー: CUDA out of memory
 
@@ -242,7 +249,7 @@ set PYTHONPATH=%PYTHONPATH%;%CD%
 
 **解決策**:
 ```yaml
-# configs/config_cut_selection_kfold_enhanced.yaml を編集
+# configs/config_cut_selection_fullvideo.yaml を編集
 batch_size: 8  # 16から削減
 ```
 
@@ -267,7 +274,7 @@ python extract_video_features_parallel.py --n_jobs 2
 
 **解決策**:
 - データ数を確認: 最低でも30本以上の動画が推奨
-- 設定を確認: `configs/config_cut_selection_kfold_enhanced.yaml`
+- 設定を確認: `configs/config_cut_selection_fullvideo.yaml`
 - ログを確認: 学習中のメッセージをチェック
 - GPU使用を確認: `nvidia-smi`
 
@@ -289,7 +296,7 @@ python extract_video_features_parallel.py --n_jobs 2
 
 学習時に最適閾値が自動計算されますが、手動で調整することも可能です：
 
-`checkpoints_cut_selection_kfold_enhanced/inference_params.yaml` を編集：
+`checkpoints_cut_selection_fullvideo/inference_params.yaml` を編集：
 
 ```yaml
 confidence_threshold: -0.558  # Fold 1の最適閾値
@@ -313,9 +320,8 @@ nvidia-smi
 
 ### データリークを防ぐには
 
-- **GroupKFold**を使用（同じ動画は同じFoldに）
-- 各Foldで完全に未見のデータで評価
-- アンサンブル評価は避ける（データが少ない場合）
+- **動画単位で分割**（同じ動画は同じsplitに）
+- 各splitで完全に未見のデータで評価
 
 ### 学習データの品質を上げるには
 
@@ -339,7 +345,7 @@ nvidia-smi
 - [PROJECT_WORKFLOW_GUIDE](guides/PROJECT_WORKFLOW_GUIDE.md) - 全体ワークフロー
 - [VIDEO_FEATURE_EXTRACTION_GUIDE](guides/VIDEO_FEATURE_EXTRACTION_GUIDE.md) - 特徴量抽出詳細
 - [FINAL_RESULTS](FINAL_RESULTS.md) - 最終結果レポート
-- [TRAINING_REPORT](TRAINING_REPORT.md) - 詳細学習レポート
+- [KFOLD_TRAINING_REPORT](KFOLD_TRAINING_REPORT.md) - K-Fold学習レポート（改善中）
 
 ---
 
@@ -380,9 +386,9 @@ Premiere Proで開くと、自動的にカット編集されたタイムライ�
 
 ## 📊 期待される性能
 
-### K-Fold Cross Validation結果（学習性能）
+### Full Video Model（推奨）✅
 
-| 指標 | 平均値 | 標準偏差 | 最良（Fold 1） |
+| 指標 | 学習時 | 推論テスト |
 |------|--------|----------|----------------|
 | **F1 Score** | **42.30%** | ±5.75% | **49.42%** |
 | **Accuracy** | 50.24% | ±14.92% | 73.63% |
@@ -433,4 +439,4 @@ Premiere Proで開くと、自動的にカット編集されたタイムライ�
 ---
 
 **最終更新**: 2025-12-26  
-**バージョン**: 3.0.0（K-Fold CV + 時系列特徴量版）
+**バージョン**: 4.0.0（Full Video Model推奨版）

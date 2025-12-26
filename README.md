@@ -85,53 +85,39 @@ python -m src.data_preparation.extract_active_labels ^
 python scripts\add_temporal_features.py
 ```
 
-**5. K-Fold用データセット作成（数分）**
+**5. Full Video用データセット作成（数分）**
 
 ```bash
-# 特徴量とラベルを結合し、K-Fold CV用に準備
-python scripts\combine_sequences_enhanced.py
+# Full Video学習用にデータを準備
+python scripts\create_cut_selection_data_enhanced_fullvideo.py
 ```
 
 **6. 学習実行（2-3時間、GPU推奨）**
 
 ```bash
-# K-Fold Cross Validation（5分割）で学習
-batch\train_cut_selection_enhanced.bat
+# Full Video学習（推奨）
+batch\train_fullvideo.bat
 
 # リアルタイム可視化
-# ブラウザで checkpoints_cut_selection_kfold_enhanced/view_training.html を開く
+# ブラウザで checkpoints_cut_selection_fullvideo/view_training.html を開く
 ```
 
 **出力**: 
-- `checkpoints_cut_selection_kfold_enhanced/fold_1_best_model.pth` （最良モデル、F1: 49.42%）
-- `kfold_summary.csv` （全Foldの統計）
-- `kfold_comparison.png` （比較グラフ）
+- `checkpoints_cut_selection_fullvideo/best_model.pth` （学習済みモデル）
+- `training_history.csv` （学習履歴）
+- `training_progress.png` （学習グラフ）
 
 ---
 
 ### 📊 現在の性能（2025-12-26検証済み）
 
-#### 学習性能（K-Fold CV）
-
-| 指標 | 平均値 | 最良（Fold 1） |
-|------|--------|----------------|
-| **F1 Score** | **42.30%** | **49.42%** |
-| **Recall** | **76.10%** | 74.65% |
-| **Precision** | 29.83% | 36.94% |
-
-- ✅ **Recall 76%**: 採用すべきカットの76%を検出（見逃しが少ない）
-- ⚠️ **Precision 30%**: 予測の30%が正解（誤検出がやや多い）
-- 📈 **目標**: F1 55%+（現在 -12.70pt）
-
-**評価方法**: 完全に未見のデータで評価（データリークなし、動画単位でFold分割）
-
-#### 推論性能（Full Video Model）
+#### 推論性能（Full Video Model）✅ 推奨
 
 **最新モデル**: Epoch 9, F1=0.5290（学習時）
 
 **推論テスト結果**（bandicam 2025-05-11 19-25-14-768.mp4）:
 - 動画長: 1000.1秒（約16.7分）
-- **最適閾値**: 0.8952（F1最大化、90-200秒制約内）
+- **最適閾値**: 0.8952（制約満足、90-200秒制約内）
 - **予測時間**: 181.9秒（目標180秒に完璧に一致）
 - **採用率**: 18.2%（1,819 / 10,001フレーム）
 - **抽出クリップ数**: 10個（合計138.3秒）
@@ -141,6 +127,8 @@ batch\train_cut_selection_enhanced.bat
 - ✅ 90秒以上200秒以下の制約を満たす
 - ✅ 目標180秒（3分）にほぼ完璧に一致
 - ✅ per-video最適化（動画ごとに最適閾値を探索）
+
+**詳細**: [推論テスト結果レポート](docs/INFERENCE_TEST_RESULTS.md)
 
 ---
 
@@ -175,10 +163,10 @@ batch\train_cut_selection_enhanced.bat
 
 **本プロジェクトは現在、カット選択（Cut Selection）に特化して開発中です。**
 
-- ✅ **カット選択モデル**: 動作中（平均F1スコア: 42.30%、Recall: 76.10%）
-  - K-Fold Cross Validation（5-Fold）で検証済み
-  - 真の汎化性能を測定（データリークなし）
-  - 最良モデル: Fold 1（F1: 49.42%）
+- ✅ **カット選択モデル**: Full Video Model推奨（推論テスト成功）
+  - 90-200秒制約を満たす最適閾値を自動探索
+  - 目標180秒にほぼ完璧に一致（+1.9秒）
+  - Premiere Pro用XML生成成功
 - ⚠️ **グラフィック配置・テロップ生成**: 精度が低いため今後の課題
   - 現在のマルチモーダルモデル（音声・映像・トラック統合）は、グラフィック配置やテロップ生成の精度が実用レベルに達していません
   - カット選択に集中することで、より高品質な自動編集を実現します
@@ -188,14 +176,13 @@ batch\train_cut_selection_enhanced.bat
 
 ### 現在実装済み（カット選択）
 - **自動カット検出**: AIが最適なカット位置を予測
-  - 平均F1スコア: 42.30%（K-Fold CV）
-  - Recall: 76.10%（採用すべきカットを見逃さない）
-  - 最良モデル: 49.42% F1（Fold 1）
+  - Full Video Model: 推論テスト成功
+  - 90-200秒制約満足
+  - per-video最適化
 - **音声同期カット**: 映像と音声を同じ位置で自動カット
 - **クリップフィルタリング**: 短すぎるクリップの除外、ギャップ結合、優先順位付け
 - **Premiere Pro連携**: 生成されたXMLをそのままPremiere Proで開ける
 - **リアルタイム学習可視化**: 6つのグラフで学習状況を監視
-- **K-Fold Cross Validation**: 5-Foldで真の汎化性能を測定
 
 ### 将来的に実装予定の機能（精度改善後）
 - **グラフィック配置の自動化**: キャラクター立ち絵の配置・スケール・位置調整
@@ -413,10 +400,10 @@ train_cut_selection.bat
 
 ### 基本ガイド
 - [クイックスタート](docs/QUICK_START.md)
-- [K-Fold Cross Validation](docs/K_FOLD_CROSS_VALIDATION.md)
-- [プロジェクト全体の流れ](docs/guides/PROJECT_WORKFLOW_GUIDE.md)
+- [最終結果レポート](docs/FINAL_RESULTS.md)
+- [推論テスト結果](docs/INFERENCE_TEST_RESULTS.md)
+- [プロジェクト全体の流れ](docs/guides/PROJECT_WORKFLOW_GUIDE_GUIDE.md)
 - [必要なファイル一覧](docs/guides/REQUIRED_FILES_BY_PHASE.md)
-- [音声カット & テロップ変換](docs/summaries/AUDIO_CUT_AND_TELOP_GRAPHICS_SUMMARY.md)
 
 ## 🔧 開発
 
@@ -428,68 +415,55 @@ python scripts/create_cut_selection_data.py
 
 ### 学習
 
-**カット選択モデルのトレーニング:**
+**Full Video Model（推奨）:**
 ```bash
-# 1. データ準備（動画単位で分割）
-python scripts/create_cut_selection_data.py
+# 1. データ準備
+python scripts/create_cut_selection_data_enhanced_fullvideo.py
 
-# 2. トレーニング実行（可視化付き）
-train_cut_selection.bat
+# 2. トレーニング実行
+batch/train_fullvideo.bat
 
 # 3. 学習状況の確認
-# ブラウザで checkpoints_cut_selection/view_training.html を開く
-# 2秒ごとに自動更新されるグラフで学習の様子をリアルタイム確認
-```
-
-**K-Fold Cross Validation（より信頼性の高い評価）:**
-```bash
-# 1. データ準備（train + valを結合）
-python scripts/create_combined_data_for_kfold.py
-
-# 2. K-Fold学習実行（5分割）
-train_cut_selection_kfold.bat
-
-# 3. 結果の確認
-# checkpoints_cut_selection_kfold/kfold_comparison.png - 全Foldの比較
-# checkpoints_cut_selection_kfold/kfold_summary.csv - 統計サマリー
+# ブラウザで checkpoints_cut_selection_fullvideo/view_training.html を開く
 ```
 
 ### テスト
 ```bash
-# カット選択モデルのテストは今後実装予定
+# 推論テスト
+python tests/test_inference_fullvideo.py "video_name"
+
+# XML生成
+python scripts/generate_xml_from_inference.py "path/to/video.mp4"
 ```
 
 ## 📊 性能
 
 ### カット選択モデル（Cut Selection Model）
 
-#### 最終性能（2025-12-26検証済み）
+#### 推論性能（Full Video Model）✅ 推奨
 
-**K-Fold Cross Validation（5-Fold）結果:**
+**推論テスト結果**（bandicam 2025-05-11 19-25-14-768.mp4）:
+- 動画長: 1000.1秒（約16.7分）
+- **予測時間**: 181.9秒（目標180秒に完璧に一致）
+- **採用率**: 18.2%（1,819 / 10,001フレーム）
+- **抽出クリップ数**: 10個（合計138.3秒）
+- **XML生成**: 成功（Premiere Pro用）
 
-| 指標 | 平均値 | 標準偏差 | 最良（Fold 1） |
-|------|--------|----------|----------------|
-| **F1 Score** | **42.30%** | ±5.75% | **49.42%** |
-| **Accuracy** | 50.24% | ±14.92% | 73.63% |
-| **Precision** | 29.83% | ±5.80% | 36.94% |
-| **Recall** | **76.10%** | ±5.19% | 74.65% |
+**制約満足度**:
+- ✅ 90秒以上200秒以下の制約を満たす
+- ✅ 目標180秒（3分）にほぼ完璧に一致
+- ✅ per-video最適化（動画ごとに最適閾値を探索）
 
-**評価方法:**
-- 各Foldで完全に未見のデータで評価
-- データリークなし（動画単位でFold分割）
-- 真の汎化性能を測定
-
-**推奨モデル:** Fold 1（F1: 49.42%、最も安定した性能）
+**詳細**: [推論テスト結果レポート](docs/INFERENCE_TEST_RESULTS.md)
 
 #### データセット
-- **学習データ**: 67動画、289シーケンス
-  - K-Fold Cross Validation: 5分割（GroupKFoldでデータリーク防止）
-  - 同じ動画のシーケンスは必ず同じFoldに配置
-  - シーケンス長: 1000フレーム、オーバーラップ: 500フレーム
+- **学習データ**: 67動画
+  - Full Video方式: 1動画=1サンプル
+  - per-video最適化
 - **採用率**: 全体23.12%
 - **特徴量**: 784次元（音声235 + 映像543 + 時系列6）
 - **想定入力**: 10分程度の動画
-- **出力**: 約2分（90秒〜150秒）のハイライト動画
+- **出力**: 約2分（90秒〜200秒）のハイライト動画
 
 #### 処理時間（実測値）
 
@@ -533,16 +507,6 @@ Training:
   - Mixed Precision: Enabled
   - Random Seed: 42（再現性確保）
 ```
-
-#### K-Fold Cross Validation結果
-
-**全Fold比較:**
-
-![K-Fold Comparison](checkpoints_cut_selection_kfold_enhanced/kfold_comparison.png)
-
-**リアルタイム進捗:**
-
-![Realtime Progress](checkpoints_cut_selection_kfold_enhanced/kfold_realtime_progress.png)
 
 詳細な結果分析は [最終結果レポート](docs/FINAL_RESULTS.md) を参照してください。
 
@@ -743,7 +707,6 @@ print(set(data['video_names']))
 **解決策**:
 - より多くの動画（最低30本以上）で再学習
 - データの多様性を確保
-- K-Fold Cross Validationで評価
 
 #### 5. 学習データと検証データが重複している
 

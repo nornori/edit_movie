@@ -37,13 +37,12 @@
    - `cut_model_enhanced.py` - 現行の拡張モデル
 
 2. **datasets/** - データセットクラス
-   - `cut_dataset_enhanced_fullvideo.py` - Full Video用
-   - `cut_dataset_enhanced.py` - K-Fold用
+   - `cut_dataset_enhanced_fullvideo.py` - Full Video用（推奨）
+   - `cut_dataset_enhanced.py` - 旧版
 
 3. **training/** - 訓練スクリプト
-   - `train_cut_selection_fullvideo_v2.py` - 現行（Full Video）
+   - `train_cut_selection_fullvideo_v2.py` - 現行（Full Video、推奨）
    - `train_cut_selection_fullvideo.py`
-   - `train_cut_selection_kfold_enhanced.py` - K-Fold訓練
 
 4. **inference/** - 推論モジュール
    - `inference_cut_selection.py` - 基本推論

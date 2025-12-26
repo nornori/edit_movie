@@ -1,8 +1,11 @@
-# K-Fold Cross Validation - 詳細学習レポート
+# カット選択モデル - 詳細学習レポート
+
+⚠️ **注意**: このドキュメントは旧K-Foldモデルに関するものです。現在は**Full Video Model**の使用を推奨しています。
 
 **訓練日**: 2025-12-26  
 **モデル**: Enhanced Cut Selection Model (V1)  
-**評価方法**: 5-Fold Cross Validation（GroupKFold）
+**評価方法**: 5-Fold Cross Validation（GroupKFold）  
+**ステータス**: 改善中（シーケンス分割の問題あり）
 
 ---
 

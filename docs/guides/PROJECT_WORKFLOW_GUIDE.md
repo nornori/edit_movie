@@ -433,8 +433,8 @@ max_duration: 150.0           # 最大合計時間（秒）
 - [README](../../README.md) - プロジェクト概要
 - [QUICK_START](../QUICK_START.md) - クイックスタートガイド
 - [FINAL_RESULTS](../FINAL_RESULTS.md) - 最終結果レポート
-- [TRAINING_REPORT](../TRAINING_REPORT.md) - 詳細学習レポート
-- [K_FOLD_CROSS_VALIDATION](../K_FOLD_CROSS_VALIDATION.md) - K-Fold CV詳細
+- [KFOLD_TRAINING_REPORT](../KFOLD_TRAINING_REPORT.md) - K-Fold学習レポート（改善中）
+- [K_FOLD_CROSS_VALIDATION](../K_FOLD_CROSS_VALIDATION.md) - K-Fold CV詳細（改善中）
 
 ---
 

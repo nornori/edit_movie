@@ -9,10 +9,10 @@
 **想定用途**: 10分程度の動画を約2分（90秒〜150秒）のハイライト動画に自動編集
 
 **現在の開発フォーカス**:
-- ✅ **カット選択モデル**: 動作中（K-Fold CV平均F1: 42.30%、最良: 49.42%）
-  - K-Fold Cross Validation（5-Fold）で検証済み
-  - 真の汎化性能を測定（データリークなし）
-  - Recall: 76.10%（採用すべきカットを見逃さない）
+- ✅ **カット選択モデル**: Full Video Model推奨（推論テスト成功）
+  - per-video最適化で90-200秒制約満足
+  - 目標180秒にほぼ完璧に一致（+1.9秒）
+  - Recall: 80.65%（採用すべきカットを見逃さない）
   - 67動画、289シーケンスで学習
   - Random Seed 42で再現性確保
 - ⚠️ **グラフィック配置・テロップ生成**: 精度が低いため今後の課題
@@ -157,16 +157,15 @@
 **`data_preprocessing.py`** (約400行)
 - **役割**: 特徴量と編集履歴をアライメントして学習用データを生成（旧バージョン）
 - **状態**: 後方互換性のために残存
-- **注意**: 現在は`create_combined_data_for_kfold.py`を使用
+- **注意**: 現在は`create_cut_selection_data_enhanced_fullvideo.py`を使用
 
-**`create_combined_data_for_kfold.py`** (約500行)
-- **役割**: K-Fold Cross Validation用のデータセット生成
+**`create_cut_selection_data_enhanced_fullvideo.py`** (約500行)
+- **役割**: Full Video学習用のデータセット生成（推奨）
 - **主要機能**:
   - 特徴量とアクティブラベルを時間ベースでマージ
-  - シーケンス分割（長さ1000フレーム、オーバーラップ500）
-  - 動画単位でグループ化（GroupKFold用、データリーク防止）
+  - 動画単位でデータを準備（per-video最適化）
   - 特徴量の正規化（StandardScaler）
-- **出力**: NPZ形式のシーケンスデータ（`preprocessed_data/combined_sequences_cut_selection_enhanced.npz`）
+- **出力**: NPZ形式のデータ（`preprocessed_data/train_fullvideo_cut_selection_enhanced.npz`）
 
 
 #### `src/model/` - モデル定義
@@ -213,11 +212,11 @@
 
 #### `src/training/` - 学習
 
-**`train_cut_selection_kfold_enhanced.py`** (約800行)
-- **役割**: K-Fold Cross Validationによる学習のメインスクリプト
+**`train_cut_selection_fullvideo_v2.py`** (約800行)
+- **役割**: Full Video学習のメインスクリプト（推奨）
 - **主要機能**:
   - YAMLファイルから設定読み込み
-  - GroupKFoldでデータ分割（動画単位、データリーク防止）
+  - 動画単位でデータ分割（per-video最適化）
   - データセット・モデル・オプティマイザの初期化
   - 各Foldで学習ループの実行
   - Early Stopping（patience=15）

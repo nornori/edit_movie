@@ -2,7 +2,9 @@
 
 ## Overview
 
-This enhancement adds **temporal and contextual features** to improve the cut selection model. The current K-Fold Cross Validation results show an average F1 score of **42.30%** (best: 49.42%), with the goal of reaching 55%+.
+⚠️ **注意**: このドキュメントは旧K-Foldモデルに関するものです。現在は**Full Video Model**の使用を推奨しています。
+
+This enhancement adds **temporal and contextual features** to improve the cut selection model. The K-Fold approach has sequence splitting issues and is currently under improvement.
 
 ## What's New
 
