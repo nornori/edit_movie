@@ -8,6 +8,8 @@
 
 ## 🎯 Final Performance Metrics
 
+### Training Performance (K-Fold CV)
+
 | Metric | Mean ± Std | Target Range | Status |
 |--------|-----------|--------------|--------|
 | **F1 Score** | 0.4230 ± 0.0575 | 0.55 | ❌ Not Achieved (-12.70pt) |
@@ -15,6 +17,25 @@
 | **Precision** | 0.2983 ± 0.0580 | 0.40-0.60 | ❌ Below Target |
 | **Accuracy** | 0.5024 ± 0.1492 | - | - |
 | **Optimal Threshold** | -0.533 ± 0.036 | - | - |
+
+### Inference Performance (Full Video Model)
+
+**Latest Model**: Epoch 9, F1=0.5290 (during training)
+
+**Inference Test Results** (bandicam 2025-05-11 19-25-14-768.mp4):
+- Video Length: 1000.1s (~16.7 minutes)
+- **Optimal Threshold**: 0.8952 (F1 maximization within 90-200s constraint)
+- **Predicted Duration**: 181.9s (target: 180s, perfect match!)
+- **Adoption Rate**: 18.2% (1,819 / 10,001 frames)
+- **Extracted Clips**: 10 clips (total 138.3s)
+- **XML Generation**: Success (Premiere Pro compatible)
+
+**Constraint Satisfaction**:
+- ✅ 90-200s constraint satisfied
+- ✅ Target 180s (3 minutes) almost perfectly matched (+1.9s)
+- ✅ Per-video optimization (optimal threshold search per video)
+
+**Details**: [Inference Test Results Report](INFERENCE_TEST_RESULTS.md)
 
 ### Per-Fold Results
 

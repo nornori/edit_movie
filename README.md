@@ -4,6 +4,155 @@
 
 **想定用途**: 10分程度の動画を約2分（90秒〜150秒）のハイライト動画に自動編集
 
+---
+
+## ⚡ 最短ルート（初めての方向け）
+
+### 📥 インストール（5分）
+
+```bash
+# 1. リポジトリをクローン
+git clone <repository_url>
+cd xmlai
+
+# 2. 依存パッケージをインストール
+pip install -r requirements.txt
+
+# 3. ffmpegがインストールされているか確認
+ffmpeg -version
+```
+
+### 🎬 推論: 動画→XML（10分/動画）
+
+**学習済みモデルを使って、新しい動画を自動編集:**
+
+```bash
+# バッチファイルで実行（推奨）
+batch\run_inference.bat "path\to\your_video.mp4"
+
+# または手動で実行
+python -m src.inference.inference_pipeline "your_video.mp4" --output outputs/output.xml
+```
+
+**出力**: `outputs/output.xml` をPremiere Proで開く → 約2分のハイライト動画が完成！
+
+**現在の性能**: 
+- 学習: 平均F1: 42.30%、Recall: 76.10%（K-Fold CV）
+- 推論: 90-200秒制約を満たす最適閾値を自動探索（F1最大化）
+
+---
+
+### 🎓 学習: あなたの編集スタイルを学習（初回のみ、数時間）
+
+**1. 教師データを準備（30本以上推奨）**
+
+```
+videos/              # 元動画（10分程度）
+├── video1.mp4
+├── video2.mp4
+└── video3.mp4
+
+data/raw/editxml/    # Premiere Proで編集したXML
+├── video1.xml       # ← Premiere Proで「書き出し」→「Final Cut Pro XML」
+├── video2.xml
+└── video3.xml
+```
+
+**2. 特徴量抽出（5-10分/動画）**
+
+```bash
+# 音声・映像・テキストの特徴量を自動抽出
+python -m src.data_preparation.extract_video_features_parallel ^
+    --video_dir videos ^
+    --output_dir data/processed/source_features ^
+    --n_jobs 4
+```
+
+**3. ラベル抽出（数秒）**
+
+```bash
+# XMLから「採用/不採用」ラベルを自動抽出
+python -m src.data_preparation.extract_active_labels ^
+    --xml_dir data/raw/editxml ^
+    --feature_dir data/processed/source_features ^
+    --output_dir data/processed/active_labels
+```
+
+**4. 時系列特徴量追加（数分）**
+
+```bash
+# 移動平均、変化率、CLIP類似度などを追加
+python scripts\add_temporal_features.py
+```
+
+**5. K-Fold用データセット作成（数分）**
+
+```bash
+# 特徴量とラベルを結合し、K-Fold CV用に準備
+python scripts\combine_sequences_enhanced.py
+```
+
+**6. 学習実行（2-3時間、GPU推奨）**
+
+```bash
+# K-Fold Cross Validation（5分割）で学習
+batch\train_cut_selection_enhanced.bat
+
+# リアルタイム可視化
+# ブラウザで checkpoints_cut_selection_kfold_enhanced/view_training.html を開く
+```
+
+**出力**: 
+- `checkpoints_cut_selection_kfold_enhanced/fold_1_best_model.pth` （最良モデル、F1: 49.42%）
+- `kfold_summary.csv` （全Foldの統計）
+- `kfold_comparison.png` （比較グラフ）
+
+---
+
+### 📊 現在の性能（2025-12-26検証済み）
+
+#### 学習性能（K-Fold CV）
+
+| 指標 | 平均値 | 最良（Fold 1） |
+|------|--------|----------------|
+| **F1 Score** | **42.30%** | **49.42%** |
+| **Recall** | **76.10%** | 74.65% |
+| **Precision** | 29.83% | 36.94% |
+
+- ✅ **Recall 76%**: 採用すべきカットの76%を検出（見逃しが少ない）
+- ⚠️ **Precision 30%**: 予測の30%が正解（誤検出がやや多い）
+- 📈 **目標**: F1 55%+（現在 -12.70pt）
+
+**評価方法**: 完全に未見のデータで評価（データリークなし、動画単位でFold分割）
+
+#### 推論性能（Full Video Model）
+
+**最新モデル**: Epoch 9, F1=0.5290（学習時）
+
+**推論テスト結果**（bandicam 2025-05-11 19-25-14-768.mp4）:
+- 動画長: 1000.1秒（約16.7分）
+- **最適閾値**: 0.8952（F1最大化、90-200秒制約内）
+- **予測時間**: 181.9秒（目標180秒に完璧に一致）
+- **採用率**: 18.2%（1,819 / 10,001フレーム）
+- **抽出クリップ数**: 10個（合計138.3秒）
+- **XML生成**: 成功（Premiere Pro用）
+
+**制約満足度**:
+- ✅ 90秒以上200秒以下の制約を満たす
+- ✅ 目標180秒（3分）にほぼ完璧に一致
+- ✅ per-video最適化（動画ごとに最適閾値を探索）
+
+---
+
+### 💡 より詳しく知りたい方へ
+
+- **教師データの作り方**: [教師データの作り方（最重要）](#-教師データの作り方最重要)
+- **詳細な使い方**: [クイックスタート](#-クイックスタート)
+- **性能の詳細**: [性能](#-性能)
+- **トラブルシューティング**: [トラブルシューティング](#-トラブルシューティング)
+
+---
+
 ## 📑 目次
 
 - [現在の開発フォーカス](#-現在の開発フォーカス)

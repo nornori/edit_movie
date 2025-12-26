@@ -2,7 +2,7 @@
 
 ## 📊 最終性能（検証済み）
 
-### 真の汎化性能
+### 学習性能（K-Fold Cross Validation）
 
 ```
 平均F1スコア: 42.30% ± 5.75%
@@ -14,6 +14,27 @@
 **評価方法**: K-Fold Cross Validation（5-Fold）  
 **データセット**: 67動画、289シーケンス  
 **評価日**: 2025-12-26
+
+### 推論性能（Full Video Model）
+
+**最新モデル**: Epoch 9, F1=0.5290（学習時）
+
+**推論テスト結果**（bandicam 2025-05-11 19-25-14-768.mp4）:
+```
+動画長: 1000.1秒（約16.7分）
+最適閾値: 0.8952（F1最大化、90-200秒制約内）
+予測時間: 181.9秒（目標180秒に完璧に一致）
+採用率: 18.2%（1,819 / 10,001フレーム）
+抽出クリップ数: 10個（合計138.3秒）
+XML生成: 成功（Premiere Pro用）
+```
+
+**制約満足度**:
+- ✅ 90秒以上200秒以下の制約を満たす
+- ✅ 目標180秒（3分）にほぼ完璧に一致（+1.9秒）
+- ✅ per-video最適化（動画ごとに最適閾値を探索）
+
+**詳細**: [推論テスト結果レポート](INFERENCE_TEST_RESULTS.md)
 
 ---
 
@@ -296,7 +317,7 @@ python src/cut_selection/train_cut_selection_kfold_enhanced.py \
     --config configs/config_cut_selection_kfold_enhanced.yaml
 ```
 
-### 推論
+### 推論（K-Fold Model）
 
 ```bash
 python src/cut_selection/inference_cut_selection.py \
@@ -304,6 +325,26 @@ python src/cut_selection/inference_cut_selection.py \
     --input_video path/to/video.mp4 \
     --output_json path/to/output.json
 ```
+
+### 推論（Full Video Model）
+
+**推奨**: per-video制約（90-200秒）を満たす最適閾値を自動探索
+
+```bash
+# 推論テスト（閾値最適化のみ）
+python test_inference_fullvideo.py "video_name"
+
+# XML生成（推論 + クリップ抽出 + XML生成）
+python generate_xml_from_inference.py "path/to/video.mp4"
+```
+
+**Full Video Model性能**:
+- モデル: `checkpoints_cut_selection_fullvideo/best_model.pth` (Epoch 9)
+- 学習時F1: 0.5290
+- 推論時: 90-200秒制約を満たす最適閾値を自動探索
+- テスト結果: 181.9秒（目標180秒に完璧）、10クリップ抽出
+
+**詳細**: [推論テスト結果レポート](INFERENCE_TEST_RESULTS.md)
 
 ---
 

@@ -242,6 +242,30 @@ Temporal (6) ──┘
 
 **Recommended Model**: Fold 1 (F1: 49.42%, most stable performance)
 
+### Inference Performance (Full Video Model)
+
+**Model**: `checkpoints_cut_selection_fullvideo/best_model.pth` (Epoch 9)
+
+**Training Performance**:
+- F1: 0.5290
+- Recall: 0.8065
+- Avg Duration: 101.3s
+
+**Inference Test Results** (bandicam 2025-05-11 19-25-14-768.mp4):
+- Video Length: 1000.1s (~16.7 minutes)
+- **Optimal Threshold**: 0.8952 (F1 maximization within 90-200s constraint)
+- **Predicted Duration**: 181.9s (target: 180s, perfect match!)
+- **Adoption Rate**: 18.2% (1,819 / 10,001 frames)
+- **Extracted Clips**: 10 clips (total 138.3s)
+- **XML Generation**: Success (Premiere Pro compatible)
+
+**Constraint Satisfaction**:
+- ✅ 90-200s constraint satisfied
+- ✅ Target 180s (3 minutes) almost perfectly matched (+1.9s)
+- ✅ Per-video optimization working correctly
+
+**Details**: See [Inference Test Results Report](docs/INFERENCE_TEST_RESULTS.md)
+
 ### Training Details
 - **Dataset**: 67 videos, 289 sequences
 - **Sequence Length**: 1000 frames (~100 seconds @ 10 FPS)

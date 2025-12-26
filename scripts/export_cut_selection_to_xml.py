@@ -12,7 +12,7 @@ import cv2
 from pathlib import Path
 from urllib.parse import quote
 
-from src.cut_selection.inference_cut_selection import CutSelectionInference
+from src.cut_selection.inference.inference_cut_selection import CutSelectionInference
 from src.utils.feature_alignment import FeatureAligner
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

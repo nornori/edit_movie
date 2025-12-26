@@ -1,0 +1,54 @@
+# Enhanced Cut Selection Model Configuration - RESET
+# Simple baseline configuration without complex tuning
+
+# Data paths
+data_path: preprocessed_data/combined_sequences_cut_selection_enhanced.npz
+checkpoint_dir: checkpoints_cut_selection_kfold_enhanced_reset
+
+# Feature dimensions
+audio_features: 235
+visual_features: 543
+temporal_features: 6
+
+# Model architecture - Standard Transformer
+d_model: 256
+nhead: 8
+num_encoder_layers: 6
+dim_feedforward: 1024
+dropout: 0.1  # Standard dropout
+
+# Training - Standard settings
+num_epochs: 50
+batch_size: 16
+learning_rate: 0.0001  # Standard Adam learning rate
+weight_decay: 0.01  # Standard weight decay
+max_grad_norm: 1.0
+use_amp: true
+
+# K-Fold Cross Validation
+n_folds: 5
+random_state: 42
+
+# Loss function - Maximize Recall with Duration Constraint
+use_focal_loss: false  # Disable focal loss (it reduces recall)
+focal_alpha: 0.75  # Not used when focal loss is disabled
+focal_gamma: 2.0  # Not used when focal loss is disabled
+tv_weight: 0.0  # Disable temporal variation loss
+duration_penalty_weight: 0.5  # Increased penalty weight (enforce constraints strictly)
+recall_reward_weight: 5.0  # STRONG recall reward (maximize recall aggressively)
+label_smoothing: 0.0  # No label smoothing
+
+# Inference constraints
+max_total_duration: 180.0  # Target total output duration in seconds (3 minutes)
+hard_max_duration: 200.0  # Hard maximum constraint (target + 20s buffer)
+min_total_duration: 90.0  # Minimum total output duration in seconds (50% of max)
+min_clip_duration: 3.0  # Minimum clip duration in seconds
+inference_fps: 10.0  # FPS used during inference
+
+# Early stopping
+early_stopping_patience: 15
+
+# Hardware
+cpu: false
+num_workers: 0
+
